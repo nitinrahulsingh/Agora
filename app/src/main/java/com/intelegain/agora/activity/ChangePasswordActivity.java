@@ -31,7 +31,8 @@ import com.intelegain.agora.service.DataFetchServices;
 import com.intelegain.agora.utils.Contants2;
 import com.intelegain.agora.utils.Sharedprefrences;
 
-public class ChangePasswordActivity extends AppCompatActivity implements View.OnClickListener {
+public class ChangePasswordActivity extends AppCompatActivity implements View.OnClickListener
+{
     TextView chng_passwrd_title_text, text_userid, text_oldpass, text_new_pass, text_confirm_pass;
     EditText ed_userid, ed_oldpass, ed_new_pass, ed_confirm_pass;
     ImageView back_img_chng_passwrd;

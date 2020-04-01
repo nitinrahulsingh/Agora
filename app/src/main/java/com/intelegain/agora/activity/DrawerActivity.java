@@ -39,7 +39,6 @@ import android.widget.Toast;
 
 import com.github.angads25.filepicker.view.FilePickerDialog;
 import com.intelegain.agora.fragmments.AboutUsFragment;
-import com.intelegain.agora.fragmments.AttendanceFragment;
 import com.intelegain.agora.fragmments.CareersFragment;
 import com.intelegain.agora.fragmments.ContactUsFragment;
 import com.intelegain.agora.fragmments.ContactsFragment;
@@ -48,8 +47,8 @@ import com.intelegain.agora.fragmments.KnowledgeBaseFragment;
 import com.intelegain.agora.fragmments.LeavesFragment;
 import com.intelegain.agora.fragmments.MyProfile_MainFragment;
 import com.intelegain.agora.fragmments.NotificationFragment;
-import com.intelegain.agora.fragmments.NotificationsFragment;
-import com.intelegain.agora.fragmments.SkillMatrix;
+//import com.intelegain.agora.fragmments.NotificationsFragment;
+import com.intelegain.agora.fragmments.SkillMatrixFragment;
 import com.intelegain.agora.interfeces.empProfileImageUpdate;
 import com.intelegain.agora.interfeces.updateDrawerImage;
 import com.intelegain.agora.utils.Contants2;
@@ -61,7 +60,7 @@ import java.io.File;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class DrawerActivity extends AppCompatActivity implements OnClickListener,
-        DrawerLayout.DrawerListener, empProfileImageUpdate, updateDrawerImage, NotificationsFragment.OnNotificationListener {
+        DrawerLayout.DrawerListener, empProfileImageUpdate, updateDrawerImage, NotificationFragment.OnNotificationListener {
     LinearLayout linearlayout_drawer;
     Sharedprefrences mSharedPref;
     View drawer_header, linearView;
@@ -268,7 +267,7 @@ public class DrawerActivity extends AppCompatActivity implements OnClickListener
                         break;
                     case 2:
                         Contants2.showToastMessage(DrawerActivity.this, getString(R.string.under_development), false);
-                      //  addFragment(new SkillMatrix(), "Skill Matrix", "Skill Matrix");
+                        //  addFragment(new SkillMatrix(), "Skill Matrix", "Skill Matrix");
                         break;
                     case 3:
                         Contants2.showToastMessage(DrawerActivity.this, getString(R.string.under_development), false);
@@ -334,9 +333,13 @@ public class DrawerActivity extends AppCompatActivity implements OnClickListener
         //tvLeaves.setOnClickListener(this);
         tvHolidayWork.setOnClickListener(this);
         tvPerformanceReview.setOnClickListener(this);
-        *//** TODO: NOTE: Temporary we are hiding the menu,
+        */
+
+    /**
+     * TODO: NOTE: Temporary we are hiding the menu,
      * 'Holiday working' and 'Self performance review' menu under Personal menu
-     *  later once the design will get ready will enable it again *//*
+     * later once the design will get ready will enable it again
+     *//*
         tvHolidayWork.setVisibility(View.GONE);
         tvPerformanceReview.setVisibility(View.GONE);
 
@@ -354,7 +357,6 @@ public class DrawerActivity extends AppCompatActivity implements OnClickListener
         });
 
     }*/
-
     @Override
     public void onDrawerSlide(View drawerView, float slideOffset) {
 
@@ -385,7 +387,7 @@ public class DrawerActivity extends AppCompatActivity implements OnClickListener
                 Contants2.doLogout(this);
                 break;
             case R.id.txt_matrix:
-                addFragment(new SkillMatrix(), "Skill Matrix", "Skill Matrix");
+                addFragment(new SkillMatrixFragment(), "Skill Matrix", "Skill Matrix");
                 break;
             case R.id.txt_performace_review:
 //                Toast.makeText(DrawerActivity.this, "Performance", Toast.LENGTH_SHORT).show();

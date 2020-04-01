@@ -11,7 +11,8 @@ import com.intelegain.agora.fragmments.New_Home_activity;
 
 import com.microsoft.windowsazure.messaging.NotificationHub;
 
-public class RegistrationIntentService extends IntentService {
+public class RegistrationIntentService extends IntentService
+{
 
     private static final String TAG = "RegIntentService";
 
@@ -20,9 +21,9 @@ public class RegistrationIntentService extends IntentService {
     public RegistrationIntentService() {
         super(TAG);
     }
-
     @Override
-    protected void onHandleIntent(Intent intent) {
+    protected void onHandleIntent(Intent intent)
+    {
 
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         String resultString = null;

@@ -214,4 +214,5 @@ class NotificationFragment
             return fragment
         }
     }
+
 }

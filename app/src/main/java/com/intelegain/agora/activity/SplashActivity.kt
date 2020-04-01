@@ -50,7 +50,7 @@ class SplashActivity : AppCompatActivity() {
         Handler().postDelayed({
 
 
-            if (!Sharedprefrences.getInstance(mContext as SplashActivity).getString(getString(R.string.key_emp_id), "").isEmpty()) {
+            if (!Sharedprefrences.getInstance(mContext as SplashActivity).getString(getString(R.string.key_emp_id), "")!!.isEmpty()) {
                 val intent = Intent(mContext as SplashActivity, DrawerActivity::class.java)
                 val inData = getIntent()
                 if (inData.hasExtra("isFromNotification")) {
@@ -64,24 +64,22 @@ class SplashActivity : AppCompatActivity() {
             }
 
 
+            /*
 
-
-         /*
-
-            if (sessionManager!!.isUserLogin)
-            {
-                val intent = Intent(this, DrawerActivity::class.java)
-                val inData = getIntent()
-                if (inData.hasExtra("isFromNotification")) {
-                    intent.putExtra("menuFragment", "NotificationFragment")
-                }
-                startActivity(intent)
-                finish()
-            } else {
-                val intent = Intent(this, New_Home_activity::class.java)
-                startActivity(intent)
-                finish()
-            }*/
+               if (sessionManager!!.isUserLogin)
+               {
+                   val intent = Intent(this, DrawerActivity::class.java)
+                   val inData = getIntent()
+                   if (inData.hasExtra("isFromNotification")) {
+                       intent.putExtra("menuFragment", "NotificationFragment")
+                   }
+                   startActivity(intent)
+                   finish()
+               } else {
+                   val intent = Intent(this, New_Home_activity::class.java)
+                   startActivity(intent)
+                   finish()
+               }*/
         }, 2000)
 
 
