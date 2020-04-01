@@ -23,6 +23,7 @@ import com.intelegain.agora.R
 import com.intelegain.agora.api.urls.CommonMethods
 import com.intelegain.agora.constants.Constants
 import com.intelegain.agora.dataFetch.RetrofitClient
+import com.intelegain.agora.interfeces.RecyclerItemClickListener
 import com.intelegain.agora.interfeces.WebApiInterface
 import com.intelegain.agora.model.KbAttchmentResponce
 import com.intelegain.agora.model.KnowledgebaseProjectName
@@ -317,13 +318,23 @@ class AddKnowledgebase : AppCompatActivity(), View.OnClickListener {
      * Show Project name list dialog that to pick project name
      */
     private fun showProjectListDialog() {
-        CommonMethods().customSpinner(this, "Select Project", inflater, dialogRecyclerView,
-                mlstProjectNameList, dialog, dialog_view
-        ) { position, itemClickText ->
-            tvProjectName!!.text = itemClickText
-            tvProjectName!!.tag = mlstProjectNameList.indexOf(itemClickText)
-            dialog!!.hide()
-        }
+
+
+        CommonMethods().customSpinner(this, "Select Project", inflater, dialogRecyclerView, mlstProjectNameList, dialog, dialog_view, object : RecyclerItemClickListener {
+            override fun recyclerViewListClicked(position: Int, itemClickText: String?) {
+                tvProjectName.text = itemClickText
+                tvProjectName.tag = mlstProjectNameList.indexOf(itemClickText)
+                dialog!!.hide()
+            }
+        })
+
+        /* CommonMethods().customSpinner(this, "Select Project", inflater, dialogRecyclerView,
+                 mlstProjectNameList, dialog, dialog_view
+         ) { position, itemClickText ->
+             tvProjectName!!.text = itemClickText
+             tvProjectName!!.tag = mlstProjectNameList.indexOf(itemClickText)
+             dialog!!.hide()
+         }*/
     }
 
     /**
@@ -331,13 +342,22 @@ class AddKnowledgebase : AppCompatActivity(), View.OnClickListener {
      */
     private fun showTechnologyListDialog() {
         dialogRecyclerView = null
-        CommonMethods().customSpinner(this, "Select Technology", inflater, dialogRecyclerView,
-                mlstTechnologyList, dialog, dialog_view
-        ) { position, itemClickText ->
-            tvTechnology!!.text = itemClickText
-            tvTechnology!!.tag = mlstTechnologyList.indexOf(itemClickText)
-            dialog!!.hide()
-        }
+
+        CommonMethods().customSpinner(this, "Select Technology", inflater, dialogRecyclerView, mlstTechnologyList, dialog, dialog_view, object : RecyclerItemClickListener {
+            override fun recyclerViewListClicked(position: Int, itemClickText: String?) {
+                tvTechnology.text = itemClickText
+                tvTechnology.tag = mlstTechnologyList.indexOf(itemClickText)
+                dialog!!.hide()
+            }
+        })
+
+        /* CommonMethods().customSpinner(this, "Select Technology", inflater, dialogRecyclerView,
+                 mlstTechnologyList, dialog, dialog_view
+         ) { position, itemClickText ->
+             tvTechnology!!.text = itemClickText
+             tvTechnology!!.tag = mlstTechnologyList.indexOf(itemClickText)
+             dialog!!.hide()
+         }*/
     }
 
     /**
@@ -423,7 +443,7 @@ class AddKnowledgebase : AppCompatActivity(), View.OnClickListener {
                     val params: MutableMap<String, DataPart> = mutableMapOf()
                     //params.put("UploadedImage", );
 
-                  // params["UploadedImage"] = null
+                    // params["UploadedImage"] = null
 
                     //params.put("UploadedImage", new DataPart(selectedFile.getName().toString(), getBytesFromFile(selectedFile.getPath()), mimeType));
 /*params.put("UploadedImage", new DataPart("IMG_20180305_153226.jpg", getBytesFromFile("/storage/emulated/0/DCIM/Camera/IMG_20180305_153226.jpg"), "image"));

@@ -35,7 +35,8 @@ import retrofit2.Retrofit;
 
 import static com.intelegain.agora.dataFetch.RetrofitClient.retrofit;
 
-public class MyProfile_Personal_Details_Fragment extends Fragment implements View.OnClickListener {
+public class MyProfile_Personal_Details_Fragment extends Fragment implements View.OnClickListener
+{
 
     View view;
     ConstraintLayout constraint_layout;
