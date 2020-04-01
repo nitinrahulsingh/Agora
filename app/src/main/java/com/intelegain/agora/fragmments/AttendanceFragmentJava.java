@@ -46,7 +46,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 
 
-public class AttendanceFragment extends Fragment implements View.OnClickListener, SwipeRefreshLayout.OnRefreshListener {
+public class AttendanceFragmentJava extends Fragment implements View.OnClickListener, SwipeRefreshLayout.OnRefreshListener {
     private String TAG = getClass().getSimpleName();
     private Activity activity;
     private ImageView ivPrevMonth, ivNexMonth;

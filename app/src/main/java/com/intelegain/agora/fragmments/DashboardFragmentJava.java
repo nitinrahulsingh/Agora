@@ -66,7 +66,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 
 
-public class DashboardFragment extends Fragment implements View.OnClickListener, FileDownloader.onDownloadTaskFinish {
+public class DashboardFragmentJava extends Fragment implements View.OnClickListener, FileDownloader.onDownloadTaskFinish {
     private String TAG = getClass().getSimpleName();
     private OccassionPagerAdapter objOccAdapter;
     private NewsPagerAdapter objNewsAdapter;
@@ -1077,7 +1077,7 @@ public class DashboardFragment extends Fragment implements View.OnClickListener,
 
                     switch (response.code()) {
                         case 200:
-                            FileDownloader fileDownloader = new FileDownloader(getActivity(), DashboardFragment.this);
+                            FileDownloader fileDownloader = new FileDownloader(getActivity(), DashboardFragmentJava.this);
                             String pdfFileName;
                             if (pdfType.equals(Contants2.HRManualContentCode)) {
                                 pdfFileName = Contants2.hr_manual_file_name;
