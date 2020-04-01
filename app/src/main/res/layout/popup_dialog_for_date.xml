@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/_60sdp"
+    android:layout_height="wrap_content"
+    android:id="@+id/rl_dt_dialog"
+    android:background="@drawable/popup_bg">
+
+    <TextView
+        android:id="@+id/tvDay"
+        style="@style/Both_Wrap_roboto_regular_style"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_13sdp"
+        android:textStyle="bold"
+        android:layout_centerVertical="true"
+        android:text="" />
+
+    <RelativeLayout
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/tvDay"
+        android:layout_marginLeft="@dimen/_4sdp">
+
+        <TextView
+            android:id="@+id/tvInTime"
+            style="@style/Both_Wrap_roboto_regular_style"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_7sdp"
+            android:layout_alignParentRight="true"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/tvOutTime"
+            style="@style/Both_Wrap_roboto_regular_style"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_7sdp"
+            android:text=""
+            android:layout_below="@+id/tvInTime"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
+</RelativeLayout>

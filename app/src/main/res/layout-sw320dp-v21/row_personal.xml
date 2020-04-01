@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relative_row_personal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/_5sdp"
+    android:padding="@dimen/_6sdp">
+
+    <ImageView
+        android:id="@+id/img_drawer_icon"
+        style="@style/Both_Wrap_style"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:src="@drawable/personal" />
+
+    <TextView
+        android:id="@+id/txt_drawer_title"
+        style="@style/Both_Wrap_style"
+        android:layout_marginLeft="@dimen/_15sdp"
+        android:layout_toRightOf="@+id/img_drawer_icon"
+        android:text="@string/personal"
+        android:textSize="@dimen/_15ssp" />
+
+    <ImageView
+        android:id="@+id/img_drawer_arrow"
+        style="@style/Both_Wrap_style"
+        android:layout_alignBottom="@id/txt_drawer_title"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/txt_drawer_title"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:src="@drawable/gray_arrow" />
+
+    <RelativeLayout
+        android:id="@+id/relative_menu_personal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txt_drawer_title"
+        android:layout_below="@+id/txt_drawer_title"
+        android:visibility="gone"
+        android:layout_marginTop="@dimen/_8sdp">
+
+        <TextView
+            android:id="@+id/txt_matrix"
+            style="@style/menu_drawer_item"
+            android:text="@string/skill_matrix" />
+
+        <!--<TextView
+            android:id="@+id/txt_leaves"
+            style="@style/menu_drawer_item"
+            android:layout_below="@+id/txt_matrix"
+            android:text="@string/leaves" />-->
+
+        <TextView
+            android:id="@+id/txt_holiday_working"
+            style="@style/menu_drawer_item"
+            android:layout_below="@+id/txt_matrix"
+            android:text="@string/holiday_working" />
+
+        <TextView
+            android:id="@+id/txt_performace_review"
+            style="@style/menu_drawer_item"
+            android:layout_below="@+id/txt_holiday_working"
+            android:text="@string/self_performance_review" />
+    </RelativeLayout>
+
+
+</RelativeLayout>
+
+    <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            style="@style/Both_Wrap_style"
+            android:padding="@dimen/_6sdp"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:src="@drawable/my_project"
+            android:visibility="invisible" />
+
+        <LinearLayout
+            android:id="@+id/lin_menu_personal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/text_2dp_2dp_3dp_3p"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:layout_marginTop="@dimen/text_2dp_2dp_3dp_3p"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_matrix"
+                style="@style/menu_drawer_item"
+                android:text="@string/skill_matrix" />
+
+            <TextView
+                android:id="@+id/txt_leaves"
+                style="@style/menu_drawer_item"
+                android:text="@string/leaves" />
+
+            <TextView
+                android:id="@+id/txt_holiday_working"
+                style="@style/menu_drawer_item"
+                android:text="@string/holiday_working" />
+
+            <TextView
+                android:id="@+id/txt_performace_review"
+                style="@style/menu_drawer_item"
+                android:text="@string/self_performance_review" />
+
+        </LinearLayout>
+
+    </LinearLayout>-->
+
+
+
+
+
+
+
+

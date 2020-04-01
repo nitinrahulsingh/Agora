@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="background">#595959</color>
+    <color name="skill_background">#f5f5f6</color>
+    <color name="login_button">#e35102</color>
+    <color name="layout2">#CCFFCC</color>
+    <color name="layout1">#00FF00</color>
+    <color name="list">#B0B0B0</color>
+    <color name="transparent">#00000000</color>
+    <color name="Pending">#0000FF</color>
+    <color name="Rejected">#FF0000</color>
+    <color name="Approved">#339933</color>
+    <color name="orange">#f09609</color>
+    <color name="light_lavender_">#dcd0ff</color>
+
+    <color name="white">#ffffff</color>
+
+    <color name="edit_text_color_white">#fff</color>
+
+    <color name="btn_yellow_normal">#ef9b11</color>
+    <color name="btn_yellow_selected">#bf8213</color>
+
+
+    <color name="black">#000</color>
+    <color name="silver">#C0C0C0</color>
+    <color name="dark_grey">#A9A9A9</color>
+    <color name="light_black">#191919</color>
+    <color name="yellow">#FFA500</color>
+    <color name="light_pink">#FFC0CB</color>
+    <color name="light_lavender">#E6E6FA</color>
+    <color name="overlay">#66000000</color>
+
+    <color name="warning_color">#f4511e</color>
+    <color name="hint_color">#42000000</color>
+    <color name="success_color">#009688</color>
+
+    <color name="colorPrimary">#323542</color>
+    <color name="colorPrimaryDark">#333343</color>
+
+    <color name="new_dark_grey">#14151a</color>
+    <color name="divider_light_grey">#dee1e4</color>
+    <color name="title_light_grey">#6d7077</color>
+    <color name="login_sign_with_line">#54555e</color>
+    <color name="login_forgot_password">#c8beb2</color>
+    <color name="login_edit_text_divider">#d0d1d5</color>
+
+    <color name="edit_text_personal_details_color">#B0B0B0</color>
+
+
+    <!-- TimeSheet-->
+
+    <color name="timesheet_yellow">#ef9b11</color>
+    <color name="timesheet_toolbar">#14151a</color>
+    <color name="timesheet_header">#fee3e2</color>
+    <color name="timesheet_header2">#505050</color>
+    <color name="timesheet_pending_color">#eb251b</color>
+    <color name="timesheet_description">#6d7077</color>
+    <color name="timesheet_project">#947450</color>
+    <color name="wbs_tab_txt_color">#c9c9c9</color>
+    <color name="wbs_tundora">#575a62</color>
+    <color name="wbs_border_color">#dadee1</color>
+    <color name="wbs_custom_spinner">#dfe2e9</color>
+    <color name="wbs_green">#3da244</color>
+    <color name="wbs_assigned_to">#e9ebef</color>
+
+    <color name="brown_color">#937551</color>
+
+
+    <color name="sub_inner_border">#e4e7e9</color>
+    <color name="inner_border">#dadee1</color>
+    <color name="outer_border">#a8aeb3</color>
+
+
+    <!-- Dashboard screen colors -->
+    <color name="day_disabled_prev_month">#323242</color>
+    <!--<color name="day_disabled_curr_month">#6d7077</color>-->
+    <color name="color_holiday">#2b2d37</color>
+    <color name="color_viewpager_event">#e8e9ef</color>
+    <color name="color_viewpager_text_not_selected">#898d9b</color>
+    <color name="color_birthday">#fffc04</color>
+
+    <!-- Leaves screen colors -->
+    <color name="color_bg_leave_row">#2b2d37</color>
+    <color name="green">#3da244</color>
+
+
+
+    <!---Defaualt holiday color -->
+    <color name="republic_day">#f8efea</color>
+    <color name="holi">#deefff</color>
+    <color name="good_friday">#e9f7f7</color>
+    <color name="maharashtra_day">#f4e9f7</color>
+    <color name="eid">#edf4ec</color>
+    <color name="independence">#f0f0f0</color>
+    <color name="ganesh_chaturthi">#e9f7f7</color>
+    <color name="dussehra">#f4e9f7</color>
+    <color name="gandhi_jayanti">#efefef</color>
+    <color name="diwali">#deefff</color>
+    <color name="christmas">#fde9eb</color>
+    <color name="defaultColor">#f8f8f8</color>
+
+    <!---Defaualt holiday color -->
+
+    <color name="skill_value">#5c5c5f</color>
+
+
+    <color name="bg_transparent">#05ffffff</color>
+</resources>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relative_occassion_pager_parent"
+    style="@style/match_wrap_style"
+    android:background="@color/btn_yellow_normal">
+
+    <com.intelegain.agora.utils.CircularImageView
+        android:id="@+id/imgOccProfile"
+        android:layout_width="@dimen/imgOccProfile_width"
+        android:layout_height="@dimen/imgOccProfile_height"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:adjustViewBounds="true"
+        android:padding="@dimen/_5sdp"
+        android:scaleType="centerInside"
+        android:src="@drawable/profile_image" />
+
+    <LinearLayout
+        android:id="@+id/linear_title_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_toLeftOf="@+id/imgBirthdayIcon"
+        android:layout_toRightOf="@+id/imgOccProfile"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvOccassionFor"
+            style="@style/Both_Wrap_roboto_regular_style"
+            android:text="Sachin Modak"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_14ssp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvOccassionDate"
+            style="@style/Both_Wrap_roboto_regular_style"
+            android:text="30 June"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_12ssp" />
+
+        <TextView
+            android:id="@+id/tvOccassionName"
+            style="@style/Both_Wrap_roboto_regular_style"
+
+            android:text="Birthday"
+            android:textColor="@color/color_birthday"
+            android:textSize="@dimen/_11ssp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imgBirthdayIcon"
+        android:layout_width="@dimen/imgBirthdayIcon_width"
+        android:layout_height="@dimen/imgBirthdayIcon_height"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/_5sdp"
+        android:padding="@dimen/_5sdp"
+        android:src="@drawable/birthday_icon_active" />
+
+    <TextView
+        android:id="@+id/tvNoOccassionFound"
+        style="@style/Both_Wrap_style"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:text="@string/no_occasion_found"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_12ssp"
+        android:visibility="gone" />
+
+</RelativeLayout>

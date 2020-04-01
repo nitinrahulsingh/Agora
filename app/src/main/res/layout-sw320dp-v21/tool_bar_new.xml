@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="@color/timesheet_toolbar"
+    tools:ignore="MissingDefaultResource">
+
+    <ImageView
+        android:id="@+id/notification"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="right|center"
+        android:visibility="gone"
+        android:layout_marginRight="@dimen/padding_large"
+        android:src="@drawable/notification" />
+
+    <TextView
+        android:id="@+id/tv_toolbar_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/padding_large"
+        android:fontFamily="sans-serif"
+        android:text="Dashboard"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_16ssp" />
+    <!--android:textSize="@dimen/text_xxxlarge"-->
+
+
+</androidx.appcompat.widget.Toolbar>
+

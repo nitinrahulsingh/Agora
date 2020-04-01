@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/constraint_layout_normal"
+    style="@style/match_wrap_style"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidline_veritcal_attendance_row"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintGuide_percent="0.25"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_layout_normal_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/tvAttStatus"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            style="@style/Both_Wrap_style"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <TextView
+                android:id="@+id/tvAttendanceDate"
+                style="@style/Both_Wrap_roboto_regular_style"
+                android:text="24"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvAttendanceDay"
+                style="@style/Both_Wrap_roboto_regular_style"
+                android:layout_alignBaseline="@+id/tvAttendanceDate"
+                android:layout_margin="@dimen/_4sdp"
+                android:layout_toRightOf="@+id/tvAttendanceDate"
+                android:text="SUN"
+
+                android:textAllCaps="true"
+                android:textSize="@dimen/_10ssp" />
+
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <View
+        android:id="@+id/upperLine"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:background="@color/outer_border"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/guidline_veritcal_attendance_row"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvAttStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:background="@drawable/circle_within_circle_green"
+        android:gravity="center"
+        android:text="P"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_10ssp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/upperLine"
+        app:layout_constraintRight_toRightOf="@+id/upperLine"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/vwHidingBottomLine"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:background="@color/republic_day"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/upperLine"
+        app:layout_constraintRight_toRightOf="@+id/upperLine"
+        app:layout_constraintTop_toBottomOf="@+id/tvAttStatus" />
+
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/tvAttStatus"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:id="@+id/container_for_InAnOutTime"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="@drawable/patch">
+
+            <TextView
+                android:id="@+id/tvInTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:text="9:30"
+                android:textColor="@color/yellow"
+                android:textSize="@dimen/_14ssp" />
+
+            <TextView
+                android:id="@+id/tvTo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_toRightOf="@+id/tvInTime"
+                android:text="to"
+                android:textSize="@dimen/_14ssp" />
+
+            <TextView
+                android:id="@+id/tvOutTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_toRightOf="@+id/tvTo"
+                android:text="19:00"
+                android:textColor="@color/yellow"
+                android:textSize="@dimen/_14ssp" />
+
+
+            <TextView
+                android:id="@+id/tvTotalHourWorked"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/line_between_hour_and_timesheet"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_2sdp"
+                android:layout_toRightOf="@+id/tvOutTime"
+                android:background="#dadee1"
+                android:drawableLeft="@drawable/total_hrs"
+                android:drawablePadding="@dimen/_2sdp"
+                android:gravity="right|center_vertical"
+                android:paddingBottom="@dimen/_5sdp"
+                android:paddingLeft="@dimen/_5sdp"
+                android:paddingRight="@dimen/_8sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:text="9hrs"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11ssp" />
+
+            <View
+                android:id="@+id/line_between_hour_and_timesheet"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:layout_toRightOf="@+id/tvOutTime"
+                android:background="#a8aeb3" />
+
+            <TextView
+                android:id="@+id/tvTimesheet"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/tvTotalHourWorked"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_2sdp"
+                android:layout_toRightOf="@+id/tvOutTime"
+                android:layout_weight="1"
+                android:background="#dadee1"
+                android:drawableLeft="@drawable/attendance_timesheet"
+                android:drawablePadding="@dimen/_4sdp"
+                android:gravity="right|center_vertical"
+                android:paddingBottom="@dimen/_5sdp"
+                android:paddingLeft="@dimen/_5sdp"
+                android:paddingRight="@dimen/_8sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:text="8hrs"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11ssp" />
+            <!--</LinearLayout>-->
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

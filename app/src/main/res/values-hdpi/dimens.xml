@@ -1,0 +1,163 @@
+<resources>
+    <dimen name="padding_small_new">2.5dp</dimen>
+
+    <dimen name="padding_4.5dp_6.7dp_9dp_11.2dp">4.5dp</dimen>
+    <dimen name="padding_8dp">8dp</dimen>
+
+
+  <!--  <dimen name="padding_2">1dp</dimen>
+    <dimen name="padding_3">2dp</dimen>-->
+    <dimen name="text_1dp_1dp_2dp_2dp">1dp</dimen>
+    <dimen name="text_2dp_2dp_3dp_3p">2dp</dimen>
+
+
+    <dimen name="text_large">10.0sp</dimen>
+
+    <dimen name="text_small_plus_one">8.5sp</dimen>
+
+    <dimen name="text_xmedium">8.0sp</dimen>
+
+    <dimen name="text_medium">9.0sp</dimen>
+
+    <dimen name="text_9sp_13.5sp_18.0sp_22.5sp">11.0sp</dimen>
+    <dimen name="text_13sp_19.5sp_26.0sp_32.5sp">14sp</dimen>
+    <dimen name="text_13sp_16sp_17.0sp_18sp">13.0sp</dimen>
+    <dimen name="text_10sp_12sp_13sp_14sp">10.0sp</dimen>
+    <dimen name="padding_6dp_10dp_12dp">6dp</dimen>
+
+    <dimen name="text_13sp_">18.0sp</dimen>
+    <dimen name="text_10sp">14.0sp</dimen>
+
+    <!-- used in login screen so before changing value think twice -->
+    <dimen name="size_15sp_18.0sp_20sp_20sp">15.0sp</dimen>
+    <dimen name="size_13sp_16sp_17.0sp_17.0sp">13.0sp</dimen>
+
+    <dimen name="size_11sp_13sp_14sp_15sp">11.0sp</dimen>
+
+    <dimen name="padding_8dp_14dp_18dp_19dp">8dp</dimen>
+
+<dimen name="splash_logo_top">180dp</dimen>
+
+
+    <!-- used in login screen so before changing value think twice -->
+    <dimen name="padding_4dp_6dp_8dp_10dp">4dp</dimen>
+
+    <!--
+    <dimen name="text_small">8.0sp</dimen>
+
+    <dimen name="text_xsmall">7.0sp</dimen>
+    -->
+
+
+    <dimen name="margin_xxmedium">10.0dp</dimen>
+
+    <dimen name="custom_pending_small_height">5.0dp</dimen>
+
+    <dimen name="custom_pending_width">15.0dp</dimen>
+
+    <dimen name="custom_penind_height">15.0dp</dimen>
+
+    <dimen name="custom_arrow_width">10.0dp</dimen>
+
+    <dimen name="custom_arrow_height">10.0dp</dimen>
+
+    <dimen name="layout_custom_width">20.0dp</dimen>
+
+    <dimen name="layout_custom_height">20.0dp</dimen>
+
+    <dimen name="text_xxxxsmall">3.5sp</dimen>
+
+    <dimen name="margin_xxxsmall">6.0dp</dimen>
+
+    <dimen name="margin_xxsmall">7.5dp</dimen>
+
+    <dimen name="margin_xsmall">20.0dp</dimen>
+
+    <dimen name="text_xxxxlarge">17.5sp</dimen>
+
+    <dimen name="text_xxxlarge">13.0sp</dimen>
+
+    <dimen name="text_xsmall">12.0sp</dimen>
+
+    <dimen name="text_xxxsmall">5.0sp</dimen>
+
+    <dimen name="padding_xxlarge">7.0dp</dimen>
+
+    <dimen name="padding_xlarge">6.0dp</dimen>
+
+    <dimen name="padding_large">10.0dp</dimen>
+
+    <dimen name="padding_medium">4.0dp</dimen>
+
+    <dimen name="padding_xsmall">2.0dp</dimen>
+
+    <dimen name="margin_xmedium">12.0dp</dimen>
+
+    <!--Used in PersonalDetailsActicity.java-->
+    <dimen name="margin_left_10dp">10.0dp</dimen>
+    <dimen name="margin_right_10dp">10.0dp</dimen>
+    <dimen name="padding_text_10dp">10.0dp</dimen>
+
+
+    <dimen name="margin_small">10.0dp</dimen>
+
+    <dimen name="margin_medium">15.0dp</dimen>
+
+    <dimen name="margin_large">20.0dp</dimen>
+
+    <dimen name="margin_xlarge">25.0dp</dimen>
+
+    <dimen name="margin_xxlarge">30.0dp</dimen>
+
+    <dimen name="margin_xxxlarge">35.0dp</dimen>
+
+    <dimen name="divider_1">0.5dp</dimen>
+
+    <dimen name="fab_margin">10dp</dimen>
+
+    <dimen name="margin_home">4dp</dimen>
+
+    <!--created by suraj-->
+    <dimen name="margin_or_padding_2">1.0dp</dimen>
+
+    <dimen name="bg_view_half_circle_height">9.0dp</dimen>
+
+    <dimen name="viewPagerEvents_height">50.0dp</dimen>
+
+    <dimen name="view_pager_month_height">125.0dp</dimen>
+
+    <dimen name="bg_with_dot_small_height">1.5dp</dimen>
+
+    <dimen name="bg_with_dot_small_width">1.5dp</dimen>
+
+    <dimen name="bg_with_dot_bottom">13.5dp</dimen>
+
+    <dimen name="bg_with_dot_top">1.5dp</dimen>
+
+    <dimen name="bg_with_dot_right">1.5dp</dimen>
+
+    <dimen name="bg_with_dot_left">13.5dp</dimen>
+
+    <dimen name="bg_with_dot_height">17.5dp</dimen>
+
+    <dimen name="bg_with_dot_width">17.5dp</dimen>
+
+    <dimen name="bg_round_height">12.5dp</dimen>
+
+    <dimen name="bg_round_width">12.5dp</dimen>
+
+    <dimen name="bg_round_inner_radius">0.5dp</dimen>
+
+    <dimen name="margin_or_padding_5">2.5dp</dimen>
+
+    <dimen name="margin_or_padding_10">5.0dp</dimen>
+
+    <dimen name="imgOccProfile_width">40.0dp</dimen>
+
+    <dimen name="imgOccProfile_height">40.0dp</dimen>
+
+    <dimen name="imgBirthdayIcon_height">40.0dp</dimen>
+
+    <dimen name="imgBirthdayIcon_width">40.0dp</dimen>
+
+</resources>

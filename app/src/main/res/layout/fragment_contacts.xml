@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraint_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/new_dark_grey"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppThemeMain.AppBarOverlay">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <RelativeLayout
+                android:id="@+id/relative_management_container"
+                style="@style/Match_Wrap_style"
+
+                android:layout_margin="@dimen/_10sdp">
+
+                <ImageView
+                    android:id="@+id/img_filter"
+                    style="@style/Both_Wrap_style"
+                    android:layout_alignTop="@+id/etSearchByName"
+                    android:layout_alignBottom="@+id/vw_editTextBottomLine"
+                    android:src="@drawable/knowledge_filter_orange_icon"
+                    android:visibility="gone" />
+
+                <EditText
+                    android:id="@+id/etSearchByName"
+                    style="@style/Match_Wrap_style"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_toRightOf="@+id/img_filter"
+                    android:background="@null"
+                    android:drawableLeft="@drawable/knowledge_search_icon"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:hint="@string/hint_Serach_name"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="@dimen/_11ssp" />
+
+                <View
+                    android:id="@+id/vw_editTextBottomLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_below="@+id/etSearchByName"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_toRightOf="@+id/img_filter"
+                    android:background="@color/divider_light_grey" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraint_three_box_container"
+                    style="@style/Match_Wrap_style"
+                    android:layout_below="@+id/vw_editTextBottomLine"
+                    android:layout_marginTop="@dimen/_10sdp">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guidline_first"
+                        style="@style/wrap_match_style"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintGuide_percent="0.30"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guidline_second"
+                        style="@style/wrap_match_style"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintGuide_percent="0.35"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guidline_third"
+                        style="@style/wrap_match_style"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintGuide_percent="0.65"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guidline_fourth"
+                        style="@style/wrap_match_style"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintGuide_percent="0.70"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <!--Board main container starts-->
+                    <RelativeLayout
+                        android:id="@+id/relative_board_container"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="@+id/guidline_first"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/img_board_container"
+                            style="@style/Both_Wrap_style"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:background="@drawable/bg_contacts_circle_yellow" />
+
+                        <ImageView
+                            android:id="@+id/img_board"
+                            style="@style/Both_Wrap_style"
+                            android:layout_alignBottom="@+id/img_board_container"
+                            android:layout_alignTop="@+id/img_board_container"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/board" />
+
+                        <TextView
+                            android:id="@+id/tvBoard"
+                            style="@style/Both_Wrap_style"
+                            android:layout_below="@+id/img_board_container"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:fontFamily="sans-serif-regular"
+                            android:text="@string/board"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_11ssp" />
+
+                        <RelativeLayout
+                            style="@style/Match_Wrap_style"
+                            android:layout_below="@+id/tvBoard"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:background="@color/divider_light_grey">
+
+                            <ImageView
+                                android:id="@+id/img_board_mail"
+                                style="@style/Both_Wrap_style"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:clickable="true"
+                                android:layout_alignParentLeft="true"
+                                android:padding="@dimen/_5sdp"
+                                android:src="@drawable/mail_s" />
+
+                            <ImageView
+                                android:id="@+id/img_board_call"
+                                style="@style/Both_Wrap_style"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:clickable="true"
+                                android:layout_alignParentRight="true"
+                                android:padding="@dimen/_5sdp"
+                                android:src="@drawable/phone_s" />
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+                    <!--Board main container ends-->
+
+                    <!--HR main container starts-->
+                    <RelativeLayout
+                        android:id="@+id/relative_hr_container"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toRightOf="@+id/guidline_second"
+                        app:layout_constraintRight_toRightOf="@+id/guidline_third"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/img_hr_container"
+                            style="@style/Both_Wrap_style"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:background="@drawable/bg_contacts_circle_yellow" />
+
+                        <ImageView
+                            android:id="@+id/img_hr"
+                            style="@style/Both_Wrap_style"
+                            android:layout_alignBottom="@+id/img_hr_container"
+                            android:layout_alignTop="@+id/img_hr_container"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/hr" />
+
+                        <TextView
+                            android:id="@+id/tvHr"
+                            style="@style/Both_Wrap_style"
+                            android:layout_below="@+id/img_hr_container"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:fontFamily="sans-serif-regular"
+                            android:text="@string/hr"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_11ssp" />
+
+                        <RelativeLayout
+                            style="@style/Match_Wrap_style"
+                            android:layout_below="@+id/tvHr"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:background="@color/divider_light_grey">
+
+                            <ImageView
+                                android:id="@+id/img_hr_mail"
+                                style="@style/Both_Wrap_style"
+                                android:layout_alignParentLeft="true"
+                                android:padding="@dimen/_5sdp"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:clickable="true"
+                                android:src="@drawable/mail_s" />
+
+                            <ImageView
+                                android:id="@+id/img_hr_call"
+                                style="@style/Both_Wrap_style"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:clickable="true"
+                                android:layout_alignParentRight="true"
+                                android:padding="@dimen/_5sdp"
+                                android:src="@drawable/phone_s" />
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+                    <!--HR main container ends-->
+
+                    <!--Accounts main container starts-->
+                    <RelativeLayout
+                        android:id="@+id/relative_accounts_container"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toRightOf="@+id/guidline_fourth"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/img_accounts_container"
+                            style="@style/Both_Wrap_style"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:background="@drawable/bg_contacts_circle_yellow" />
+
+                        <ImageView
+                            android:id="@+id/img_accounts"
+                            style="@style/Both_Wrap_style"
+                            android:layout_alignBottom="@+id/img_accounts_container"
+                            android:layout_alignTop="@+id/img_accounts_container"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/accounts" />
+
+                        <TextView
+                            android:id="@+id/tvAccounts"
+                            style="@style/Both_Wrap_style"
+                            android:layout_below="@+id/img_accounts"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:fontFamily="sans-serif-regular"
+                            android:text="@string/accounts"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_11ssp" />
+
+                        <RelativeLayout
+                            style="@style/match_Wrap_style"
+                            android:layout_below="@+id/tvAccounts"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:background="@color/divider_light_grey">
+
+                            <ImageView
+                                android:id="@+id/img_accounts_mail"
+                                style="@style/Both_Wrap_style"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:clickable="true"
+                                android:layout_alignParentLeft="true"
+                                android:padding="@dimen/_5sdp"
+                                android:src="@drawable/mail_s" />
+
+                            <ImageView
+                                android:id="@+id/img_accounts_call"
+                                style="@style/Both_Wrap_style"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:clickable="true"
+                                android:layout_alignParentRight="true"
+                                android:padding="@dimen/_5sdp"
+                                android:src="@drawable/phone_s" />
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+                    <!--Accounts main container ends-->
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </RelativeLayout>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/refreshlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            style="@style/Both_Match_style"
+            android:background="@color/new_dark_grey"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                style="@style/Both_Match_style"
+                android:background="@color/white"
+                app:layout_collapseMode="pin">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_contacts"
+                    style="@style/Both_Match_style"
+                    android:scrollbars="vertical" />
+
+                <include
+                    android:id="@+id/text_view_try_again"
+                    layout="@layout/text_view_try_again" />
+            </RelativeLayout>
+
+
+            <ProgressBar
+                android:id="@+id/progress_bar_contacts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Both_Match_style">
+
+    <TextView
+        android:id="@+id/text_hello"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        style="@style/Both_Match_style"
+        android:scaleType="centerCrop"
+        android:src="@drawable/login_background" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_home"
+        style="@style/match_Wrap_style"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="4dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        style="@style/match_Wrap_style"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/agoralogo" />
+
+</RelativeLayout>
+
+

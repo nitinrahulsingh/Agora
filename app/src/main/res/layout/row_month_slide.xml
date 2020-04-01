@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/new_dark_grey"
+        android:orientation="horizontal"
+        android:weightSum="7">
+
+        <TextView
+            style="@style/Both_Match_roboto_regular_style"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="SUN"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_11ssp" />
+
+        <TextView
+            style="@style/Both_Match_roboto_regular_style"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="MON"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_11ssp" />
+
+        <TextView
+            style="@style/Both_Match_roboto_regular_style"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="TUE"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_11ssp" />
+
+        <TextView
+            style="@style/Both_Match_roboto_regular_style"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="WED"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_11ssp" />
+
+        <TextView
+            style="@style/Both_Match_roboto_regular_style"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="THU"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_11ssp" />
+
+        <TextView
+            style="@style/Both_Match_roboto_regular_style"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="FRI"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_11ssp" />
+
+        <TextView
+            style="@style/Both_Match_roboto_regular_style"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="SAT"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_11ssp" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/month_recyView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="@color/new_dark_grey" />
+
+</LinearLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_home"
+    style="@style/match_Wrap_style"
+    android:layout_margin="@dimen/margin_home"
+    android:background="#202126"
+    android:padding="@dimen/padding_medium"
+    tools:ignore="MissingDefaultResource">
+
+    <ImageView
+        android:id="@+id/img_home"
+        style="@style/Both_Wrap_style"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:srcCompat="@drawable/new_about_us" />
+
+    <TextView
+        android:id="@+id/text_home"
+        style="@style/Both_Wrap_style"
+        android:layout_marginRight="8dp"
+        android:text="ABOUT US"
+        android:textColor="@android:color/white"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_home" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

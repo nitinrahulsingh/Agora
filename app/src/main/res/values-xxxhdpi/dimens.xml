@@ -1,0 +1,154 @@
+<resources>
+
+    <dimen name="splash_logo_top">240dp</dimen>
+    <dimen name="padding_small_new">6.2dp</dimen>
+
+    <dimen name="text_1dp_1dp_2dp_2dp">2dp</dimen>
+    <dimen name="text_2dp_2dp_3dp_3p">3dp</dimen>
+
+    <dimen name="text_13sp_16sp_17.0sp_18sp">18.0sp</dimen>
+    <dimen name="text_10sp_12sp_13sp_14sp">14.0sp</dimen>
+    <dimen name="text_13sp_19.5sp_26.0sp_32.5sp">21sp</dimen>
+
+    <dimen name="text_9sp_13.5sp_18.0sp_22.5sp">16sp</dimen>
+    <dimen name="padding_8dp_14dp_18dp_19dp">19dp</dimen>
+    <dimen name="padding_6dp_10dp_12dp">12dp</dimen>
+
+    <dimen name="padding_4.5dp_6.7dp_9dp_11.2dp">11.2dp</dimen>
+
+    <dimen name="text_large">25.0sp</dimen>
+
+    <dimen name="text_small_plus_one">21.2sp</dimen>
+
+    <dimen name="text_xmedium">20.0sp</dimen>
+
+    <dimen name="text_medium">22.5sp</dimen>
+
+    <dimen name="text_small">20.0sp</dimen>
+
+    <dimen name="text_xsmall">17.5sp</dimen>
+
+
+    <dimen name="margin_xxmedium">25.0dp</dimen>
+
+    <dimen name="custom_pending_small_height">12.5dp</dimen>
+
+    <dimen name="custom_pending_width">37.5dp</dimen>
+
+    <dimen name="custom_penind_height">37.5dp</dimen>
+
+    <dimen name="custom_arrow_width">25.0dp</dimen>
+
+    <dimen name="custom_arrow_height">25.0dp</dimen>
+
+    <dimen name="layout_custom_width">50.0dp</dimen>
+
+    <dimen name="layout_custom_height">50.0dp</dimen>
+
+    <dimen name="text_xxxxsmall">8.8sp</dimen>
+
+    <dimen name="margin_xxxsmall">15.0dp</dimen>
+
+    <dimen name="margin_xxsmall">18.7dp</dimen>
+
+    <dimen name="margin_xsmall">22.5dp</dimen>
+    <dimen name="margin_home">10dp</dimen>
+
+    <dimen name="text_xxxxlarge">43.8sp</dimen>
+
+    <dimen name="text_xxxlarge">32.5sp</dimen>
+
+    <!--<dimen name="text_xsmall">17sp</dimen>-->
+
+    <dimen name="text_xxsmall">15.5sp</dimen>
+
+    <dimen name="text_xxxsmall">12.5sp</dimen>
+
+    <dimen name="padding_xxlarge">17.5dp</dimen>
+
+    <dimen name="padding_xlarge">15.0dp</dimen>
+
+    <dimen name="padding_large">12.5dp</dimen>
+
+    <dimen name="padding_medium">10.0dp</dimen>
+
+    <dimen name="padding_xsmall">5.0dp</dimen>
+
+    <dimen name="margin_xmedium">30.0dp</dimen>
+
+
+    <dimen name="margin_small">25.0dp</dimen>
+
+    <dimen name="margin_medium">37.5dp</dimen>
+
+    <dimen name="margin_large">50.0dp</dimen>
+
+    <dimen name="margin_xlarge">62.5dp</dimen>
+
+    <dimen name="margin_xxlarge">75.0dp</dimen>
+
+    <dimen name="margin_xxxlarge">87.5dp</dimen>
+
+    <dimen name="divider_1">1.2dp</dimen>
+
+
+    <!-- used in login screen so before changing value think twice -->
+    <dimen name="size_15sp_18.0sp_20sp_20sp">20.0sp</dimen>
+    <dimen name="size_13sp_16sp_17.0sp_17.0sp">17.0sp</dimen>
+    <dimen name="size_11sp_13sp_14sp_15sp">15.0sp</dimen>
+
+    <dimen name="padding_4dp_6dp_8dp_8dp">4dp</dimen>
+
+
+    <dimen name="size_30px">7.50sp</dimen>
+    <dimen name="size_28px">7.00sp</dimen>
+    <dimen name="size_26px">6.50sp</dimen>
+    <dimen name="size_24px">6.00sp</dimen>
+    <dimen name="size_18px">4.50sp</dimen>
+    <dimen name="size_16px">4.00sp</dimen>
+    <dimen name="size_14px">3.00sp</dimen>
+
+    <!--created by suraj-->
+    <dimen name="margin_or_padding_2">2.5dp</dimen>
+
+    <dimen name="bg_view_half_circle_height">22.5dp</dimen>
+
+    <dimen name="viewPagerEvents_height">125.0dp</dimen>
+
+    <dimen name="view_pager_month_height">312.5dp</dimen>
+
+    <dimen name="bg_with_dot_small_height">3.8dp</dimen>
+
+    <dimen name="bg_with_dot_small_width">3.8dp</dimen>
+
+    <dimen name="bg_with_dot_bottom">33.8dp</dimen>
+
+    <dimen name="bg_with_dot_top">3.8dp</dimen>
+
+    <dimen name="bg_with_dot_right">3.8dp</dimen>
+
+    <dimen name="bg_with_dot_left">33.8dp</dimen>
+
+    <dimen name="bg_with_dot_height">43.8dp</dimen>
+
+    <dimen name="bg_with_dot_width">43.8dp</dimen>
+
+    <dimen name="bg_round_height">31.2dp</dimen>
+
+    <dimen name="bg_round_width">31.2dp</dimen>
+
+    <dimen name="bg_round_inner_radius">1.2dp</dimen>
+
+    <dimen name="margin_or_padding_5">6.2dp</dimen>
+
+    <dimen name="margin_or_padding_10">12.5dp</dimen>
+
+    <dimen name="imgOccProfile_width">100.0dp</dimen>
+
+    <dimen name="imgOccProfile_height">100.0dp</dimen>
+
+    <dimen name="imgBirthdayIcon_height">100.0dp</dimen>
+
+    <dimen name="imgBirthdayIcon_width">100.0dp</dimen>
+
+</resources>

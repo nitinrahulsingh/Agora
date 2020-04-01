@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Login Screen-->
+
+    <string name="app_name">Agora</string>
+    <string name="action_settings">Settings</string>
+    <string name="button_login">Login</string>
+    <string name="Customer_login">CLogin</string>
+    <string name="login_username">Username</string>
+    <string name="login_password">Password</string>
+    <string name="remb_me">Remember Me</string>
+    <string name="forgot_password">Forgot Password ?</string>
+    <string name="social_facebook">F</string>
+    <string name="social_google">g+</string>
+    <string name="social_linkin">In</string>
+    <string name="sign_in_with">Sign In With</string>
+
+
+    <!--Facebook Id-->
+    <string name="facebook_app_id">324235241341202</string>
+
+    <!-- Error Messages -->
+    <string name="empty_emp_id">Enter Employee ID</string>
+    <string name="empty_paswd">Enter Password</string>
+    <string name="title_activity_dash_bord">DashBordActivity</string>
+    <string name="title_activity_search_contacts">SearchContactsActivity</string>
+    <string name="hint_seach_name">Please Enter Name to Search</string>
+    <string name="text_cl">CL</string>
+    <string name="text_sl">SL</string>
+    <string name="text_pl">PL</string>
+    <string name="text_co">CO</string>
+    <string name="text_total_anual">Total (Annual)</string>
+    <string name="text_consumed">Consumed</string>
+    <string name="text_balance">Balance</string>
+    <string name="text_leave_details">Leave Details</string>
+    <string name="text_joining_date">Joining Date</string>
+    <string name="text_conformation_date">Confirmation Date</string>
+    <string name="text_leave_type">Leave Type</string>
+    <string name="text_leave_from">Leave From</string>
+    <string name="text_leave_to">Leave To</string>
+    <string name="text_leave_reason">Reason of Leave</string>
+    <string name="submit_button">Submit</string>
+    <string name="forgot_pass_descp">In order to recover your password, we need to confirm your identity. Please enter your Username and Email address.</string>
+    <string name="forgot_pass">FORGOT YOUR PASSWORD?</string>
+    <string name="hint_Serach_name">Search by name</string>
+    <string name="hint_Emp_id">Search by Id</string>
+    <string name="emp_name">Employee Name</string>
+    <string name="emp_id">Employee ID</string>
+    <string name="leave_apply_on">Leave Entry On</string>
+    <string name="leave_status">Leave Status</string>
+    <string name="admin_comment">Admin Comments</string>
+    <string name="leavestatus_dialog">Do you want to delete this record?</string>
+    <string name="spinner">Select</string>
+    <string name="search_project_name">Please Enter Project Name to Search</string>
+    <string name="some_error_occurred">Some error occurred. Please try again.</string>
+    <string name="no_internet">Please check internet connectivity.</string>
+
+
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+
+
+    <string name="cancel">Cancel</string>
+    <string name="use_password">Use password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="ok">Ok</string>
+    <string name="password">Password</string>
+    <string name="fingerprint_description">Confirm fingerprint to continue</string>
+    <string name="fingerprint_hint">Touch sensor</string>
+    <string name="password_description">Enter your store password to continue</string>
+    <string name="purchase">Purchase</string>
+    <string name="purchase_not_invalidated">Purchase not invalidated</string>
+    <string name="purchase_button_not_invalidated_description">
+        You can proceed to purchase with this button \n even if a new fingerprint is enrolled
+    </string>
+    <string name="fingerprint_not_recognized">Fingerprint not recognized. Try again</string>
+    <string name="fingerprint_success">Fingerprint recognized</string>
+    <string name="item_title">White Mesh Pluto Backpack</string>
+    <string name="item_price">$62.68</string>
+    <string name="item_description">Mesh backpack in white. Black textile trim throughout.</string>
+    <string name="purchase_done">Purchase successful</string>
+    <string name="new_fingerprint_enrolled_description">A new fingerprint was added to this device, so your password is required.</string>
+    <string name="use_fingerprint_in_future">Use fingerprint in the future</string>
+    <string name="use_fingerprint_to_authenticate_title">Use fingerprint to authenticate</string>
+    <string name="use_fingerprint_to_authenticate_key">use_fingerprint_to_authenticate_key</string>
+    <string name="title_activity_timesheet_list">TimesheetList</string>
+
+
+    <!-- Time Sheet screen -->
+    <string name="add_timesheet">Add TimeSheet</string>
+    <string name="select_project">Select Project</string>
+    <string name="select_date">Date</string>
+    <string name="select_working_hours">Working Hours</string>
+    <string name="timesheet_txt_description">Description</string>
+    <string name="timesheet_description">Type Your Description</string>
+    <string name="timesheet_wbs">WBS</string>
+    <string name="timesheet_fragment">TimeSheet</string>
+    <string name="timesheet_task_manager">Task Manager</string>
+    <string name="lorm_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedm</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="spinner_text">All Project</string>
+    <string name="txt_pending_sheet">Pending Timesheet</string>
+    <string name="add_new_timesheet">Timesheet&#160;&#160;&#160;</string>
+    <string name="timesheet_total_hours">Total :</string>
+    <string name="timesheet_title">My Project</string>
+
+
+    <!-- WBS -->
+    <string name="wbs_edit">Edit WBS</string>
+    <string name="wbs_select_wbs">Select WBS</string>
+    <string name="wbs_select_module">Select Module</string>
+    <string name="wbs_start_date">Start Date</string>
+    <string name="wbs_end_date">End Date</string>
+    <string name="wbs_start_time">Start Time</string>
+    <string name="wbs_end_time">End Time</string>
+    <string name="wbs_txt_description">Description</string>
+    <string name="wbs_txt_description_hint">Type Your Description</string>
+    <string name="wbs_submit_button">Submit</string>
+    <string name="wbs_milestone">Milestone</string>
+    <string name="wbs_wbs">WBS</string>
+    <string name="wbs_assign_to">Assign To</string>
+    <string name="wbs_status">Status</string>
+    <string name="wbs_remark">Remark</string>
+    <string name="wbs_remark_hint">Add addtional columns showing last</string>
+
+
+    <!-- My Profile personal details-->
+    <string name="myprofile_address">Address</string>
+    <string name="myprofile_contact_number">Contact Number</string>
+    <string name="myprofile_email">E-Mail</string>
+    <string name="myprofile_probabation">Probabation Period</string>
+    <string name="myprofile_joining_date">Joining Date</string>
+    <string name="myprofile_account_number">Account Number</string>
+    <string name="myprofile_birth_date">Birth Date</string>
+    <string name="myprofile_anniversary_date">Anniversary Date</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="try_again">Try Again</string>
+
+    <string name="no_occasion_found">No occassion found.</string>
+
+
+    <string-array name="menu_drawer">
+        <item>Dashboard</item>
+        <item>My Project</item>
+        <item>Skill Matrix</item>
+        <item>Attendance</item>
+        <item>Leaves</item>
+        <item>Contacts</item>
+        <item>Knowledge Base</item>
+        <item>Favorite</item>
+        <item>About Us</item>
+        <item>Contact Us</item>
+        <item>Careers</item>
+        <item>Notifications</item>
+    </string-array>
+
+
+    <!-- My Profile change password-->
+    <string name="old_password">Old Password</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_password">Confirm New Password</string>
+    <string name="wbs_project_name">Agora - Internal</string>
+    <string name="wbs_project_due_date">Due Date :  </string>
+    <string name="wbs_project_delievry_date">Delivery Date :  </string>
+    <string name="wbs_header_budget_hours">Budgeted Hours</string>
+    <string name="wbs_header_planned_hours">Planned Hours</string>
+    <string name="wbs_header_actual_hours">Actual Hours</string>
+    <string name="expandable_my_profile"><![CDATA[My Profile - view & edit]]></string>
+    <string name="wbs_recycler_header">WBS TimeSheets</string>
+    <string name="wbs_expandable_header">Milestones</string>
+    <string name="wbs_timesheet_remark">Add project status remark on Project a</string>
+    <string name="wbs_timesheet_start_date">Start Date : 17 June 2017 09.30 pm</string>
+    <string name="wbs_timesheet_end_date">End Date : 17 June 2017 08.30 pm</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Gallery</string>
+    <string name="remove_photo">Remove Photo</string>
+    <string name="title_image_picker">Image Picker</string>
+
+
+    <!-- Task Manager -->
+    <string name="task_manager_task">Install Outlook on my machine</string>
+
+    <!-- Add Task -->
+    <string name="add_task">Add Task</string>
+    <string name="select_module">Select Module</string>
+    <string name="task_name">TasK Name</string>
+    <string name="msg_logout">Do you want to logout?</string>
+
+    <string name="logout">Logout</string>
+    <string name="new_task">New Task&#160;&#160;&#160;</string>
+
+
+    <!-- Drawer Personal Menu-->
+
+    <string name="skill_matrix">Skill Matrix</string>
+    <string name="leaves">Leaves</string>
+    <string name="holiday_working">Holiday Working</string>
+    <string name="self_performance_review">Self Performance Review</string>
+    <string name="personal">Personal</string>
+
+
+    <!--Contacts Screen-->
+    <string name="board">Board</string>
+    <string name="hr">HR</string>
+    <string name="accounts">Accounts</string>
+    <string name="call">Call</string>
+
+
+    <!-- Skill Matrix   -->
+    <string name="Enter_skill">Enter Skill</string>
+    <string name="skill_save">Save</string>
+    <string name="skill_matrix_year">Year</string>
+    <string name="skill_matrix_month">Month</string>
+    <string name="skill_matrix_level">Level</string>
+
+    <string-array name="skill_matrix_item_array">
+        <item>Select Level</item>
+        <item>Beginner</item>
+        <item>Intermediate</item>
+        <item>Expert</item>
+    </string-array>
+    <string name="title_activity_contact_us">ContactUsActivity</string>
+
+    <string name="Select_A_Project">Please Select A Project</string>
+    <string name="field_required">This field is required.</string>
+    <string name="no_data_found">No data found.</string>
+    <string name="get_All_Skill">All Skill</string>
+    <string name="My_Skill">My Skill</string>
+    <string name="skill_select_check">Please select check mark</string>
+    <string name="skill_validation_message">Please update Year/Month &amp; Level of Skill.</string>
+    <string name="downloadFailed">Download failed. Please try again.</string>
+    <string name="no_application_found">No application found to view the pdf.</string>
+    <string name="invalid_login_credentials">Invalid login credentials.</string>
+    <string name="under_development">Under development</string>
+    <string name="valid_details">Please fill valid details.</string>
+    <string name="delete_leave">Are you sure you want to delete this leave?</string>
+    <string name="button_allow">Allow</string>
+    <string name="button_deny">Deny</string>
+    <string name="permission_pick_rationale">READ_EXTERNAL_STORAGE permission is needed to pick image.</string>
+    <string name="permission_crop_rationale">WRITE_EXTERNAL_STORAGE permission is needed to save cropped image.</string>
+    <string name="swipe_left">Swipe left to delete</string>
+    <string name="app_version">version - 1.0</string>
+    <string name="select">Upload</string>
+    <string name="upload_file">Upload File</string>
+    <string name="mobile_no">Please enter valid number</string>
+    <string name="logout_message">Do you want to exit?</string>
+
+</resources>

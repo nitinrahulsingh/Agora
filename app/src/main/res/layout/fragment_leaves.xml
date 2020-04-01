@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraint_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppThemeMain.AppBarOverlay">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <LinearLayout
+                android:id="@+id/leaves_table"
+                style="@style/Match_Wrap_style"
+                android:background="@color/new_dark_grey"
+
+                android:orientation="vertical">
+                <!-- Table header section -->
+                <TableLayout
+                    android:id="@+id/table_container"
+                    style="@style/match_wrap_style"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_18sdp">
+                    <!-- Table headers -->
+                    <TableRow
+                        android:layout_margin="@dimen/_2sdp"
+                        android:gravity="center"
+                        android:paddingLeft="@dimen/_10sdp"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:layout_weight="1.2"
+                            android:text="Type"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_9ssp" />
+
+                        <TextView
+                            android:layout_weight="0.2"
+                            android:gravity="center"
+                            android:text="Annual"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_9ssp" />
+
+                        <TextView
+                            android:layout_weight="0.2"
+                            android:gravity="center"
+                            android:text="Till Current Date"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_9ssp" />
+
+                        <TextView
+                            android:layout_weight="0.2"
+                            android:gravity="center"
+                            android:text="Consumed"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_9ssp" />
+
+                        <TextView
+                            android:layout_weight="0.2"
+                            android:gravity="center|end"
+                            android:text="Balance"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_9ssp" />
+                    </TableRow>
+                    <!-- CL section -->
+                    <TableRow
+                        android:layout_margin="2dp"
+                        android:background="@drawable/bg_leave_rounded"
+                        android:gravity="center"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="2dp"
+                        android:paddingRight="2dp"
+                        android:paddingBottom="2dp"
+                        android:weightSum="2">
+
+                        <TextView
+                            style="@style/Both_Wrap_roboto_regular_style"
+                            android:layout_weight="1.2"
+                            android:text="CL"
+                            android:textColor="@color/white" />
+
+                        <RelativeLayout
+                            style="@style/Both_Wrap_style"
+                            android:layout_weight="0.2">
+
+                            <TextView
+                                android:id="@+id/tvTotalCL"
+                                style="@style/Both_Wrap_roboto_regular_style"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/bg_cell_gray"
+                                android:gravity="center"
+                                android:text="0"
+                                android:textColor="@color/white" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            style="@style/Both_Wrap_style"
+                            android:layout_weight="0.2">
+
+                            <TextView
+                                android:id="@+id/tvTotalCLTillDate"
+                                style="@style/Both_Wrap_roboto_regular_style"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/bg_cell_gray"
+                                android:gravity="center"
+                                android:text="0"
+                                android:textColor="@color/white" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            style="@style/Both_Wrap_style"
+                            android:layout_weight="0.2">
+
+                            <TextView
+                                android:id="@+id/tvConsumedCL"
+                                style="@style/Both_Wrap_roboto_regular_style"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/bg_cell_gray"
+                                android:gravity="center"
+                                android:text="0"
+                                android:textColor="@color/white" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            style="@style/Both_Wrap_style"
+                            android:layout_weight="0.2"
+                            android:gravity="end">
+
+                            <TextView
+                                android:id="@+id/tvBalanceCL"
+                                style="@style/Both_Wrap_roboto_regular_style"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/bg_cell_green"
+                                android:gravity="center"
+                                android:text="0"
+                                android:textColor="@color/white" />
+                        </RelativeLayout>
+
+                    </TableRow>
+                    <!-- SL section -->
+                    <TableRow
+                        android:layout_margin="2dp"
+                        android:background="@drawable/bg_leave_rounded"
+                        android:gravity="center"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="2dp"
+                        android:paddingRight="2dp"
+                        android:paddingBottom="2dp"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:layout_weight="1.2"
+                            android:text="SL"
+                            android:textColor="@color/white" />
+
+                        <RelativeLayout
+                            style="@style/Both_Wrap_style"
+                            android:layout_weight="0.2">
+
+                            <TextView
+                                android:id="@+id/tvTotalSL"
+                                style="@style/Both_Wrap_roboto_regular_style"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/bg_cell_gray"
+                                android:gravity="center"
+                                android:text="0"
+                                android:textColor="@color/white" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            style="@style/Both_Wrap_style"
+                            android:layout_weight="0.2">
+
+                            <TextView
+                                android:id="@+id/tvTotalSLTillDate"
+                                style="@style/Both_Wrap_roboto_regular_style"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/bg_cell_gray"
+                                android:gravity="center"
+                                android:text="0"
+                                android:textColor="@color/white" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            style="@style/Both_Wrap_style"
+                            android:layout_weight="0.2">
+
+                            <TextView
+                                android:id="@+id/tvConsumedSL"
+                                style="@style/Both_Wrap_roboto_regular_style"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/bg_cell_gray"
+                                android:gravity="center"
+                                android:text="0"
+                                android:textColor="@color/white" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            style="@style/Both_Wrap_style"
+                            android:layout_weight="0.2"
+                            android:gravity="end">
+
+                            <TextView
+                                android:id="@+id/tvBalanceSL"
+                                style="@style/Both_Wrap_roboto_regular_style"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/bg_cell_green"
+                                android:gravity="center"
+                                android:text="0"
+                                android:textColor="@color/white" />
+                        </RelativeLayout>
+                    </TableRow>
+                    <!-- PL section -->
+                    <TableRow
+                        android:layout_margin="2dp"
+                        android:background="@drawable/bg_leave_rounded"
+                        android:gravity="center"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="2dp"
+                        android:paddingRight="2dp"
+                        android:paddingBottom="2dp"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:layout_weight="1.2"
+                            android:text="PL"
+                            android:textColor="@color/white" />
+
+                        <RelativeLayout
+                            style="@style/Both_Wrap_style"
+                            android:layout_weight="0.2">
+
+                            <TextView
+                                android:id="@+id/tvTotalPL"
+                                style="@style/Both_Wrap_roboto_regular_style"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/bg_cell_gray"
+                                android:gravity="center"
+                                android:text="0"
+                                android:textColor="@color/white" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            style="@style/Both_Wrap_style"
+                            android:layout_weight="0.2">
+
+                            <TextView
+                                android:id="@+id/tvTotalPLTillDate"
+                                style="@style/Both_Wrap_roboto_regular_style"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/bg_cell_gray"
+                                android:gravity="center"
+                                android:text="0"
+                                android:textColor="@color/white" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            style="@style/Both_Wrap_style"
+                            android:layout_weight="0.2">
+
+                            <TextView
+                                android:id="@+id/tvConsumedPL"
+                                style="@style/Both_Wrap_roboto_regular_style"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/bg_cell_gray"
+                                android:gravity="center"
+                                android:text="0"
+                                android:textColor="@color/white" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            style="@style/Both_Wrap_style"
+                            android:layout_weight="0.2"
+                            android:gravity="end">
+
+                            <TextView
+                                android:id="@+id/tvBalancePL"
+                                style="@style/Both_Wrap_roboto_regular_style"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/bg_cell_green"
+                                android:gravity="center"
+                                android:text="0"
+                                android:textColor="@color/white" />
+                        </RelativeLayout>
+
+                    </TableRow>
+                    <!-- CO section -->
+                    <TableRow
+                        android:layout_margin="2dp"
+                        android:background="@drawable/bg_leave_rounded"
+                        android:gravity="center"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="2dp"
+                        android:paddingRight="2dp"
+                        android:paddingBottom="2dp"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:layout_weight="1.2"
+                            android:text="CO"
+                            android:textColor="@color/white" />
+
+                        <RelativeLayout
+                            style="@style/Both_Wrap_style"
+                            android:layout_weight="0.2">
+
+                            <TextView
+                                android:id="@+id/tvTotalCO"
+                                style="@style/Both_Wrap_roboto_regular_style"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/bg_cell_gray"
+                                android:gravity="center"
+                                android:text="0"
+                                android:textColor="@color/white" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            style="@style/Both_Wrap_style"
+                            android:layout_weight="0.2">
+
+                            <TextView
+                                android:id="@+id/tvTotalCOTillDate"
+                                style="@style/Both_Wrap_roboto_regular_style"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/bg_cell_gray"
+                                android:gravity="center"
+                                android:text="0"
+                                android:textColor="@color/white" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            style="@style/Both_Wrap_style"
+                            android:layout_weight="0.2">
+
+                            <TextView
+                                android:id="@+id/tvConsumedCO"
+                                style="@style/Both_Wrap_roboto_regular_style"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/bg_cell_gray"
+                                android:gravity="center"
+                                android:text="0"
+                                android:textColor="@color/white" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            style="@style/Both_Wrap_style"
+                            android:layout_weight="0.2"
+                            android:gravity="end">
+
+                            <TextView
+                                android:id="@+id/tvBalanceCO"
+                                style="@style/Both_Wrap_roboto_regular_style"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/bg_cell_green"
+                                android:gravity="center"
+                                android:text="0"
+                                android:textColor="@color/white" />
+                        </RelativeLayout>
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        <RelativeLayout
+            android:id="@+id/collapsableView"
+            style="@style/Match_Wrap_style"
+            android:layout_below="@+id/table_container"
+            android:background="@color/white"
+            app:layout_collapseMode="pin">
+
+            <!-- <View
+                 android:id="@+id/view"
+                 android:layout_width="match_parent"
+                 android:layout_height="@dimen/_18sdp"
+                 android:background="@color/new_dark_grey" />-->
+
+            <!--<ImageView
+                style="@style/Both_Wrap_style"
+                android:layout_below="@+id/view"
+                android:layout_centerInParent="true"
+                android:background="@android:color/white"
+                android:paddingBottom="@dimen/_1sdp"
+                android:src="@drawable/half_cricle" />-->
+
+            <!--<ImageView
+                android:id="@+id/iv_Resize_table"
+                style="@style/Both_Wrap_style"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
+                android:rotation="180"
+                android:src="@drawable/ic_down_arrow"
+                android:tint="@android:color/white" />-->
+
+            <RelativeLayout
+                android:id="@+id/recyclerHeaderView"
+                style="@style/match_wrap_style"
+                android:layout_margin="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:background="@color/white">
+
+                <ImageView
+                    android:id="@+id/ivPrevYear"
+                    style="@style/Both_Wrap_style"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:padding="@dimen/_5sdp"
+                    android:src="@drawable/right_arrow" />
+
+                <TextView
+                    android:id="@+id/tvCurrentYearSlap"
+                    style="@style/Both_Wrap_roboto_regular_style"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/ivPrevYear"
+                    android:textColor="@color/black" />
+
+                <ImageView
+                    android:id="@+id/ivNextYear"
+                    style="@style/Both_Wrap_style"
+                    android:layout_centerInParent="true"
+                    android:layout_marginRight="@dimen/_5sdp"
+                    android:layout_toRightOf="@+id/tvCurrentYearSlap"
+                    android:padding="@dimen/_5sdp"
+                    android:src="@drawable/left_arrow" />
+
+                <ImageView
+                    android:id="@+id/ivLeaveFilter"
+                    style="@style/Both_Wrap_style"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/filter" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/swipe_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:id="@+id/rel_recyclerview"
+            style="@style/match_Wrap_style"
+            android:background="@color/white">
+
+            <View
+                android:id="@+id/borderView"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/outer_border" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewForLeaves"
+                style="@style/Both_Match_style"
+                android:layout_below="@+id/borderView"
+                android:clipToPadding="false"
+                android:paddingBottom="@dimen/_60sdp" />
+
+            <include
+                android:id="@+id/text_view_try_again"
+                layout="@layout/text_view_try_again" />
+            <!--<TextView
+                android:id="@+id/tv_try_again"
+                style="@style/Both_Wrap_style"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/footer_border"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/try_again"
+                android:textColor="@color/background"
+                android:textSize="@dimen/_18ssp"
+                android:visibility="gone" />-->
+
+        </RelativeLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <!--<RelativeLayout-->
+    <!--style="@style/Both_Wrap_style"-->
+    <!--android:background="@color/white">-->
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabApply"
+        style="@style/Both_Wrap_style"
+        android:layout_marginRight="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:src="@drawable/apply"
+        app:layout_anchor="@id/rel_recyclerview"
+        app:layout_anchorGravity="bottom|end" />
+    <!--</RelativeLayout>-->
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,260 @@
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true"
+    android:isScrollContainer="false">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_xxxlarge">
+
+
+            <!--center constraint guidline with 40% : 60 % screen dividing ratio-->
+            <androidx.constraintlayout.widget.Guideline
+
+                android:id="@+id/center_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+
+                app:layout_constraintGuide_percent="0.45" />
+
+            <!--address Text View start-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/myprofile_address"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--android:text="B203, Sanpada Station complex, Vashi "-->
+            <TextView
+                android:id="@+id/tv_Address"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:textColor="@color/black"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toRightOf="@+id/center_guideline"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_default="wrap" />
+
+            <!--address Text View end-->
+
+            <!--contact Text View start-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_xxxlarge"
+                android:text="@string/myprofile_contact_number"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_Address" />
+
+            <!--android:text="9969169161"-->
+            <TextView
+                android:id="@+id/tv_contact_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_xxxlarge"
+
+                android:textColor="@color/black"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toRightOf="@+id/center_guideline"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_Address" />
+
+            <!--contact Text View end-->
+
+            <!--email Text View start-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_xxxlarge"
+                android:text="@string/myprofile_email"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_contact_number" />
+
+            <!--android:text="abc@gmail.com"-->
+            <TextView
+                android:id="@+id/tv_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_xxxlarge"
+
+                android:textColor="@color/black"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toRightOf="@+id/center_guideline"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_contact_number" />
+
+            <!--contact Text View end-->
+
+
+            <!--probabation Text View start-->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_xxxlarge"
+                android:text="@string/myprofile_probabation"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_email"
+                app:layout_constraintWidth_default="wrap" />
+
+            <!--android:text="3 months"-->
+            <TextView
+                android:id="@+id/tv_probabation_period"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_xxxlarge"
+                android:visibility="gone"
+                android:textColor="@color/black"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toRightOf="@+id/center_guideline"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_email" />
+
+            <!--probabation Text View end-->
+
+
+            <!--joining date Text View start-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_xxxlarge"
+                android:text="@string/myprofile_joining_date"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_probabation_period" />
+
+            <!--android:text="21 dec 2009"-->
+            <TextView
+                android:id="@+id/tv_joining_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_xxxlarge"
+
+                android:textColor="@color/black"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toRightOf="@+id/center_guideline"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_probabation_period" />
+
+            <!--joining date View end-->
+
+            <!--act no Text View start-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_xxxlarge"
+                android:text="@string/myprofile_account_number"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_joining_date" />
+
+            <!--android:text="000001560321230"-->
+            <TextView
+                android:id="@+id/tv_account_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_xxxlarge"
+
+                android:textColor="@color/black"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toRightOf="@+id/center_guideline"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_joining_date" />
+
+            <!--act no Text View end-->
+
+
+            <!--birth date Text View start-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_xxxlarge"
+                android:text="@string/myprofile_birth_date"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_account_number" />
+
+            <!--android:text="27 July 1991"-->
+            <TextView
+                android:id="@+id/tv_birth_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_xxxlarge"
+
+                android:textColor="@color/black"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toRightOf="@+id/center_guideline"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_account_number" />
+
+            <!--act no Text View end-->
+
+            <!--anniversary_date Text View start-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_xxxlarge"
+                android:text="@string/myprofile_anniversary_date"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_birth_date" />
+
+            <!--android:text="2 august 1970"-->
+            <TextView
+                android:id="@+id/tv_anniversary_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_xxxlarge"
+
+                android:textColor="@color/black"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toRightOf="@+id/center_guideline"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_birth_date" />
+
+            <!--anniversary_date Text View end-->
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--<LinearLayout
+            android:id="@+id/linear_layout_error_message"
+            style="@style/Both_Match_style"
+            android:gravity="center"
+            android:orientation="vertical"
+            >-->
+
+        <!--<TextView
+            android:id="@+id/tv_some_error_occurred"
+            style="@style/Both_Wrap_style"
+            android:text="@string/some_error_occurred"
+            android:textColor="@color/black" />-->
+
+        <include
+            android:id="@+id/text_view_try_again"
+            layout="@layout/text_view_try_again" />
+        <!--<TextView
+            android:id="@+id/tv_try_again"
+            style="@style/Both_Wrap_style"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/_5sdp"
+            android:text="@string/try_again"
+            android:textColor="@color/background"
+            android:textSize="@dimen/_18ssp"
+            android:background="@drawable/footer_border"
+            android:visibility="gone" />-->
+        <!--  </LinearLayout>-->
+
+
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>
+
+
+

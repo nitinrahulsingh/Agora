@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/constraint_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppThemeMain.AppBarOverlay">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <RelativeLayout
+                android:id="@+id/rr_cal"
+                style="@style/Both_Wrap_style"
+                android:background="@color/new_dark_grey">
+
+                <LinearLayout
+                    android:id="@+id/ll_for_month_label"
+                    style="@style/match_wrap_style"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/img_back"
+                        style="@style/Both_Wrap_style"
+                        android:padding="@dimen/_5sdp"
+                        android:src="@drawable/ic_chevron_left_black_24dp"
+                        android:textColor="@android:color/white" />
+
+                    <TextView
+                        android:id="@+id/text_month_lbl"
+                        style="@style/Both_Wrap_roboto_regular_style"
+                        android:gravity="center"
+                        android:minWidth="@dimen/_130sdp"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/_15ssp" />
+
+                    <ImageView
+                        android:id="@+id/img_front"
+                        style="@style/Both_Wrap_style"
+                        android:padding="@dimen/_5sdp"
+                        android:src="@drawable/ic_chevron_right_black_24dp"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/viewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_230sdp"
+                    android:layout_below="@+id/ll_for_month_label"
+                    android:layout_marginTop="@dimen/_10sdp" />
+
+
+            </RelativeLayout>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+
+        <RelativeLayout
+            style="@style/match_wrap_style"
+            android:layout_below="@+id/viewPager"
+            android:background="@color/white"
+            app:layout_collapseMode="pin">
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/bg_view_half_circle_height"
+                android:background="@color/new_dark_grey" />
+
+            <ImageView
+                style="@style/Both_Wrap_style"
+                android:layout_below="@+id/view"
+                android:layout_centerInParent="true"
+                android:background="@android:color/white"
+                android:paddingBottom="1dp"
+                android:src="@drawable/half_cricle" />
+
+            <ImageView
+                android:id="@+id/img_Resize_cal"
+                style="@style/Both_Wrap_style"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
+                android:rotation="180"
+                android:src="@drawable/ic_down_arrow"
+                android:tint="@android:color/white"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nested_scroll_parent"
+        style="@style/match_wrap_style"
+        android:background="@color/white"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            style="@style/match_wrap_style"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <LinearLayout
+                style="@style/Both_Wrap_style"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvOccassions"
+                    style="@style/Both_Wrap_roboto_regular_style"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:background="@drawable/rounded_button"
+                    android:gravity="center"
+                    android:minWidth="@dimen/_90sdp"
+                    android:padding="@dimen/_5sdp"
+                    android:text="Occassions"
+                    android:textColor="@color/color_viewpager_text_not_selected" />
+
+                <TextView
+                    android:id="@+id/tvnNews"
+                    style="@style/Both_Wrap_roboto_regular_style"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:background="@drawable/rounded_button"
+                    android:gravity="center"
+                    android:minWidth="@dimen/_70sdp"
+                    android:padding="@dimen/_5sdp"
+                    android:text="News"
+                    android:textColor="@color/color_viewpager_text_not_selected" />
+
+                <TextView
+                    android:id="@+id/tvCipSession"
+                    style="@style/Both_Wrap_roboto_regular_style"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:background="@drawable/rounded_button"
+                    android:gravity="center"
+                    android:minWidth="@dimen/_90sdp"
+                    android:padding="@dimen/_5sdp"
+                    android:text="CIP Sessions"
+                    android:textColor="@color/color_viewpager_text_not_selected" />
+            </LinearLayout>
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPagerEvents"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_80sdp"
+                android:layout_marginTop="@dimen/_10sdp" />
+
+            <com.rd.PageIndicatorView
+                android:id="@+id/imgCirIndicator"
+                style="@style/match_Wrap_style"
+                android:layout_marginTop="@dimen/_10sdp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                style="@style/match_wrap_style"
+                android:layout_margin="@dimen/margin_or_padding_10"
+                android:layout_marginTop="@dimen/_10sdp">
+
+                <!--center constraint guidline with 50% : 50 % parent dividing ratio-->
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/left_guideline"
+                    style="@style/Both_Wrap_style"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.48" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/right_guideline"
+                    style="@style/Both_Wrap_style"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.52" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/top_guideline"
+                    style="@style/Both_Wrap_style"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.48" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/bottom_guideline"
+                    style="@style/Both_Wrap_style"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.52" />
+
+                <RelativeLayout
+                    android:id="@+id/section_holidays"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="#e8e9ef"
+                    android:padding="@dimen/margin_or_padding_10"
+                    app:layout_constraintBottom_toTopOf="@+id/top_guideline"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/left_guideline"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0">
+
+                    <ImageView
+                        android:id="@+id/img_holidays"
+                        style="@style/Both_Wrap_style"
+                        android:padding="@dimen/margin_or_padding_10"
+                        android:src="@drawable/holidays" />
+
+                    <TextView
+                        android:id="@+id/tvHoliday"
+                        style="@style/Both_Wrap_style"
+                        android:layout_below="@+id/img_holidays"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:gravity="end"
+                        android:padding="4dp"
+                        android:text="HOLIDAYS\n 2017-18" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/section_hr_manual"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="#e8e9ef"
+                    android:padding="@dimen/margin_or_padding_10"
+                    app:layout_constraintBottom_toTopOf="@+id/top_guideline"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintLeft_toRightOf="@+id/right_guideline"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0">
+
+                    <ImageView
+                        android:id="@+id/img_hr_manual"
+                        style="@style/Both_Wrap_style"
+                        android:padding="@dimen/margin_or_padding_10"
+                        android:src="@drawable/hr_manual" />
+
+                    <TextView
+                        android:id="@+id/tvHrManual"
+                        style="@style/Both_Wrap_style"
+                        android:layout_below="@+id/img_hr_manual"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:gravity="end"
+                        android:padding="4dp"
+                        android:text="HR MANUAL" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/section_mediclaim_policy"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="#e8e9ef"
+                    android:padding="@dimen/margin_or_padding_10"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/left_guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/bottom_guideline">
+
+                    <ImageView
+                        android:id="@+id/img_mediclaim_policy"
+                        style="@style/Both_Wrap_style"
+                        android:padding="@dimen/margin_or_padding_10"
+                        android:src="@drawable/mediclaim" />
+
+                    <TextView
+                        android:id="@+id/tvMediclaim"
+                        style="@style/Both_Wrap_style"
+                        android:layout_below="@+id/img_mediclaim_policy"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:gravity="end"
+                        android:padding="4dp"
+                        android:text="MEDICLAIM\nPOLICY" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/section_anti_sexual_policy"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="#e8e9ef"
+                    android:padding="@dimen/margin_or_padding_10"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintLeft_toRightOf="@+id/right_guideline"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/bottom_guideline"
+                    app:layout_constraintWidth_default="wrap">
+
+                    <ImageView
+                        android:id="@+id/img_anti_sexual_policy"
+                        style="@style/Both_Wrap_style"
+                        android:padding="@dimen/margin_or_padding_10"
+                        android:src="@drawable/anti_sexual" />
+
+                    <TextView
+                        android:id="@+id/tvHarrassmentPolicy"
+                        style="@style/Both_Wrap_style"
+                        android:layout_below="@+id/img_anti_sexual_policy"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:gravity="end"
+                        android:padding="4dp"
+                        android:text="ANTI SEXUAL\nHARRASSMENT POLICY" />
+                </RelativeLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

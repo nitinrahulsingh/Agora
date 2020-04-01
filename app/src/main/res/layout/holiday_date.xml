@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/match_wrap_style">
+
+    <ImageView
+        android:id="@+id/ivBgCircle"
+        style="@style/Both_Wrap_style"
+        android:layout_centerInParent="true"
+        android:src="@drawable/bg_cell_holiday" />
+
+    <RelativeLayout
+        style="@style/Both_Wrap_style"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
+
+        <TextView
+            android:id="@+id/tvHolidayDay"
+            style="@style/Both_Wrap_roboto_regular_style"
+            android:layout_centerHorizontal="true"
+            android:text="26"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12ssp" />
+
+        <TextView
+            android:id="@+id/tvHolidayMonth"
+            style="@style/Both_Wrap_roboto_regular_style"
+            android:layout_below="@+id/tvHolidayDay"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="JAN"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_8ssp" />
+    </RelativeLayout>
+</RelativeLayout>

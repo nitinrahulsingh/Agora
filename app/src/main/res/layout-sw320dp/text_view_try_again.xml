@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tv_try_again"
+    style="@style/Both_Wrap_style"
+    android:layout_centerInParent="true"
+    android:layout_centerVertical="true"
+    android:background="@drawable/footer_border"
+    android:padding="@dimen/_5sdp"
+    android:text="@string/try_again"
+    android:textColor="@color/background"
+    android:textSize="@dimen/_18ssp"
+    android:visibility="gone" />

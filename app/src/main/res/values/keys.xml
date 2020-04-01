@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="key_remember_me">key_remember_me</string>
+
+    <string name="key_emp_name">key_emp_name</string>
+    <string name="key_paswd">key_paswd</string>
+    <string name="key_login">key_login</string>
+
+    <string name="key_emp_id">emp_Id</string>
+    <string name="key_token">Token</string>>
+    <string name="key_fcm_token">fcm_token</string>>
+    <string name="key_is_remove_photo">isRemovePhoto</string>>
+
+</resources>

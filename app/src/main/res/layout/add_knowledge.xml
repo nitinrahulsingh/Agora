@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Both_Match_style"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <RelativeLayout
+        android:id="@+id/relative_close"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.07"
+        android:background="#800D0D0D">
+
+        <ImageView
+            android:id="@+id/img_icon_close"
+            style="@style/Both_Wrap_style"
+            android:layout_centerInParent="true"
+            android:src="@drawable/cancel" />
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.93"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvAddNewScreenTitle"
+                style="@style/Match_Wrap_roboto_regular_style"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="sans-serif-medium"
+                android:padding="@dimen/_4sdp"
+                android:text="Add New"
+                android:textAllCaps="true"
+                android:textColor="@color/new_dark_grey"
+                android:textSize="@dimen/_15ssp" />
+
+            <TextView
+                android:id="@+id/tvTitleProjectName"
+                style="@style/Match_Wrap_roboto_regular_style"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:padding="@dimen/_4sdp"
+                android:text="Project Name"
+                android:textSize="@dimen/_11ssp" />
+
+            <TextView
+                android:id="@+id/tvProjectName"
+                style="@style/match_wrap_style"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:textColor="@color/new_dark_grey"
+                android:drawableRight="@drawable/down_arrow"
+                android:textSize="@dimen/_14ssp"
+                android:padding="@dimen/_4sdp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginLeft="@dimen/_7sdp"
+                android:layout_marginRight="@dimen/_7sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@color/dark_grey" />
+
+            <TextView
+                android:id="@+id/tvEmployeeNameTitle"
+                style="@style/Match_Wrap_roboto_regular_style"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:padding="@dimen/_4sdp"
+                android:text="Employee Name"
+                android:textSize="@dimen/_11ssp" />
+
+            <EditText
+                android:id="@+id/edEmployeeName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:focusableInTouchMode="true"
+                android:background="@null"
+                android:gravity="start"
+                android:lines="1"
+                android:inputType="text"
+                android:maxLines="1"
+                android:imeOptions="actionNext"
+                android:padding="@dimen/_4sdp"
+                android:textColor="@color/new_dark_grey"
+                android:textSize="@dimen/_14ssp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginLeft="@dimen/_7sdp"
+                android:layout_marginRight="@dimen/_7sdp"
+                android:background="@color/dark_grey" />
+
+
+            <TextView
+                android:id="@+id/tvTitle"
+                style="@style/Match_Wrap_roboto_regular_style"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:padding="@dimen/_4sdp"
+                android:text="Title"
+                android:textSize="@dimen/_11ssp" />
+
+            <EditText
+                android:id="@+id/edTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:focusableInTouchMode="true"
+                android:background="@null"
+                android:gravity="start"
+                android:lines="1"
+                android:inputType="text"
+                android:imeOptions="actionNext"
+                android:maxLines="1"
+                android:padding="@dimen/_4sdp"
+                android:textColor="@color/new_dark_grey"
+                android:textSize="@dimen/_14ssp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginLeft="@dimen/_7sdp"
+                android:layout_marginRight="@dimen/_7sdp"
+                android:background="@color/dark_grey" />
+
+            <TextView
+                android:id="@+id/tv_description"
+                style="@style/Match_Wrap_roboto_regular_style"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:padding="@dimen/_4sdp"
+                android:text="Description"
+                android:textSize="@dimen/_11ssp" />
+
+            <EditText
+                android:id="@+id/ed_description"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:focusableInTouchMode="true"
+                android:background="@null"
+                android:gravity="start"
+                android:imeOptions="actionNext"
+                android:lines="5"
+                android:inputType="text"
+                android:maxLines="5"
+                android:padding="@dimen/_4sdp"
+                android:textColor="@color/new_dark_grey"
+                android:textSize="@dimen/_14ssp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginLeft="@dimen/_7sdp"
+                android:layout_marginRight="@dimen/_7sdp"
+                android:background="@color/dark_grey" />
+
+            <TextView
+                android:id="@+id/tvTitleTechnlogy"
+                style="@style/Match_Wrap_roboto_regular_style"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:padding="@dimen/_4sdp"
+                android:text="Techonlogy Name"
+                android:textSize="@dimen/_11ssp" />
+
+            <TextView
+                android:id="@+id/tvTechnology"
+                style="@style/match_wrap_style"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:drawableRight="@drawable/down_arrow"
+                android:textColor="@color/new_dark_grey"
+                android:textSize="@dimen/_14ssp"
+                android:padding="@dimen/_4sdp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginLeft="@dimen/_7sdp"
+                android:layout_marginRight="@dimen/_7sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@color/dark_grey"
+                android:padding="@dimen/_4sdp" />
+
+            <TextView
+                android:id="@+id/tvTagTitle"
+                style="@style/Match_Wrap_roboto_regular_style"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:padding="@dimen/_4sdp"
+                android:text="Tag"
+                android:textSize="@dimen/_11ssp" />
+
+            <EditText
+                android:id="@+id/ed_tag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:background="@null"
+                android:focusableInTouchMode="true"
+                android:gravity="start"
+                android:lines="1"
+                android:inputType="text"
+                android:imeOptions="actionNext"
+                android:maxLines="1"
+                android:padding="@dimen/_4sdp"
+                android:textColor="@color/new_dark_grey"
+                android:textSize="@dimen/_14ssp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginLeft="@dimen/_7sdp"
+                android:layout_marginRight="@dimen/_7sdp"
+                android:background="@color/dark_grey" />
+
+            <TextView
+                android:id="@+id/tvUrlTitle"
+                style="@style/Match_Wrap_roboto_regular_style"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:padding="@dimen/_4sdp"
+                android:text="Url"
+                android:textSize="@dimen/_11ssp" />
+            <EditText
+                android:id="@+id/ed_url"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:background="@null"
+                android:focusableInTouchMode="true"
+                android:gravity="start"
+                android:padding="@dimen/_4sdp"
+                android:inputType="text"
+
+                android:imeOptions="actionDone"
+                android:textColor="@color/new_dark_grey"
+                android:textSize="@dimen/_14ssp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginLeft="@dimen/_7sdp"
+                android:layout_marginRight="@dimen/_7sdp"
+                android:background="@color/dark_grey" />
+            <TextView
+                android:id="@+id/tvSelectFIleTitle"
+                style="@style/Match_Wrap_roboto_regular_style"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:padding="@dimen/_4sdp"
+                android:visibility="gone"
+                android:text="@string/upload_file"
+                android:textSize="@dimen/_11ssp" />
+
+            <LinearLayout
+                android:id="@+id/ll_uploaded_fileName"
+                style="@style/Both_Match_style"
+                android:orientation="vertical"
+                android:padding="@dimen/_4sdp"
+                android:layout_marginLeft="@dimen/_7sdp"
+                android:layout_marginRight="@dimen/_7sdp"
+                />
+
+
+            <RelativeLayout
+                android:id="@+id/rl_upload_file"
+                style="@style/match_Wrap_style"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:visibility="gone"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:background="@drawable/button_bg_dashed_border"
+                >
+            <Button
+                android:id="@+id/btnSelectFile"
+                android:text="@string/select"
+                android:textAllCaps="false"
+                android:clickable="false"
+                android:drawableLeft="@drawable/ic_file_upload"
+                android:gravity="center"
+                android:background="@null"
+                android:drawablePadding="@dimen/_14sdp"
+                android:layout_centerInParent="true"
+                style="@style/Both_Wrap_style"/>
+            </RelativeLayout>
+            <Button
+                android:id="@+id/btnAddKnowledge"
+                style="@style/match_wrap_style"
+                android:layout_margin="@dimen/_10sdp"
+                android:background="@drawable/capsule_shape"
+                android:text="Submit"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14ssp" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

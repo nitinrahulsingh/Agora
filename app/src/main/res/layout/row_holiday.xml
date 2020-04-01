@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/match_Wrap_style"
+    android:background="@color/white"
+    android:paddingLeft="@dimen/_10sdp"
+    android:paddingRight="@dimen/_10sdp"
+    android:paddingTop="@dimen/_10sdp">
+
+    <RelativeLayout style="@style/Both_Wrap_style"
+        android:id="@+id/holiday_row_background"
+        android:background="#f8efea"
+        android:padding="@dimen/_10sdp">
+
+        <include
+            android:id="@+id/include_holiday_date"
+            layout="@layout/holiday_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true" />
+
+        <TextView
+            android:id="@+id/tvHolidayName"
+            style="@style/Both_Wrap_roboto_regular_style"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_toRightOf="@+id/include_holiday_date"
+            android:layout_toLeftOf="@+id/ivHolidayImage"
+            android:textColor="#444851"
+            android:textSize="@dimen/_12ssp"
+            android:text="Rupublic Day" />
+
+        <ImageView
+            android:id="@+id/ivHolidayImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/_1sdp"
+            android:src="@drawable/republic_day" />
+
+    </RelativeLayout>
+</RelativeLayout>

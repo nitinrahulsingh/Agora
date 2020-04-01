@@ -1,0 +1,204 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/match_Wrap_style">
+
+    <RelativeLayout
+        style="@style/match_Wrap_style"
+        android:layout_margin="@dimen/_10sdp"
+
+        android:background="@drawable/footer_border">
+
+        <View
+            android:id="@+id/vwVerticalGreenLine"
+            android:layout_width="2dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/tvSkillSubTitle"
+
+
+            android:layout_alignParentLeft="true"
+            android:layout_alignTop="@+id/tvSkillTitle"
+            android:background="@color/black" />
+
+        <TextView
+            android:id="@+id/tvSkillTitle"
+            style="@style/Both_Wrap_style"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_toLeftOf="@+id/checkboxSkillMatrix"
+            android:text="Certification"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15ssp" />
+
+        <TextView
+            android:id="@+id/tvSkillSubTitle"
+            style="@style/Both_Wrap_style"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/tvSkillTitle"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_toLeftOf="@+id/checkboxSkillMatrix"
+            android:text="MCP - Microsoft certified professional"
+            android:textColor="@color/yellow"
+            android:textSize="@dimen/_13ssp" />
+
+        <CheckBox
+            android:id="@+id/checkboxSkillMatrix"
+            style="@style/Both_Wrap_style"
+            android:theme="@style/checkBoxStyle"
+            android:layout_alignBottom="@+id/tvSkillSubTitle"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/tvSkillTitle" />
+
+        <LinearLayout
+            style="@style/match_Wrap_style"
+            android:layout_below="@+id/tvSkillSubTitle"
+            android:layout_margin="1dp"
+            android:background="@color/divider_light_grey"
+            android:orientation="horizontal">
+
+            <!--Year relative Container starts-->
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="-2dp"
+                android:layout_marginLeft="-2dp"
+                android:layout_weight="1"
+                android:background="@drawable/grey_border_grey_background">
+
+                <TextView
+                    android:id="@+id/tvYear"
+                    style="@style/Both_Wrap_style"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="@string/skill_matrix_year"
+                    android:textColor="@color/title_light_grey"
+                    android:textSize="@dimen/_11ssp" />
+
+                <ImageView
+                    android:id="@+id/tvMinusYear"
+                    style="@style/Both_Wrap_style"
+                    android:layout_below="@+id/tvYear"
+                    android:padding="@dimen/_5sdp"
+                    android:src="@drawable/minus"
+                    android:textSize="@dimen/_11ssp" />
+
+                <TextView
+                    android:id="@+id/tvCountYear"
+                    style="@style/Both_Wrap_style"
+                    android:layout_below="@+id/tvYear"
+                    android:layout_centerHorizontal="true"
+                    android:text="6"
+                    android:textColor="@color/skill_value" />
+
+                <ImageView
+                    android:id="@+id/tvPlusYear"
+                    style="@style/Both_Wrap_style"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/tvYear"
+                    android:padding="@dimen/_5sdp"
+                    android:src="@drawable/plus" />
+
+            </RelativeLayout>
+            <!--Year relative Container ends-->
+
+            <!--month relative Container starts-->
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="-2dp"
+                android:layout_marginLeft="-2dp"
+                android:layout_weight="1"
+                android:background="@drawable/grey_border_grey_background">
+
+                <TextView
+                    android:id="@+id/tvMonth"
+                    style="@style/Both_Wrap_style"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="@string/skill_matrix_month"
+                    android:textColor="@color/title_light_grey"
+                    android:textSize="@dimen/_11ssp" />
+
+                <ImageView
+                    android:id="@+id/tvMinusMonth"
+                    style="@style/Both_Wrap_style"
+                    android:layout_below="@+id/tvMonth"
+
+                    android:padding="@dimen/_5sdp"
+                    android:src="@drawable/minus" />
+
+                <TextView
+                    android:id="@+id/tvCountMonth"
+                    style="@style/Both_Wrap_style"
+                    android:layout_below="@+id/tvMonth"
+                    android:layout_centerHorizontal="true"
+
+                    android:text="3"
+                    android:textColor="@color/skill_value"
+                    android:textSize="@dimen/_11ssp" />
+
+                <ImageView
+                    android:id="@+id/tvPlusMonth"
+                    style="@style/Both_Wrap_style"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/tvMonth"
+                    android:padding="@dimen/_5sdp"
+                    android:src="@drawable/plus" />
+
+            </RelativeLayout>
+
+            <!--month relative Container ends-->
+
+
+            <!--level relative Container starts-->
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="-2dp"
+                android:layout_marginLeft="-2dp"
+                android:layout_marginRight="-2dp"
+                android:layout_weight="1"
+                android:background="@drawable/grey_border_grey_background">
+
+                <TextView
+                    android:id="@+id/tvLevel"
+                    style="@style/Both_Wrap_style"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="@string/skill_matrix_level"
+                    android:textColor="@color/title_light_grey"
+                    android:textSize="@dimen/_11ssp" />
+
+                <TextView
+                    android:id="@+id/tvSkillLevel"
+                    style="@style/match_Wrap_style"
+                    android:layout_alignBottom="@+id/imgDownArrow"
+                    android:layout_alignTop="@+id/imgDownArrow"
+                    android:layout_below="@+id/tvLevel"
+                    android:textColor="@color/skill_value"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_marginRight="@dimen/_3sdp"
+                    android:layout_toLeftOf="@+id/imgDownArrow"
+                    android:gravity="start|center"
+                    android:text="Select Level"
+                    android:textAlignment="viewStart"
+                    android:textSize="@dimen/_11ssp" />
+
+                <ImageView
+                    android:id="@+id/imgDownArrow"
+                    style="@style/Both_Wrap_style"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/tvLevel"
+                    android:padding="@dimen/_6sdp"
+                    android:src="@drawable/down_arrow" />
+
+
+            </RelativeLayout>
+            <!--level relative Container ends-->
+
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

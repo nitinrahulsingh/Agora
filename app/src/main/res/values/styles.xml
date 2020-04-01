@@ -1,0 +1,252 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+   -->
+    <style name="AppThemeMain" parent="Theme.AppCompat.Light.NoActionBar">
+
+    </style>
+
+    <style name="Theme.AppCompat.Translucent" parent="AppThemeMain">
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="ProgressHUD" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="basic_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="edittext_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dip</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:maxLength">50</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textColorHint">#FFFFFF</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_marginBottom">12dip</item>
+        <item name="android:padding">5dip</item>
+        <item name="android:drawablePadding">5dip</item>
+        <item name="android:background">@drawable/editext_outline</item>
+    </style>
+
+    <style name="logo">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">40dip</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:paddingBottom">30dip</item>
+    </style>
+
+    <style name="loginbutton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">10dip</item>
+        <item name="android:layout_marginBottom">12dip</item>
+        <item name="android:padding">5dip</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="a_textbox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">41dip</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:maxLength">30</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textColorHint">#ffffff</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:paddingBottom">10dip</item>
+        <item name="android:paddingTop">10dip</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:drawablePadding">5dip</item>
+    </style>
+
+    <style name="Match_Wrap_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/bg_spinner_down_arrow</item>
+    </style>
+
+    <style name="match_Wrap_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="wrap_match_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="Both_Match_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="Both_Wrap_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+
+    <style name="menu_drawer_item">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/dark_grey</item>
+        <item name="android:layout_marginBottom">7dp</item>
+
+    </style>
+
+    <!--For Toolbar-->
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
+        <!--<item name="android:popupBackground">@color/background</item>-->
+    </style>
+
+    <style name="DrawerTitle">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <style name="SpinnerTheme" parent="android:Widget.Spinner">
+        <item name="android:background">@drawable/bg_spinner_down_arrow</item>
+    </style>
+
+    <style name="AppThemeMain.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppThemeMain.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!--     Roboto regular styles-->
+    <style name="Match_Wrap_roboto_regular_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="wrap_match_roboto_regular_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="Both_Match_roboto_regular_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="Both_Wrap_roboto_regular_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+    <!--     Roboto regular styles-->
+
+    <!--     Roboto medium styles-->
+    <style name="Match_Wrap_roboto_medium_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="wrap_match_roboto__medium_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="Both_Match_roboto_medium_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="Both_Wrap_roboto_medium_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+    <!--     Roboto medium styles-->
+
+    <!--     Roboto light styles-->
+    <style name="Match_Wrap_roboto_light_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
+    <style name="wrap_match_roboto_light_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
+    <style name="Both_Match_roboto_light_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
+    <style name="Both_Wrap_roboto_light_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+    <!--     Roboto light styles-->
+
+    <style name="AlertDialogCustomColor" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorAccent">@color/yellow</item>
+    </style>
+
+    <style name="DialogTheme" parent="Theme.AppCompat.Light">
+        <item name="colorAccent">@color/btn_yellow_normal</item>
+    </style>
+
+    <style name="match_wrap_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="checkBoxStyle" parent="Base.Theme.AppCompat">
+        <item name="colorAccent">#3da244</item>
+        <item name="android:textColorSecondary">@color/skill_value</item>
+    </style>
+
+
+    <style name="MyAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <!-- Used for the buttons -->
+        <item name="colorAccent">#FFC107</item>
+        <!-- Used for the title and text -->
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <!-- Used for the background -->
+        <item name="android:background">#848685</item>
+
+
+        <item name="android:textColor">@null</item>
+        <item name="android:textSize">@null</item>
+    </style>
+</resources>

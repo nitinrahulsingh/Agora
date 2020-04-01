@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraint_layout_leave"
+    style="@style/match_wrap_style"
+    android:background="@color/white">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidline_veritcal_attendance_row"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintGuide_percent="0.25"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- date and day view-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/tvAttStatus"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            style="@style/Both_Wrap_style"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <TextView
+                android:id="@+id/tvAttendanceDate"
+                style="@style/Both_Wrap_roboto_regular_style"
+                android:text="24"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvAttendanceDay"
+                style="@style/Both_Wrap_roboto_regular_style"
+                android:layout_alignBaseline="@+id/tvAttendanceDate"
+                android:layout_margin="@dimen/_4sdp"
+                android:layout_toRightOf="@+id/tvAttendanceDate"
+                android:text="SUN"
+                android:textAllCaps="true"
+                android:textSize="@dimen/_10ssp" />
+
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- date and day view-->
+
+    <View
+        android:id="@+id/upperLine"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:background="@color/outer_border"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/guidline_veritcal_attendance_row"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvAttStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:background="@drawable/circle_within_circle_gray"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/guidline_veritcal_attendance_row"
+        app:layout_constraintRight_toRightOf="@+id/guidline_veritcal_attendance_row"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!--<View
+        android:id="@+id/vwHidingBottomLine"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/tvAttStatus"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/upperLine"
+        app:layout_constraintRight_toRightOf="@+id/upperLine"
+
+        />-->
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/tvAttStatus"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:id="@+id/container_for_InAnOutTime"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="@drawable/bg_attendance_patch"
+            android:minHeight="@dimen/_75sdp">
+
+            <TextView
+                android:id="@+id/tvLeaveText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:gravity="center|start"
+                android:text="PL"
+                android:textColor="@color/outer_border"
+                android:textSize="@dimen/_16ssp" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

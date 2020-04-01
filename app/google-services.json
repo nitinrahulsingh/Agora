@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "13327926749",
+    "firebase_url": "https://agora-app-eed7b.firebaseio.com",
+    "project_id": "agora-app-eed7b",
+    "storage_bucket": "agora-app-eed7b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:13327926749:android:5e065e345cd7aa43",
+        "android_client_info": {
+          "package_name": "com.intelegain.agora"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "13327926749-eh0663bmp967eo6a646m2jagcg56d8a4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.intelegain.agora",
+            "certificate_hash": "99852b2ac28b0f0dd6628468e16dc254d61a99c5"
+          }
+        },
+        {
+          "client_id": "13327926749-dcuo6mkk09aj1rkpqpt8e55j3eqfvo9r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.intelegain.agora",
+            "certificate_hash": "16fa5b82bea442081397250d00b25c6aa95e9d32"
+          }
+        },
+        {
+          "client_id": "13327926749-523ccssesh76f9vapis2fdorm737ei95.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJPmJjJnO5pbgncu67p0zLmFa-EyjDD0A"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "13327926749-523ccssesh76f9vapis2fdorm737ei95.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

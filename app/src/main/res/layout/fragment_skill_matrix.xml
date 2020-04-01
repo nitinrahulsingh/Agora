@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/swipe_refresh_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        style="@style/Both_Match_style"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/relative_search_container"
+            style="@style/match_Wrap_style"
+            android:background="@color/new_dark_grey">
+
+            <RelativeLayout
+                style="@style/match_Wrap_style"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp">
+
+                <ImageView
+                    android:id="@+id/img_filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/vw_editTextBottomLine"
+                    android:layout_alignTop="@+id/etSearchBySkill"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:src="@drawable/knowledge_filter_orange_icon" />
+
+                <EditText
+                    android:id="@+id/etSearchBySkill"
+                    style="@style/match_Wrap_style"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_marginRight="@dimen/_5sdp"
+                    android:layout_toRightOf="@+id/img_filter"
+                    android:background="@null"
+                    android:drawableLeft="@drawable/search_new"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:hint="@string/Enter_skill"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:padding="@dimen/_5sdp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="@dimen/_11ssp" />
+
+                <View
+                    android:id="@+id/vw_editTextBottomLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_below="@+id/etSearchBySkill"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_marginRight="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_toLeftOf="@+id/imgAddSkill"
+                    android:layout_toRightOf="@+id/img_filter"
+                    android:background="@color/divider_light_grey" />
+
+
+                <ImageView
+                    android:id="@+id/imgAddSkill"
+                    style="@style/Both_Wrap_style"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/_10sdp"
+                    android:src="@drawable/plus_big"
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <include
+            android:id="@+id/text_view_try_again"
+            layout="@layout/text_view_try_again" />
+        <!--<TextView
+            android:id="@+id/tv_try_again"
+            style="@style/Both_Wrap_style"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/footer_border"
+            android:padding="@dimen/_5sdp"
+            android:text="@string/try_again"
+            android:textColor="@color/background"
+            android:textSize="@dimen/_18ssp"
+            android:visibility="gone" />-->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_skill_matrix"
+            style="@style/match_Wrap_style"
+            android:layout_above="@+id/vw_divider"
+            android:layout_below="@+id/relative_search_container" />
+
+        <View
+            android:id="@+id/vw_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_above="@+id/relative_button_container"
+            android:background="@color/divider_light_grey" />
+
+        <RelativeLayout
+            android:id="@+id/relative_button_container"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white">
+
+            <Button
+                android:id="@+id/btnSaveSkill"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_centerInParent="true"
+                android:layout_margin="@dimen/_7sdp"
+                android:background="@drawable/capsule_shape"
+                android:gravity="center"
+                android:text="@string/skill_save"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14ssp" />
+        </RelativeLayout>
+    </RelativeLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

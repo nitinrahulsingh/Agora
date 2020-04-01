@@ -1,0 +1,135 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/new_dark_grey">
+
+        <FrameLayout
+            android:id="@+id/profile_pic_frame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:ignore="MissingConstraints">
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/image_profile_pic"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/profile_image" />
+
+            <!--<com.intelgain.util.CircularImageView
+                android:id="@+id/image_profile_pic"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:background="@drawable/oval"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_launcher" />-->
+
+            <ImageView
+                android:id="@+id/img_camera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center|top"
+                android:padding="3dp"
+                android:src="@drawable/camera_new" />
+
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tv_emp_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding_medium"
+            android:textColor="@color/white"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profile_pic_frame" />
+
+        <TextView
+            android:id="@+id/tv_emp_desination"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding_medium"
+
+            android:textColor="@color/yellow"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_emp_name" />
+
+        <TableLayout
+            android:id="@+id/my_profile_tabs"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_xxlarge"
+            android:background="@color/timesheet_toolbar"
+            android:fontFamily="sans-serif"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_emp_desination"
+            app:tabGravity="fill"
+            app:tabIndicatorColor="@color/timesheet_yellow"
+            app:tabMode="fixed"
+            app:tabSelectedTextColor="@color/timesheet_yellow"
+            app:tabTextColor="@color/white" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/my_profile_viewpager"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/white"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/my_profile_tabs" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@drawable/edit" />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <!--
+    <RelativeLayout
+    android:id="@+id/whatYouWantInRightDrawer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="left"
+    android:background="#242424"
+    android:minHeight="?android:attr/listPreferredItemHeight">
+
+    <FrameLayout
+        android:id="@+id/fragment_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#1d1d1d">
+
+    </FrameLayout>
+
+    <ListView
+        android:id="@+id/navList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:choiceMode="singleChoice" />
+    </RelativeLayout>-->

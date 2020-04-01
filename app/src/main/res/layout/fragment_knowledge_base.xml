@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/swipe_refresh_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        style="@style/Both_Match_style"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:id="@+id/knowledge_base_filter_section"
+            style="@style/match_Wrap_style"
+            android:background="@color/new_dark_grey">
+
+            <ImageView
+                android:id="@+id/ivknowledge_filter"
+                style="@style/Both_Wrap_style"
+                android:layout_alignTop="@+id/edKnowledgeSkill"
+                android:layout_alignBottom="@+id/line_under_knowledge_screen"
+                android:layout_centerVertical="true"
+                android:paddingLeft="@dimen/_10sdp"
+                android:paddingRight="@dimen/_10sdp"
+                android:src="@drawable/knowledge_filter_orange_icon" />
+
+            <EditText
+                android:id="@+id/edKnowledgeSkill"
+                style="@style/Match_Wrap_roboto_regular_style"
+                android:layout_margin="@dimen/_4sdp"
+                android:layout_toRightOf="@+id/ivknowledge_filter"
+                android:background="@null"
+                android:drawableLeft="@drawable/knowledge_search_icon"
+                android:drawablePadding="@dimen/_5sdp"
+                android:hint="Enter Skill"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="@dimen/_11ssp" />
+
+            <View
+                android:id="@+id/line_under_knowledge_screen"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_below="@+id/edKnowledgeSkill"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_toRightOf="@+id/ivknowledge_filter"
+                android:background="@color/outer_border" />
+
+
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyler_view_for_knowledge"
+            style="@style/Both_Match_style"
+            android:layout_below="@+id/knowledge_base_filter_section"
+            android:scrollbars="vertical" />
+
+        <include
+            android:id="@+id/text_view_try_again"
+            layout="@layout/text_view_try_again" />
+        <!-- <TextView
+             android:id="@+id/tv_try_again"
+             style="@style/Both_Wrap_style"
+             android:layout_centerInParent="true"
+             android:layout_centerVertical="true"
+             android:background="@drawable/footer_border"
+             android:padding="@dimen/_5sdp"
+             android:text="@string/try_again"
+             android:textColor="@color/background"
+             android:textSize="@dimen/_18ssp"
+             android:visibility="gone"/>-->
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabAddKnowledge"
+            style="@style/Both_Wrap_style"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:src="@drawable/knowledge_add_icon" />
+
+    </RelativeLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

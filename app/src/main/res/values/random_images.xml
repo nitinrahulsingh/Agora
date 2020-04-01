@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="apptour">
+       <!-- <item>@drawable/happy_birthday</item>-->
+        <item>@drawable/contact_us</item>
+        <item>@drawable/careers</item>
+    </array>
+
+
+</resources>

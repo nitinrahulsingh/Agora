@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_dt_dialog"
+    android:layout_width="@dimen/_60sdp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/popup_bg_gray">
+
+    <TextView
+        android:id="@+id/tvDay"
+        style="@style/Both_Wrap_roboto_regular_style"
+        android:layout_centerVertical="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_13sdp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvLeave"
+        style="@style/Both_Wrap_roboto_regular_style"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:padding="@dimen/_4sdp"
+        android:layout_toRightOf="@+id/tvDay"
+        android:textSize="@dimen/_9ssp"
+        android:textColor="@color/white"
+        android:text=""/>
+</RelativeLayout>

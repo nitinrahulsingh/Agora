@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/_12sdp"
+    android:layout_marginTop="@dimen/_12sdp"
+    tools:ignore="MissingDefaultResource">
+
+    <!--<com.intelgain.util.CircularImageView
+        android:id="@+id/image_profile_pic"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/_12sdp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/oval"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_launcher" />-->
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/image_profile_pic"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/_12sdp"
+        android:src="@drawable/profile_image" />
+
+    <RelativeLayout
+        style="@style/Both_Wrap_style"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_toRightOf="@+id/image_profile_pic">
+
+        <TextView
+            android:id="@+id/tvEmpName"
+            style="@style/Both_Wrap_roboto_medium_style"
+            android:textColor="@color/new_dark_grey"
+            android:textSize="@dimen/_18ssp" />
+
+
+        <TextView
+            android:id="@+id/tvEmpId"
+            style="@style/Both_Wrap_roboto_regular_style"
+            android:layout_below="@+id/tvEmpName"
+            android:textColor="@color/title_light_grey"
+            android:textSize="@dimen/_15ssp" />
+
+    </RelativeLayout>
+
+    <ImageView
+        style="@style/Both_Wrap_style"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="@dimen/_12sdp"
+        android:src="@drawable/gray_arrow" />
+
+</RelativeLayout>

@@ -1,0 +1,2 @@
+rootProject.name='Agora'
+include ':app', ':libraryviewpager'

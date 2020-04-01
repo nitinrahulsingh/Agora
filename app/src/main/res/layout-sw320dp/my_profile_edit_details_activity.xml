@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Both_Match_style"
+    android:orientation="vertical"
+    android:weightSum="1"
+    tools:ignore="MissingDefaultResource">
+
+    <RelativeLayout
+        android:id="@+id/relative_close"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.35"
+        android:background="#800D0D0D"
+        app:layout_constraintBottom_toTopOf="@+id/relative_bottom_container"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteY="8dp">
+
+        <ImageView
+            android:id="@+id/img_icon_close"
+            style="@style/Both_Wrap_style"
+            android:layout_centerInParent="true"
+            android:src="@drawable/cancel" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative_bottom_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.65"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/tv_edit_my_profile"
+            style="@style/Both_Wrap_style"
+            android:layout_above="@+id/input_layout_edit_address"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/edit_profile"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15ssp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_layout_edit_address"
+            style="@style/match_Wrap_style"
+            android:layout_above="@+id/tv_address_field_required"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp">
+
+            <EditText
+                android:id="@+id/et_edit_address"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:hint="@string/myprofile_address"
+                android:inputType="text"
+                android:maxLength="250"
+                android:textSize="@dimen/_13ssp" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tv_address_field_required"
+            style="@style/Both_Wrap_style"
+            android:layout_above="@+id/input_layout_edit_contact_number"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:text="@string/field_required"
+            android:textColor="@color/Rejected"
+            android:visibility="invisible" />
+        <!--<View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/title_light_grey"
+            android:layout_below="@+id/txt_gallery_pick" />-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_layout_edit_contact_number"
+            style="@style/match_Wrap_style"
+            android:layout_above="@+id/tv_contact_number_field_required"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp">
+
+            <EditText
+                android:id="@+id/et_edit_contact_number"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/myprofile_contact_number"
+                android:inputType="number"
+                android:maxLength="10"
+                android:textSize="@dimen/_13ssp" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tv_contact_number_field_required"
+            style="@style/Both_Wrap_style"
+            android:layout_above="@+id/input_layout_anniversary_date"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:text="@string/field_required"
+            android:textColor="@color/Rejected"
+            android:visibility="invisible" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_layout_anniversary_date"
+            style="@style/match_Wrap_style"
+            android:layout_above="@+id/btn_edit_details_submit"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp">
+
+            <EditText
+                android:id="@+id/etAnniversaryDate"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:cursorVisible="false"
+                android:drawableRight="@drawable/date"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:hint="@string/myprofile_anniversary_date"
+                android:maxLength="10"
+                android:textSize="@dimen/_13ssp" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--<TextView
+            android:id="@+id/tvAnniversaryDate"
+            style="@style/match_Wrap_style"
+            android:layout_above="@+id/vwAnniversaryDivider"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:drawableRight="@drawable/date"
+            android:textColor="@color/new_dark_grey"
+            android:textSize="@dimen/_14ssp" />-->
+
+        <!-- <View
+             android:id="@+id/vwAnniversaryDivider"
+             android:layout_width="match_parent"
+             android:layout_height="1dp"
+             android:layout_above="@+id/btn_edit_details_submit"
+             android:layout_marginLeft="@dimen/_10sdp"
+             android:layout_marginRight="@dimen/_10sdp"
+             android:background="@color/black" />-->
+
+
+        <Button
+            android:id="@+id/btn_edit_details_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/_10sdp"
+            android:background="@drawable/button_yellow_click_effect"
+            android:fontFamily="sans-serif"
+            android:text="@string/submit_button"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15ssp" />
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

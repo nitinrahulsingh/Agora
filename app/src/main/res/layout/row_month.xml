@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/match_wrap_style"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/_1sdp"
+    android:padding="@dimen/_2sdp">
+
+    <ImageView
+        android:id="@+id/img_date_circle"
+        style="@style/Both_Match_style"
+        android:layout_centerInParent="true"
+        android:src="@drawable/bg_round" />
+
+
+    <TextView
+        android:id="@+id/dateTv"
+        style="@style/Both_Match_roboto_regular_style"
+        android:layout_centerInParent="true"
+        android:padding="@dimen/_5sdp"
+        android:textSize="@dimen/_13ssp"
+        android:textColor="@color/white"
+        android:gravity="center" />
+    <!--style="@style/text_view_medium"-->
+
+</RelativeLayout>

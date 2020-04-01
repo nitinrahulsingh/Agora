@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/login_relative_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background">
+
+    <ImageView
+        android:id="@+id/agora_logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:src="@drawable/agoralogo" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/login_et_empid"
+            style="@style/Match_Wrap_roboto_light_style"
+            android:background="@null"
+            android:drawable="@drawable/edit_text_modified_state"
+            android:drawableLeft="@drawable/username"
+            android:drawablePadding="@dimen/_16sdp"
+            android:hint="@string/login_username"
+            android:inputType="number"
+            android:maxLength="4"
+            android:padding="@dimen/_10sdp"
+            android:textColor="@color/edit_text_color_white"
+            android:textColorHint="@color/edit_text_color_white"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/size_15sp_18.0sp_20sp_20sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/login_edit_text_divider" />
+
+        <EditText
+            android:id="@+id/login_et_paswd"
+            style="@style/Match_Wrap_roboto_light_style"
+            android:background="@null"
+            android:drawableLeft="@drawable/password"
+            android:drawablePadding="@dimen/_16sdp"
+            android:hint="@string/login_password"
+            android:inputType="textPassword"
+            android:padding="@dimen/_10sdp"
+            android:textColor="@color/edit_text_color_white"
+            android:textColorHint="@color/edit_text_color_white"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/size_15sp_18.0sp_20sp_20sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:background="@color/login_edit_text_divider" />
+
+
+        <Button
+            android:id="@+id/login_btn_login"
+            style="@style/Match_Wrap_roboto_regular_style"
+            android:layout_marginBottom="@dimen/_7sdp"
+            android:background="@drawable/button_yellow_click_effect"
+            android:gravity="center"
+            android:text="@string/sign_in"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size_15sp_18.0sp_20sp_20sp" />
+
+        <TextView
+            android:id="@+id/textview_forgot_pass"
+            style="@style/Both_Wrap_roboto_light_style"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:background="@null"
+            android:gravity="center"
+            android:padding="@dimen/_10sdp"
+            android:textColor="@color/login_forgot_password"
+            android:textSize="@dimen/size_13sp_16sp_17.0sp_17.0sp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/_6sdp"
+            android:weightSum="1">
+
+
+            <!--<View-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="1dp"-->
+                <!--android:layout_weight="0.1"-->
+                <!--android:background="@color/login_sign_with_line" />-->
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:textColor="@color/white"
+            android:textSize="@dimen/size_11sp_13sp_14sp_15sp" />
+            <!--android:text="@string/sign_in_with"-->
+
+            <!--<View-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="1dp"-->
+                <!--android:layout_weight="0.1"-->
+                <!--android:background="@color/login_sign_with_line" />-->
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <!--<de.hdodenhof.circleimageview.CircleImageView-->
+                <!--android:id="@+id/facebook_login_custom_button"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="50dp"-->
+                <!--android:layout_margin="@dimen/padding_medium"-->
+                <!--android:gravity="center_vertical|center_horizontal"-->
+                <!--android:src="@drawable/fb"-->
+                <!--android:text="@string/social_facebook"-->
+                <!--android:textColor="#000" />-->
+
+            <!--<com.facebook.login.widget.LoginButton-->
+                <!--android:id="@+id/btn_facebook"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="0dp"-->
+                <!--android:visibility="gone" />-->
+
+            <!--<com.google.android.gms.common.SignInButton-->
+                <!--android:id="@+id/sign_in_button"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:visibility="gone" />-->
+
+            <!--<de.hdodenhof.circleimageview.CircleImageView-->
+                <!--android:id="@+id/google_login_custom_button"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="50dp"-->
+                <!--android:layout_margin="@dimen/padding_medium"-->
+                <!--android:gravity="center_vertical|center_horizontal"-->
+                <!--android:src="@drawable/google"-->
+                <!--android:text="@string/social_google"-->
+                <!--android:textAllCaps="false"-->
+                <!--android:textColor="#000" />-->
+
+            <!--<de.hdodenhof.circleimageview.CircleImageView-->
+                <!--android:id="@+id/linkedin_login_custom_button"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="50dp"-->
+                <!--android:layout_margin="@dimen/padding_medium"-->
+                <!--android:gravity="center_vertical|center_horizontal"-->
+                <!--android:src="@drawable/linkedin"-->
+                <!--android:text="@string/social_linkin"-->
+                <!--android:textAllCaps="false"-->
+                <!--android:textColor="#000" />-->
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
+

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background" >
+
+    <LinearLayout
+        android:id="@+id/lay_back_img_Settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/state_selection_titlebar"
+        android:paddingBottom="15dp"
+        android:paddingLeft="7dp"
+        android:paddingRight="7dp"
+        android:paddingTop="15dp">
+
+        <ImageView
+            android:id="@+id/back_img_Settings"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/icon_back_sml" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/Settings_title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/lay_back_img_Settings"
+        android:text="Settings"
+        android:paddingBottom="15dp"
+        android:paddingTop="15dp"
+        android:textColor="#ffffff"
+        android:textSize="24sp" />
+
+    <LinearLayout
+        android:id="@+id/lay_img_Settings_drawer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/state_selection_titlebar"
+        android:paddingBottom="15dp"
+        android:paddingLeft="7dp"
+        android:paddingRight="7dp"
+        android:paddingTop="15dp">
+
+        <ImageView
+            android:id="@+id/img_Settings_drawer"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/list" />
+    </LinearLayout>
+
+</RelativeLayout>

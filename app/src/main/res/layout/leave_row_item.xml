@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Both_Wrap_style"
+    android:background="@color/white">
+
+    <ImageButton
+        android:id="@+id/imgBtnLeaveStatus"
+        style="@style/Both_Wrap_style"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/_7sdp"
+        android:background="@drawable/bg_cell_gray"
+        android:src="@drawable/pending" />
+
+    <RelativeLayout
+        style="@style/Both_Wrap_style"
+        android:layout_margin="@dimen/_8sdp"
+        android:layout_toRightOf="@+id/imgBtnLeaveStatus">
+
+        <LinearLayout
+            android:id="@+id/tvLeavePeriodSection"
+            style="@style/Both_Wrap_style"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvLeaveStartDate"
+                style="@style/Both_Wrap_roboto_regular_style"
+                android:textColor="@color/orange"
+                android:textSize="@dimen/text_9sp_13.5sp_18.0sp_22.5sp" />
+
+            <TextView
+                style="@style/Both_Wrap_roboto_regular_style"
+                android:text= " --- to --- " />
+
+            <TextView
+                android:id="@+id/tvLeaveEndDate"
+                style="@style/Both_Wrap_roboto_regular_style"
+
+                android:textColor="@color/orange"
+                android:textSize="@dimen/text_9sp_13.5sp_18.0sp_22.5sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvLeaveTitle_text"
+            style="@style/Both_Wrap_roboto_regular_style"
+            android:layout_below="@+id/tvLeavePeriodSection"
+
+            android:textColor="@color/black"
+            android:textSize="@dimen/_13ssp" />
+
+        <TextView
+            android:id="@+id/tvLeaveDetail_text"
+            style="@style/Both_Wrap_roboto_regular_style"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/tvLeaveTitle_text"
+            android:layout_toLeftOf="@+id/tvSwipeToDelete"
+            android:layout_marginRight="@dimen/_3sdp"
+            android:textSize="@dimen/_9ssp" />
+
+        <TextView
+            android:id="@+id/tvLeaveAdminComments"
+            style="@style/Both_Wrap_roboto_regular_style"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/tvLeaveDetail_text"
+            android:layout_toLeftOf="@+id/tvSwipeToDelete"
+            android:layout_marginRight="@dimen/_3sdp"
+            android:textSize="@dimen/_9ssp" />
+
+        <!--this TextView made visible only in pending leave cell programatically-->
+        <TextView
+            android:id="@+id/tvSwipeToDelete"
+            style="@style/Both_Wrap_roboto_regular_style"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:text="@string/swipe_left"
+            android:textColor="@color/popup_red"
+            android:textSize="@dimen/_9ssp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvLeaveType"
+            style="@style/Both_Wrap_roboto_regular_style"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="PL"
+            android:textColor="#dfe2e9"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="@dimen/_7sdp"
+        android:layout_marginRight="@dimen/_7sdp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/outer_border" />
+
+
+</RelativeLayout>
