@@ -15,7 +15,6 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.intelegain.agora.R;
-import com.intelegain.agora.api.urls.CommonMethods;
 import com.intelegain.agora.interfeces.RecyclerItemClickListener;
 import com.intelegain.agora.model.SkillMatrixData;
 import com.intelegain.agora.utils.Contants2;

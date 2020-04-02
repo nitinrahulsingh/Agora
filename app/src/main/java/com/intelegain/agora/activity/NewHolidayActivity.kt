@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.intelegain.agora.R
 import com.intelegain.agora.adapter.HolidayAdapter
-import com.intelegain.agora.api.urls.CommonMethods
 import com.intelegain.agora.constants.Constants
 import com.intelegain.agora.dataFetch.RetrofitClient
 import com.intelegain.agora.interfeces.WebApiInterface
