@@ -20,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.DefaultRetryPolicy
 import com.android.volley.NetworkResponse
 import com.intelegain.agora.R
+import com.intelegain.agora.api.urls.CommonMethods
 import com.intelegain.agora.constants.Constants
 import com.intelegain.agora.dataFetch.RetrofitClient
 import com.intelegain.agora.interfeces.RecyclerItemClickListener
@@ -316,7 +317,6 @@ class AddKnowledgebase : AppCompatActivity(), View.OnClickListener {
      * Show Project name list dialog that to pick project name
      */
     private fun showProjectListDialog() {
-
 
         CommonMethods().customSpinner(this, "Select Project", inflater!!, dialogRecyclerView!!, mlstProjectNameList, dialog!!,
                 dialog_view!!, object : RecyclerItemClickListener {

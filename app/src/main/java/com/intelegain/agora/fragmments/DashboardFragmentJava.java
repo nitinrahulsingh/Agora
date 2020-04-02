@@ -35,6 +35,7 @@ import com.intelegain.agora.adapter.MonthAdapter;
 import com.intelegain.agora.adapter.NewsPagerAdapter;
 import com.intelegain.agora.adapter.OccassionPagerAdapter;
 import com.intelegain.agora.adapter.SlidingViewPagerAdapter;
+import com.intelegain.agora.api.urls.CommonMethods;
 import com.intelegain.agora.constants.Constants;
 import com.intelegain.agora.dataFetch.RetrofitClient;
 import com.intelegain.agora.interfeces.WebApiInterface;
