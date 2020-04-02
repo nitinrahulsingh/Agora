@@ -70,7 +70,7 @@ private constructor(private val mCtx: Context)
         mRequestQueue = requestQueue
         imageLoader = ImageLoader(mRequestQueue,
                 object : ImageLoader.ImageCache {
-                    private val cache: LruCache<String, Bitmap> = LruBitmapCache()
+                    private val cache: LruBitmapCache = LruBitmapCache()
                     override fun getBitmap(url: String): Bitmap {
                         return cache[url]!!
                     }

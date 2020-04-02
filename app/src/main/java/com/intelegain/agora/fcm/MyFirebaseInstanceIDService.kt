@@ -1,11 +1,8 @@
-package com.intelegain.agora.fcm;
+package com.intelegain.agora.fcm
 
-import com.google.firebase.iid.FirebaseInstanceIdService;
+import com.google.firebase.iid.FirebaseInstanceIdService
 
-public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
-
-
-//    @Override
+class MyFirebaseInstanceIDService : FirebaseInstanceIdService() { //    @Override
 //    public void onTokenRefresh() {
 //
 //        //For registration of token
@@ -15,5 +12,4 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
 //        Log.d("TOKEN: ", refreshedToken);
 //
 //    }
-
 }

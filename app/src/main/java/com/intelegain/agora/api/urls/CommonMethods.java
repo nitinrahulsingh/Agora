@@ -35,7 +35,7 @@ public class CommonMethods implements RecyclerItemClickListener, TextWatcher {
     private CommonRecyclerAdapter commonRecyclerAdapter;
     private String spinnerText;
 
-    protected Utilities mUtilities = Utilities.getInstance();
+    protected Utilities mUtilities = Utilities.instance;
     public static ProgressDialog progress_dialog;
 
     /**

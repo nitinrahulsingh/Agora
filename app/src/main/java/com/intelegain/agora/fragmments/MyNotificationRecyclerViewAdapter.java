@@ -42,24 +42,45 @@ public class MyNotificationRecyclerViewAdapter extends RecyclerView.Adapter<MyNo
     public void onBindViewHolder(final ViewHolder holder, int position) {
         List<String> aa = new ArrayList<>();
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).getTitle());
-        holder.mContentView.setText(mValues.get(position).getMessage());
-        switch (mValues.get(position).getStatus()) {
-            case "Approved":
-            case "approved":
-                holder.mStatusImgView.setImageDrawable(ContextCompat.getDrawable(mContext, R.drawable.ic_notify_approved));
-                break;
-            case "Rejected":
-            case "rejected":
-                holder.mStatusImgView.setImageDrawable(ContextCompat.getDrawable(mContext, R.drawable.ic_notify_rejected));
-                break;
-            case "pending" :
-            case "Pending" :
-                holder.mStatusImgView.setImageDrawable(ContextCompat.getDrawable(mContext, R.drawable.ic_notify_pending));
-                break;
-            default:
-                holder.mStatusImgView.setImageDrawable(ContextCompat.getDrawable(mContext, R.drawable.ic_notify));
+        if(mValues.get(position).getTitle()!=null)
+        {
+            holder.mIdView.setText(""+mValues.get(position).getTitle());
         }
+        else
+        {
+            holder.mIdView.setText("");
+        }
+
+       if(mValues.get(position).getMessage()!=null)
+       {
+           holder.mContentView.setText(""+mValues.get(position).getMessage());
+       }
+       else
+       {
+           holder.mContentView.setText("");
+       }
+
+       if(mValues.get(position).getStatus()!=null)
+       {
+           switch (mValues.get(position).getStatus()) {
+               case "Approved":
+               case "approved":
+                   holder.mStatusImgView.setImageDrawable(ContextCompat.getDrawable(mContext, R.drawable.ic_notify_approved));
+                   break;
+               case "Rejected":
+               case "rejected":
+                   holder.mStatusImgView.setImageDrawable(ContextCompat.getDrawable(mContext, R.drawable.ic_notify_rejected));
+                   break;
+               case "pending" :
+               case "Pending" :
+                   holder.mStatusImgView.setImageDrawable(ContextCompat.getDrawable(mContext, R.drawable.ic_notify_pending));
+                   break;
+               default:
+                   holder.mStatusImgView.setImageDrawable(ContextCompat.getDrawable(mContext, R.drawable.ic_notify));
+           }
+       }
+
+
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
