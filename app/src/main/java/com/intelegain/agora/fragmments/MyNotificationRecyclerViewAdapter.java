@@ -42,7 +42,7 @@ public class MyNotificationRecyclerViewAdapter extends RecyclerView.Adapter<MyNo
     public void onBindViewHolder(final ViewHolder holder, int position) {
         List<String> aa = new ArrayList<>();
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).getTitle());
+        holder.mIdView.setText(mValues.get(position).title);
         holder.mContentView.setText(mValues.get(position).getMessage());
         switch (mValues.get(position).getStatus()) {
             case "Approved":

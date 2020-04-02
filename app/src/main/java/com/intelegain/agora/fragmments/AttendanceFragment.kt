@@ -146,7 +146,7 @@ class AttendanceFragment : Fragment(), View.OnClickListener, OnRefreshListener {
      * sets up recycler view adapter
      */
     private fun setUpRecyclerAdapter() {
-        attendanceAdapter = AttendanceAdapter(activity, mlstAttendanceData)
+        attendanceAdapter = AttendanceAdapter(activity!!, mlstAttendanceData!!)
         recyclerViewForAttendance!!.adapter = attendanceAdapter
         recyclerViewForAttendance!!.layoutManager = LinearLayoutManager(activity)
     }
@@ -408,7 +408,7 @@ class AttendanceFragment : Fragment(), View.OnClickListener, OnRefreshListener {
         val strToken = mSharedPrefs.getString("Token", "")
         val strEmpId = mSharedPrefs.getString("emp_Id", "")
         // Make list of parameter for sending the http request
-        val params: MutableMap<String, String> = HashMap()
+        val params: MutableMap<String, String?> = HashMap()
         params["EmpId"] = strEmpId
         params["Startdate"] = attendanceStartDate
         params["EndDate"] = attendanceEndDate
@@ -438,11 +438,11 @@ class AttendanceFragment : Fragment(), View.OnClickListener, OnRefreshListener {
                                     objAttendanceData.description = "Absent"
                                 }
                                 val strWorkingHour = objAttendanceData.workinghours
-                                if (!strWorkingHour.isEmpty()) {
-                                    objAttendanceData.workinghours = getTotalHours(strWorkingHour)
+                                if (!strWorkingHour!!.isEmpty()) {
+                                    objAttendanceData.workinghours = getTotalHours(strWorkingHour!!)
                                 }
                                 var strTimesheetHour = objAttendanceData.timesheethours
-                                if (!strTimesheetHour.isEmpty()) {
+                                if (!strTimesheetHour!!.isEmpty()) {
                                     strTimesheetHour = strTimesheetHour.substring(0, strTimesheetHour.indexOf("hrs") + 3)
                                     strTimesheetHour = strTimesheetHour.replace(" ", "")
                                     objAttendanceData.timesheethours = strTimesheetHour

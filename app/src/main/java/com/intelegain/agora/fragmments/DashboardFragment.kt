@@ -99,7 +99,7 @@ class DashboardFragment : Fragment(), View.OnClickListener, onDownloadTaskFinish
     private var bHasCalledBySwipe = true
     private var miLastVisibleItem = 0
     private var contants2: Contants2? = null
-    var stringArrayList: ArrayList<String?>? = null
+    var stringArrayList: ArrayList<String>? = null
     var rr_calendar: RelativeLayout? = null
 
     enum class State {
@@ -213,7 +213,7 @@ class DashboardFragment : Fragment(), View.OnClickListener, onDownloadTaskFinish
      * @param year year value which is one less than current year recieved from server to prepare custome calendar
      */
     private fun setUpCalendarViewPager(year: Int, arrayListDashboardData:ArrayList<AttendanceData>) {
-         viewPagerAdapter = SlidingViewPagerAdapter(activity, stringArrayList, year)
+         viewPagerAdapter = SlidingViewPagerAdapter(activity!!, stringArrayList!!, year)
          viewPager!!.adapter = (viewPagerAdapter);
          viewPager!!.currentItem = (getCurrentMonthPosition());
 
@@ -317,7 +317,7 @@ class DashboardFragment : Fragment(), View.OnClickListener, onDownloadTaskFinish
      * Set Occassion ViewPager data
      */
     private fun setOccassionViewPagerData(objOccassionsData: ArrayList<OccassionsData>?) {
-        objOccAdapter = OccassionPagerAdapter(activity, objOccassionsData)
+        objOccAdapter = OccassionPagerAdapter(activity!!, objOccassionsData!!)
         viewPagerEvents!!.clipChildren = false
         viewPagerEvents!!.clipToPadding = false
         viewPagerEvents!!.setPadding(80, 0, 80, 0)
@@ -329,7 +329,7 @@ class DashboardFragment : Fragment(), View.OnClickListener, onDownloadTaskFinish
      * Set News ViewPager data
      */
     private fun setNewsViewPagerData(objNewsDataList: ArrayList<News>) {
-        objNewsAdapter = NewsPagerAdapter(activity, objNewsDataList)
+        objNewsAdapter = NewsPagerAdapter(activity!!, objNewsDataList)
         viewPagerEvents!!.clipChildren = false
         viewPagerEvents!!.clipToPadding = false
         viewPagerEvents!!.setPadding(80, 0, 80, 0)
@@ -341,7 +341,7 @@ class DashboardFragment : Fragment(), View.OnClickListener, onDownloadTaskFinish
      * Set Cip Session ViewPager data
      */
     private fun setCipSessionViewPagerData(objCipSessionDataList: ArrayList<CIPSession>) {
-        objCipSessionPagerAdapter = CipSessionPagerAdapter(activity, objCipSessionDataList)
+        objCipSessionPagerAdapter = CipSessionPagerAdapter(activity!!, objCipSessionDataList)
         viewPagerEvents!!.clipChildren = false
         viewPagerEvents!!.clipToPadding = false
         viewPagerEvents!!.setPadding(80, 0, 80, 0)
@@ -506,8 +506,8 @@ class DashboardFragment : Fragment(), View.OnClickListener, onDownloadTaskFinish
         txtmonthLbl!!.text = getItemFromPosition(viewPager!!.currentItem)
     }
 
-    private fun generateCalendarArrayList(year: Int, month: Int): ArrayList<String?>? {
-        val stringArrayList = ArrayList<String?>()
+    private fun generateCalendarArrayList(year: Int, month: Int): ArrayList<String> {
+        val stringArrayList = ArrayList<String>()
         val calendar = Calendar.getInstance()
         calendar[Calendar.YEAR] = year
         calendar[Calendar.MONTH] = month
@@ -595,7 +595,7 @@ class DashboardFragment : Fragment(), View.OnClickListener, onDownloadTaskFinish
             val strEmpId = mSharedPrefs.getString("emp_Id", "")
             // Make list of parameter for sending the http request
             val params: MutableMap<String, String> = HashMap()
-            params["EmpId"] = strEmpId
+            params["EmpId"] = strEmpId!!
             params["Days"] = "7"
             params["LocationID"] = "0"
             params["Startdate"] = "" // sending blank parameter to get current data and date from server.
@@ -608,27 +608,27 @@ class DashboardFragment : Fragment(), View.OnClickListener, onDownloadTaskFinish
                             arrayListDashboardData = objDashboardMaster!!.dashboardData
                             val arrayListOccassionsData = objDashboardMaster.occassionsData
                             val arrayListNewsDataList = objDashboardMaster.news
-                            val arrayListCipSessions = objDashboardMaster.cipSessions
+                            val arrayListCipSessions = objDashboardMaster.cIPSessions
                             if (arrayListOccassionsData == null || arrayListOccassionsData.size == 0) {
                                 val occassionsData = OccassionsData()
                                 occassionsData.occassionName = ""
                                 occassionsData.occassionDate = ""
                                 occassionsData.occassionFor = "No Occasion Found"
-                                arrayListOccassionsData.add(occassionsData)
+                                arrayListOccassionsData!!.add(occassionsData)
                             }
                             if (arrayListNewsDataList == null || arrayListNewsDataList.size == 0) {
                                 val news = News()
                                 news.newsTitle = ""
                                 news.newsDate = "No news available."
-                                arrayListNewsDataList.add(news)
+                                arrayListNewsDataList!!.add(news)
                             }
                             if (arrayListCipSessions == null || arrayListCipSessions.size == 0) {
                                 val cipSession = CIPSession()
-                                cipSession.cipSessionsInfo = "No CIP sessions available."
-                                arrayListCipSessions.add(cipSession)
+                                cipSession.cIPSessionsInfo = "No CIP sessions available."
+                                arrayListCipSessions!!.add(cipSession)
                             }
-                            mOccassionsDataList = arrayListOccassionsData
-                            mNewsDataList = arrayListNewsDataList
+                            mOccassionsDataList = arrayListOccassionsData!!
+                            mNewsDataList = arrayListNewsDataList!!
                             mCipSessionDataList = arrayListCipSessions
                             mobjDashboardData = arrayListDashboardData
                             setOccassionViewPagerData(arrayListOccassionsData)
@@ -701,7 +701,7 @@ class DashboardFragment : Fragment(), View.OnClickListener, onDownloadTaskFinish
         val strEmpId = mSharedPrefs.getString("emp_Id", "")
         // Make list of parameter for sending the http request
         val params: MutableMap<String, String> = HashMap()
-        params["EmpId"] = strEmpId
+        params["EmpId"] = strEmpId!!
         params["Startdate"] = attendanceStartDate
         params["EndDate"] = attendanceEndDate
         val call = apiInterface.getAttendanceData(strEmpId, strToken, params)
@@ -810,14 +810,14 @@ class DashboardFragment : Fragment(), View.OnClickListener, onDownloadTaskFinish
             val strEmpId = mSharedPrefs.getString("emp_Id", "")
             // Make list of parameter for sending the http request
             val params: MutableMap<String, String> = HashMap()
-            params["EmpId"] = strEmpId
+            params["EmpId"] = strEmpId!!
             params["Code"] = pdfType
             val call = apiInterface.getDocument(strEmpId, strToken, params)
             call.enqueue(object : Callback<DocumentData> {
                 override fun onResponse(call: Call<DocumentData>, response: Response<DocumentData>) {
                     when (response.code()) {
                         200 -> {
-                            val fileDownloader = FileDownloader(getActivity(), this@DashboardFragment)
+                            val fileDownloader = FileDownloader(activity!!.baseContext, this@DashboardFragment)
                             val pdfFileName: String
                             pdfFileName = if (pdfType == Contants2.HRManualContentCode) {
                                 Contants2.hr_manual_file_name

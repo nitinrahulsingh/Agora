@@ -69,7 +69,7 @@ class NewHolidayActivity : AppCompatActivity() {
                     if (iStatusCode == 200) {
                         val objHolidayMaster = response.body()
                         val lstHoldiayList = objHolidayMaster!!.holidayList
-                        mlstHolidayList = lstHoldiayList
+                        mlstHolidayList = lstHoldiayList!!
                         setHolidayAdapter()
                         Log.i(TAG, "")
                     } else {

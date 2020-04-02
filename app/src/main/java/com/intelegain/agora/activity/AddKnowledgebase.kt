@@ -242,12 +242,12 @@ class AddKnowledgebase : AppCompatActivity(), View.OnClickListener {
                     when (response.code()) {
                         200 -> {
                             val knowledgebaseProjectName = response.body()
-                            projectDatumArrayList.addAll(knowledgebaseProjectName!!.projectData)
+                            projectDatumArrayList.addAll(knowledgebaseProjectName!!.projectData!!)
                             if (mlstProjectNameList.size > 0) mlstProjectNameList.clear()
-                            val projectNameListSize = knowledgebaseProjectName.projectData.size
+                            val projectNameListSize = knowledgebaseProjectName.projectData!!.size
                             var i = 0
                             while (i < projectNameListSize) {
-                                mlstProjectNameList.add(knowledgebaseProjectName.projectData[i].projName)
+                                mlstProjectNameList.add(knowledgebaseProjectName.projectData!![i].projName!!)
                                 i++
                             }
                         }
@@ -262,7 +262,6 @@ class AddKnowledgebase : AppCompatActivity(), View.OnClickListener {
                 }*/
 
                 override fun onFailure(call: Call<KnowledgebaseProjectName?>, t: Throwable) {
-                    TODO("not implemented") //To change body of created functions use File | Settings | File Templates..
                     call.cancel()
                 }
             })
@@ -291,12 +290,12 @@ class AddKnowledgebase : AppCompatActivity(), View.OnClickListener {
                         200 -> {
                             val technologyData = response.body()
                             if (mlstTechnologyList.size > 0) mlstTechnologyList.clear()
-                            technologyDatumArrayList.addAll(technologyData!!.technologyData)
-                            val projectNameListSize = technologyData.technologyData.size
+                            technologyDatumArrayList.addAll(technologyData!!.technologyData!!)
+                            val projectNameListSize = technologyData.technologyData!!.size
                             var i = 0
                             while (i < projectNameListSize) {
-                                mlstTechnologyList.add(technologyData.technologyData[i].techName)
-                                mlstTechnologyFilterList.add(technologyData.technologyData[i].techName)
+                                mlstTechnologyList.add(technologyData.technologyData!![i].techName!!)
+                                mlstTechnologyFilterList.add(technologyData.technologyData!![i].techName!!)
                                 i++
                             }
                         }

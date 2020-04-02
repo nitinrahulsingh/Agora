@@ -189,7 +189,7 @@ class ContactsFragment : Fragment(), View.OnClickListener, OnRefreshListener {
         recyclerView_contacts!!.addItemDecoration(dividerItemDecoration)
         recyclerView_contacts!!.itemAnimator = DefaultItemAnimator()
         recyclerView_contacts!!.layoutManager = LinearLayoutManager(activity)
-        contactsRecyclerViewAdapter = Contacts_recycler_view_adapter(activity, empContactsList)
+        contactsRecyclerViewAdapter = Contacts_recycler_view_adapter(activity!!, empContactsList!!)
         recyclerView_contacts!!.adapter = contactsRecyclerViewAdapter
         setUpItemTouchHelper()
     }

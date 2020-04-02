@@ -25,6 +25,7 @@ import com.android.volley.NetworkResponse
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.intelegain.agora.R
+import com.intelegain.agora.activity.AddKnowledgebase
 import com.intelegain.agora.adapter.KnowledgeBaseAdapter
 import com.intelegain.agora.api.urls.CommonMethods
 import com.intelegain.agora.constants.Constants
@@ -181,7 +182,7 @@ class KnowledgeBaseFragment : Fragment(), View.OnClickListener, OnRefreshListene
      * Set knowledge adapter data
      */
     private fun setKnowledgeAdapterData() { // Set adapter data here
-        knowledgeBaseAdapter = KnowledgeBaseAdapter(activity, mlstKnowledgeBaseDataList, strToken, strEmpId, this)
+        knowledgeBaseAdapter = KnowledgeBaseAdapter(activity!!, mlstKnowledgeBaseDataList, strToken!!, strEmpId!!, this)
         recyler_view_for_knowledge!!.adapter = knowledgeBaseAdapter
         recyler_view_for_knowledge!!.layoutManager = LinearLayoutManager(activity)
     }
@@ -297,7 +298,7 @@ class KnowledgeBaseFragment : Fragment(), View.OnClickListener, OnRefreshListene
                 mlstTechnologyFilterList, dialog, dialog_view,
                 object : RecyclerItemClickListener {
                     override fun recyclerViewListClicked(position: Int, itemClickText: String?) {
-                        if (itemClickText.equals("See All", ignoreCase = true)) knowledgeBaseAdapter!!.filter("", KnowledgeBaseAdapter.FILTER_WITH_TECHNOLOGY) else knowledgeBaseAdapter!!.filter(itemClickText, KnowledgeBaseAdapter.FILTER_WITH_TECHNOLOGY)
+                        if (itemClickText.equals("See All", ignoreCase = true)) knowledgeBaseAdapter!!.filter("", KnowledgeBaseAdapter.FILTER_WITH_TECHNOLOGY) else knowledgeBaseAdapter!!.filter(itemClickText!!, KnowledgeBaseAdapter.FILTER_WITH_TECHNOLOGY)
                         dialog!!.hide()
                     }
                 })
@@ -322,7 +323,7 @@ class KnowledgeBaseFragment : Fragment(), View.OnClickListener, OnRefreshListene
                             200 -> {
                                 val objKnowledgeMaster = response.body()
                                 val objKnowledgeBaseDataList = objKnowledgeMaster!!.knowledgeData
-                                if (objKnowledgeBaseDataList.size > 0) {
+                                if (objKnowledgeBaseDataList!!.size > 0) {
                                     mlstKnowledgeBaseDataList = objKnowledgeBaseDataList
                                     setKnowledgeAdapterData()
                                     hideshowRecyclerView(false)
@@ -506,12 +507,12 @@ class KnowledgeBaseFragment : Fragment(), View.OnClickListener, OnRefreshListene
                     when (response.code()) {
                         200 -> {
                             val knowledgebaseProjectName = response.body()
-                            projectDatumArrayList.addAll(knowledgebaseProjectName!!.projectData)
+                            projectDatumArrayList.addAll(knowledgebaseProjectName!!.projectData!!)
                             if (mlstProjectNameList.size > 0) mlstProjectNameList.clear()
-                            val projectNameListSize = knowledgebaseProjectName.projectData.size
+                            val projectNameListSize = knowledgebaseProjectName.projectData!!.size
                             var i = 0
                             while (i < projectNameListSize) {
-                                mlstProjectNameList.add(knowledgebaseProjectName.projectData[i].projName)
+                                mlstProjectNameList.add(knowledgebaseProjectName.projectData!![i].projName!!)
                                 i++
                             }
                         }
@@ -558,12 +559,12 @@ class KnowledgeBaseFragment : Fragment(), View.OnClickListener, OnRefreshListene
                         200 -> {
                             val technologyData = response.body()
                             if (mlstTechnologyList.size > 0) mlstTechnologyList.clear()
-                            technologyDatumArrayList.addAll(technologyData!!.technologyData)
-                            val projectNameListSize = technologyData.technologyData.size
+                            technologyDatumArrayList.addAll(technologyData!!.technologyData!!)
+                            val projectNameListSize = technologyData.technologyData!!.size
                             var i = 0
                             while (i < projectNameListSize) {
-                                mlstTechnologyList.add(technologyData.technologyData[i].techName)
-                                mlstTechnologyFilterList.add(technologyData.technologyData[i].techName)
+                                mlstTechnologyList.add(technologyData.technologyData!![i].techName!!)
+                                mlstTechnologyFilterList.add(technologyData.technologyData!![i].techName!!)
                                 i++
                             }
                         }
@@ -708,7 +709,7 @@ class KnowledgeBaseFragment : Fragment(), View.OnClickListener, OnRefreshListene
                 when (response.code()) {
                     200 -> {
                         val data = response.body()
-                        if (writeFile(data!!.Attachments[0].FileData, data.Attachments[0].FileName)) viewFile(data.Attachments[0].FileName)
+                        if (writeFile(data!!.Attachments!![0].FileData!!, data.Attachments!![0].FileName!!)) viewFile(data.Attachments!![0].FileName!!)
                     }
                     403 -> {
                         contants2!!.dismissProgressDialog()

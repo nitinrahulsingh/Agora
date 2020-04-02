@@ -1,0 +1,6 @@
+package com.intelegain.agora.model
+
+/**
+ * Created by suraj on 14/6/17.
+ */
+class CalenderEvent(var date: String, var colorRes: Int)

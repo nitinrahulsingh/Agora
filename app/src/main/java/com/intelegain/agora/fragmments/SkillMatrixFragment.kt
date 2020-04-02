@@ -97,7 +97,7 @@ class SkillMatrixFragment : Fragment(), View.OnClickListener, OnRefreshListener 
         recyclerView_skill_matrix!!.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL,
                 false)
         recyclerView_skill_matrix!!.layoutManager = LinearLayoutManager(activity)
-        skillMatrixRecyclerAdapter = SkillMatrixRecyclerAdapter(activity, empSkillArrayList)
+        skillMatrixRecyclerAdapter = SkillMatrixRecyclerAdapter(activity!!, empSkillArrayList)
         recyclerView_skill_matrix!!.adapter = skillMatrixRecyclerAdapter
         /*recyclerView_contacts.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
@@ -162,7 +162,7 @@ class SkillMatrixFragment : Fragment(), View.OnClickListener, OnRefreshListener 
                                 empSkillArrayList!!.clear()
                                 skillMatrixRecyclerAdapter!!.notifyDataSetChanged()
                             }
-                            empSkillArrayList!!.addAll(skillMatrixData!!.lstEmpSkill)
+                            empSkillArrayList!!.addAll(skillMatrixData!!.lstEmpSkill!!)
                             if (empSkillArrayList!!.size > 0) {
                                 setUpRecyclerView()
                             } else {

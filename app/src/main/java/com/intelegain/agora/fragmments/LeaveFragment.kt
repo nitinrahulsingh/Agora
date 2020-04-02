@@ -35,6 +35,7 @@ import com.intelegain.agora.api.urls.CommonMethods
 import com.intelegain.agora.api.urls.RetrofitClient
 import com.intelegain.agora.constants.Constants
 import com.intelegain.agora.interfeces.OnItemLongClickListener
+import com.intelegain.agora.interfeces.RecyclerItemClickListener
 import com.intelegain.agora.interfeces.WebApiInterface
 import com.intelegain.agora.model.*
 import com.intelegain.agora.utils.Contants2
@@ -339,7 +340,7 @@ class LeaveFragment : Fragment(), View.OnClickListener, DatePickerDialog.OnDateS
         val strEmpId = mSharedPrefs.getString("emp_Id", "")
         // make list of parameter for sending the http request
         val params: MutableMap<String, String> = HashMap()
-        params["EmpId"] = strEmpId
+        params["EmpId"] = strEmpId!!
         params["LeaveType"] = "0"
         params["LeaveStatus"] = "0"
         params["Year"] = year
@@ -350,11 +351,11 @@ class LeaveFragment : Fragment(), View.OnClickListener, DatePickerDialog.OnDateS
                     200 -> {
                         hideRecycler(false, "getAppliedLeaveDetails")
                         val leaveMaster = response.body()
-                        fiscalYear = leaveMaster!!.fiscalYear
+                        fiscalYear = leaveMaster!!.fiscalYear!!
                         val fullFiscalYear = "Apr - " + fiscalYear + " To Mar - " + (fiscalYear + 1)
                         tvCurrentYearSlap!!.text = fullFiscalYear
                         //Leave objAvailableLeave = leaveMaster.getLeaveType();// here we're retrieving 0th object because it only contain 1 json object
-                        fillAvailableLeavesSection(leaveMaster.leaveType)
+                        fillAvailableLeavesSection(leaveMaster.leaveType!!)
                         mLeaveData = leaveMaster.leaveData
                         val iSizeOfAppliedLeave = mLeaveData!!.size
                         if (iSizeOfAppliedLeave <= 0) {
@@ -364,10 +365,10 @@ class LeaveFragment : Fragment(), View.OnClickListener, DatePickerDialog.OnDateS
                             var i = 0
                             while (i < iSizeOfAppliedLeave) {
                                 val objAppliedLeaveDetails = mLeaveData!!.get(i)
-                                val strLeaveFrom = convertDate(objAppliedLeaveDetails.getLeaveFrom())
-                                objAppliedLeaveDetails.setLeaveFrom(strLeaveFrom)
-                                val strLeaveTo = convertDate(objAppliedLeaveDetails.getLeaveTo())
-                                objAppliedLeaveDetails.setLeaveTo(strLeaveTo)
+                                val strLeaveFrom = convertDate(objAppliedLeaveDetails.leaveFrom!!)
+                                objAppliedLeaveDetails.leaveFrom = (strLeaveFrom)
+                                val strLeaveTo = convertDate(objAppliedLeaveDetails.leaveTo!!)
+                                objAppliedLeaveDetails.leaveTo = (strLeaveTo)
                                 i++
                             }
                             FillAdapterData()
@@ -461,7 +462,7 @@ class LeaveFragment : Fragment(), View.OnClickListener, DatePickerDialog.OnDateS
      * Fill adapter data with leaveData list
      */
     private fun FillAdapterData() {
-        mobjLeavesAdapter = NewLeavesAdapter(activity, mLeaveData, this)
+        mobjLeavesAdapter = NewLeavesAdapter(activity!!, mLeaveData!!, this)
         mRecyViewForLeaves!!.adapter = mobjLeavesAdapter
         linearLayoutManager = LinearLayoutManager(getActivity())
         mRecyViewForLeaves!!.layoutManager = linearLayoutManager
@@ -493,20 +494,19 @@ class LeaveFragment : Fragment(), View.OnClickListener, DatePickerDialog.OnDateS
         }
     }
 
-    /**
-     * Show Leave Type Filter list dialog
-     */
     private fun showLeaveTypeFilterDialog() {
         CommonMethods().customSpinner(activity, "Select Leave Status", inflater, dialogRecyclerView,
-                mlstLeaveFilterList, dialog, dialog_view
-        ) { position, itemClickText ->
-            if (mobjLeavesAdapter != null) {
-                if (itemClickText.equals("See All", ignoreCase = true)) mobjLeavesAdapter!!.filter("") else mobjLeavesAdapter!!.filter(itemClickText)
-            } else {
-                Contants2.showToastMessage(getActivity(), getString(R.string.no_data_found), true)
-            }
-            dialog!!.hide()
-        }
+                mlstLeaveFilterList, dialog, dialog_view,
+                object : RecyclerItemClickListener {
+                    override fun recyclerViewListClicked(position: Int, itemClickText: String?) {
+                        if (mobjLeavesAdapter != null) {
+                            if (itemClickText.equals("See All", ignoreCase = true)) mobjLeavesAdapter!!.filter("") else mobjLeavesAdapter!!.filter(itemClickText!!)
+                        } else {
+                            Contants2.showToastMessage(getActivity(), getString(R.string.no_data_found), true)
+                        }
+                        dialog!!.hide()
+                    }
+                })
     }
 
     /**************************************** WEB API CALLS ENDS **********************************/
@@ -524,7 +524,7 @@ class LeaveFragment : Fragment(), View.OnClickListener, DatePickerDialog.OnDateS
         val strEmpId = mSharedPrefs.getString("emp_Id", "")
         // make list of parameter for sending the http request
         val params: MutableMap<String, String> = HashMap()
-        params["EmpId"] = strEmpId
+        params["EmpId"] = strEmpId!!
         val call = apiInterface.getAvailableLeave(strEmpId, strToken, params)
         call.enqueue(object : Callback<ArrayList<AvailableLeave>> {
             override fun onResponse(call: Call<ArrayList<AvailableLeave>>, response: Response<ArrayList<AvailableLeave>>) {
@@ -619,7 +619,7 @@ class LeaveFragment : Fragment(), View.OnClickListener, DatePickerDialog.OnDateS
         val strEmpId = mSharedPrefs.getString("emp_Id", "")
         // make list of parameter for sending the http request
         val params: MutableMap<String, String> = HashMap()
-        params["EmpId"] = strEmpId
+        params["EmpId"] = strEmpId!!
         params["LeaveType"] = "0"
         params["LeaveStatus"] = "0"
         params["Year"] = year
@@ -643,10 +643,10 @@ class LeaveFragment : Fragment(), View.OnClickListener, DatePickerDialog.OnDateS
                             var i = 0
                             while (i < iSizeOfAppliedLeave) {
                                 val objAppliedLeaveDetails = mlstAppliedLeaveDetails!!.get(i)
-                                val strLeaveFrom = convertDate(objAppliedLeaveDetails.getLeaveFrom())
-                                objAppliedLeaveDetails.setLeaveFrom(strLeaveFrom)
-                                val strLeaveTo = convertDate(objAppliedLeaveDetails.getLeaveTo())
-                                objAppliedLeaveDetails.setLeaveTo(strLeaveTo)
+                                val strLeaveFrom = convertDate(objAppliedLeaveDetails.leaveFrom!!)
+                                objAppliedLeaveDetails.leaveFrom = (strLeaveFrom)
+                                val strLeaveTo = convertDate(objAppliedLeaveDetails.leaveTo!!)
+                                objAppliedLeaveDetails.leaveTo = (strLeaveTo)
                                 i++
                             }
                             FillAdapterData()
@@ -729,7 +729,7 @@ class LeaveFragment : Fragment(), View.OnClickListener, DatePickerDialog.OnDateS
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, swipeDir: Int) { ///set here view swiped
                 val swipedPosition = viewHolder.adapterPosition
-                if (mobjLeavesAdapter!!.filteredList[swipedPosition].getLeaveStatus().equals("Pending", ignoreCase = true)) mobjLeavesAdapter!!.deleteRow(swipedPosition)
+                if (mobjLeavesAdapter!!.filteredList!![swipedPosition].leaveStatus.equals("Pending", ignoreCase = true)) mobjLeavesAdapter!!.deleteRow(swipedPosition)
                 //                contactsRecyclerViewAdapter.contactsList.get(swipedPosition).isSwiped = true;
 //                contactsRecyclerViewAdapter.notifyItemChanged(swipedPosition);
                 //NotificationAdapter adapter = (NotificationAdapter) recyclerView_contacts.getAdapter();
@@ -748,7 +748,7 @@ class LeaveFragment : Fragment(), View.OnClickListener, DatePickerDialog.OnDateS
                 if (viewHolder.adapterPosition == -1) { // not interested in those
                     return
                 }
-                if (!mobjLeavesAdapter!!.filteredList[viewHolder.adapterPosition].getLeaveStatus().equals("Pending", ignoreCase = true)) return
+                if (!mobjLeavesAdapter!!.filteredList!![viewHolder.adapterPosition].leaveStatus.equals("Pending", ignoreCase = true)) return
                 if (!initiated) {
                     init()
                 }

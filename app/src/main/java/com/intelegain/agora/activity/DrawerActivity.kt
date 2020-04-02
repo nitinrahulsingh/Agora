@@ -37,7 +37,7 @@ import com.intelegain.agora.utils.Sharedprefrences
 import de.hdodenhof.circleimageview.CircleImageView
 import java.io.File
 
-class DrawerActivity : AppCompatActivity(), View.OnClickListener, DrawerListener, empProfileImageUpdate, updateDrawerImage, NotificationsFragment.OnNotificationListener {
+class DrawerActivity : AppCompatActivity(), View.OnClickListener, DrawerListener, empProfileImageUpdate, updateDrawerImage, NotificationFragment.OnNotificationListener {
     var linearlayout_drawer: LinearLayout? = null
     var mSharedPref: Sharedprefrences? = null
     var drawer_header: View? = null
@@ -194,9 +194,10 @@ class DrawerActivity : AppCompatActivity(), View.OnClickListener, DrawerListener
                 1 ->  // add my project
                     //addFragment(new MyProjectFragment(), "my_project", title[position]);
                     Contants2.showToastMessage(this@DrawerActivity, getString(R.string.under_development), false)
-                2 -> Contants2.showToastMessage(this@DrawerActivity, getString(R.string.under_development), false)
+                2 -> addFragment(SkillMatrixFragment(), "skill_matrix", title!![position])
+//                    Contants2.showToastMessage(this@DrawerActivity, getString(R.string.under_development), false)
                 3 -> {
-                    Contants2.showToastMessage(this@DrawerActivity, getString(R.string.under_development), false)
+//                    Contants2.showToastMessage(this@DrawerActivity, getString(R.string.under_development), false)
                     addFragment(AttendanceFragment(), "attendance", title!![position])
                 }
                 4 -> addFragment(LeaveFragment(), "leaves", title!![position])
@@ -269,7 +270,7 @@ class DrawerActivity : AppCompatActivity(), View.OnClickListener, DrawerListener
         when (view.id) {
             R.id.notification -> Contants2.showToastMessage(this@DrawerActivity, getString(R.string.under_development), false)
             R.id.txt_logout -> Contants2.doLogout(this)
-            R.id.txt_matrix -> addFragment(SkillMatrix(), "Skill Matrix", "Skill Matrix")
+            R.id.txt_matrix -> addFragment(SkillMatrixFragment(), "Skill Matrix", "Skill Matrix")
             R.id.txt_performace_review -> {
             }
             R.id.txt_holiday_working -> {
@@ -288,7 +289,7 @@ class DrawerActivity : AppCompatActivity(), View.OnClickListener, DrawerListener
     }
 
     // interface implemented method used to update the profile image coming from child fragment web call
-    override fun updateParentFragment(empImageUrl: String, empName: String, empId: String, empDesignation: String) {
+    override fun updateParentFragment(empImageUrl: String?, empName: String?, empId: String?, empDesignation: String?) {
         myProfileMainFragment = fragmentManager!!.findFragmentByTag("my_profile") as MyProfile_MainFragment?
         myProfileMainFragment!!.setUpProfileImage(empImageUrl, empName, empId, empDesignation)
     }
@@ -324,7 +325,7 @@ class DrawerActivity : AppCompatActivity(), View.OnClickListener, DrawerListener
         inputManager.hideSoftInputFromWindow(v.windowToken, 0)
     }
 
-    override fun onNotification(item: String) { //        Toast.makeText(this, "" + item, Toast.LENGTH_SHORT).show();
+    override fun onNotification(item: String?) { //        Toast.makeText(this, "" + item, Toast.LENGTH_SHORT).show();
         val notificationBuilder = NotificationCompat.Builder(this, "chanel_id") //                .setSmallIcon(getNotificationIcon())
                 .setSmallIcon(R.drawable.ic_notification_icon)
                 .setLargeIcon(BitmapFactory.decodeResource(applicationContext.resources, R.mipmap.ic_launcher))
