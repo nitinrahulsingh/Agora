@@ -20,7 +20,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.DefaultRetryPolicy
 import com.android.volley.NetworkResponse
 import com.intelegain.agora.R
-import com.intelegain.agora.api.urls.CommonMethods
 import com.intelegain.agora.constants.Constants
 import com.intelegain.agora.dataFetch.RetrofitClient
 import com.intelegain.agora.interfeces.RecyclerItemClickListener

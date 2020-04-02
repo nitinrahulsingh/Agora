@@ -35,7 +35,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.intelegain.agora.R;
 import com.intelegain.agora.activity.NewApplyLeaveActivity;
 import com.intelegain.agora.adapter.NewLeavesAdapter;
-import com.intelegain.agora.api.urls.CommonMethods;
 import com.intelegain.agora.constants.Constants;
 import com.intelegain.agora.dataFetch.RetrofitClient;
 import com.intelegain.agora.interfeces.OnItemLongClickListener;

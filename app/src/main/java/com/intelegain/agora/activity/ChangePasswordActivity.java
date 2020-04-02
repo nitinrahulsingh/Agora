@@ -22,7 +22,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.intelegain.agora.R;
-import com.intelegain.agora.api.urls.CommonMethods;
 import com.intelegain.agora.fragmments.CustomLoader_constant;
 import com.intelegain.agora.fragmments.New_Home_activity;
 import com.intelegain.agora.fragmments.SettingsActivity;

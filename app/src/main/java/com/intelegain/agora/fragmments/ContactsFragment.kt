@@ -39,7 +39,7 @@ import retrofit2.Retrofit
 import java.util.*
 
 class ContactsFragment : Fragment(), View.OnClickListener, OnRefreshListener {
-    var viewParent: View? = null
+
     var recyclerView_contacts: RecyclerView? = null
     var contactsRecyclerViewAdapter: Contacts_recycler_view_adapter? = null
     var empContactsList: ArrayList<Employee_contacts>? = null
@@ -60,16 +60,21 @@ class ContactsFragment : Fragment(), View.OnClickListener, OnRefreshListener {
     var retrofitClient: Retrofit? = null
     var contants2: Contants2? = null
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? { // Inflate the layout for this fragment
-        viewParent = inflater.inflate(R.layout.fragment_contacts, container, false)
+
+
+        return inflater.inflate(R.layout.fragment_contacts, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         initialize()
-        findViews()
+        findViews(view)
         if (Contants2.checkInternetConnection(activity)) companyContacts else {
             Contants2.showToastMessage(activity, getString(R.string.no_internet), true)
             hideRecyclerView(true)
         }
         //generateDemoList();
         setListenersForViews()
-        return view
     }
 
     private fun initialize() {
@@ -78,7 +83,7 @@ class ContactsFragment : Fragment(), View.OnClickListener, OnRefreshListener {
         contants2 = Contants2()
     }
 
-    private fun findViews() {
+    private fun findViews(view:View) {
         swipeRefreshLayout = view!!.findViewById(R.id.refreshlayout)
         img_filter = view!!.findViewById(R.id.img_filter)
         editTextSearch = view!!.findViewById(R.id.etSearchByName)

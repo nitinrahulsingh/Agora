@@ -439,7 +439,7 @@ class ParserClass(json: String?) : Holidaylist {
                         getLeaveforapprovalDetails.leaveToDate = jsonObjectInside.getString("leaveToDate").toString()
                         getLeaveforapprovalDetails.leaveType = jsonObjectInside.getString("leaveType").toString()
                         getLeaveforapprovalDetails.statusDesc = jsonObjectInside.getString("statusDesc").toString()
-                        val status = getLeaveforapprovalDetails.statusDesc
+                        val status = getLeaveforapprovalDetails.statusDesc.toString()
                         println(" Status:- $status")
                         if (status == "Pending") {
                             result.getleaveForApproval_arraylist.add(getLeaveforapprovalDetails)
@@ -477,9 +477,9 @@ class ParserClass(json: String?) : Holidaylist {
                         getLeaveforapprovalDetails.leaveToDate = jsonObjectInside.getString("leaveToDate").toString()
                         getLeaveforapprovalDetails.leaveType = jsonObjectInside.getString("leaveType").toString()
                         getLeaveforapprovalDetails.statusDesc = jsonObjectInside.getString("statusDesc").toString()
-                        val status = getLeaveforapprovalDetails.statusDesc
+                        val status = getLeaveforapprovalDetails.statusDesc.toString()
                         println(" Status:- $status")
-                        val rejectStatus = getLeaveforapprovalDetails.statusDesc
+                        val rejectStatus = getLeaveforapprovalDetails.statusDesc.toString()
                         if (rejectStatus == "Rejected") {
                             result.getleaveForApproval_arraylist.add(getLeaveforapprovalDetails)
                         }
@@ -514,7 +514,7 @@ class ParserClass(json: String?) : Holidaylist {
                         getLeaveforapprovalDetails.leaveToDate = jsonObjectInside.getString("leaveToDate").toString()
                         getLeaveforapprovalDetails.leaveType = jsonObjectInside.getString("leaveType").toString()
                         getLeaveforapprovalDetails.statusDesc = jsonObjectInside.getString("statusDesc").toString()
-                        val aprrovedStatus = getLeaveforapprovalDetails.statusDesc
+                        val aprrovedStatus = getLeaveforapprovalDetails.statusDesc.toString()
                         if (aprrovedStatus == "Approved") {
                             result.getleaveForApproval_arraylist.add(getLeaveforapprovalDetails)
                         }
