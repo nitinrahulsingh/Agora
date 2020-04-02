@@ -54,7 +54,7 @@ class SkillMatrixFragment : Fragment(), View.OnClickListener, OnRefreshListener 
         findViews()
         getAllSkillMatrix("-1")
         setListenersForViews()
-        return view
+        return viewParent
     }
 
     override fun onCreateContextMenu(menu: ContextMenu, v: View, menuInfo: ContextMenu.ContextMenuInfo?) {
@@ -82,13 +82,13 @@ class SkillMatrixFragment : Fragment(), View.OnClickListener, OnRefreshListener 
     }
 
     private fun findViews() {
-        swipeRefreshLayout = view!!.findViewById(R.id.swipe_refresh_layout)
-        img_filter = view!!.findViewById(R.id.img_filter)
-        etSearchBySkill = view!!.findViewById(R.id.etSearchBySkill)
-        imageViewAddSkill = view!!.findViewById(R.id.imgAddSkill)
-        recyclerView_skill_matrix = view!!.findViewById(R.id.recycler_skill_matrix)
-        tv_try_again = view!!.findViewById(R.id.text_view_try_again)
-        btnSaveSkill = view!!.findViewById(R.id.btnSaveSkill)
+        swipeRefreshLayout = viewParent!!.findViewById(R.id.swipe_refresh_layout)
+        img_filter = viewParent!!.findViewById(R.id.img_filter)
+        etSearchBySkill = viewParent!!.findViewById(R.id.etSearchBySkill)
+        imageViewAddSkill = viewParent!!.findViewById(R.id.imgAddSkill)
+        recyclerView_skill_matrix = viewParent!!.findViewById(R.id.recycler_skill_matrix)
+        tv_try_again = viewParent!!.findViewById(R.id.text_view_try_again)
+        btnSaveSkill = viewParent!!.findViewById(R.id.btnSaveSkill)
         registerForContextMenu(img_filter)
     }
 

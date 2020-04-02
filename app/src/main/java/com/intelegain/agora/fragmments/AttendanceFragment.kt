@@ -87,7 +87,7 @@ class AttendanceFragment : Fragment(), View.OnClickListener, OnRefreshListener {
 
         retrofit = RetrofitClient.getInstance(Constants.BASE_URL)
 
-        if (CommonMethods.checkInternetConnection(activity)) { // Get the Attendance data from server
+        if (CommonMethods.checkInternetConnection(activity!!)) { // Get the Attendance data from server
             getAttendanceDataFromServer(startDate!!, endDate!!)
         } else {
             hideRecyclerView(true)
@@ -100,7 +100,7 @@ class AttendanceFragment : Fragment(), View.OnClickListener, OnRefreshListener {
         when (v!!.id) {
             R.id.ivPrevMonth -> {
                 ivNexMonth!!.isEnabled = true
-                if (CommonMethods.checkInternetConnection(activity)) { // Get the Attendance data from server
+                if (CommonMethods.checkInternetConnection(activity!!)) { // Get the Attendance data from server
                     setPrevStartEndDate()
                     getAttendanceDataFromServer(startDate!!, endDate!!)
                 } else {
@@ -111,7 +111,7 @@ class AttendanceFragment : Fragment(), View.OnClickListener, OnRefreshListener {
                 Log.i(TAG, "End Date of Month: " + getEndDateOfTheMonth(iCurrentMonth, iCurrentYear))
             }
             R.id.ivNexMonth -> if (hideNextMonth(endDate!!)) {
-                if (CommonMethods.checkInternetConnection(activity)) { // Get the Attendance data from server
+                if (CommonMethods.checkInternetConnection(activity!!)) { // Get the Attendance data from server
                     setnextStartEndDate()
                     getAttendanceDataFromServer(startDate!!, endDate!!)
                 } else {
@@ -122,7 +122,7 @@ class AttendanceFragment : Fragment(), View.OnClickListener, OnRefreshListener {
                 Log.i(TAG, "End Date of Month: " + getEndDateOfTheMonth(iCurrentMonth, iCurrentYear))
             } else {
             }
-            R.id.text_view_try_again -> if (CommonMethods.checkInternetConnection(activity)) { // Get the Attendance data from server
+            R.id.text_view_try_again -> if (CommonMethods.checkInternetConnection(activity!!)) { // Get the Attendance data from server
                 getAttendanceDataFromServer(startDate!!, endDate!!)
             } else {
                 Contants2.showToastMessage(getActivity(), getString(R.string.no_internet), true)
@@ -133,7 +133,7 @@ class AttendanceFragment : Fragment(), View.OnClickListener, OnRefreshListener {
     }
 
     override fun onRefresh() {
-        if (CommonMethods.checkInternetConnection(activity)) { // Get the Attendance data from server
+        if (CommonMethods.checkInternetConnection(activity!!)) { // Get the Attendance data from server
             getAttendanceDataFromServer(startDate!!, endDate!!)
         } else {
             hideRecyclerView(true)

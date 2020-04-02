@@ -42,7 +42,7 @@ class CommonMethods : RecyclerItemClickListener, TextWatcher {
         context.startActivity(i)
     }
 
-    fun customSpinner(mContext: Context?, title: String?, inflater: LayoutInflater, recyclerView: RecyclerView, dataInfo: List<String?>?, dialog: Dialog, dialogView: View, itemClickListener: RecyclerItemClickListener?) {
+    fun customSpinner(mContext: Context?, title: String?, inflater: LayoutInflater, recyclerView: RecyclerView, dataInfo: List<String>?, dialog: Dialog, dialogView: View, itemClickListener: RecyclerItemClickListener?) {
         var recyclerView = recyclerView
         var dialogView = dialogView
         dialogView = inflater.inflate(R.layout.dialog_select_items, null)
@@ -70,7 +70,7 @@ class CommonMethods : RecyclerItemClickListener, TextWatcher {
         recyclerView.itemAnimator = DefaultItemAnimator()
         recyclerView.addItemDecoration(VerticalSpaceItemDecoration(10))
         recyclerView.layoutManager = LinearLayoutManager(mContext)
-        commonRecyclerAdapter = CommonRecyclerAdapter(mContext, dataInfo, itemClickListener)
+        commonRecyclerAdapter = CommonRecyclerAdapter(mContext!!, dataInfo!!, itemClickListener!!)
         recyclerView.adapter = commonRecyclerAdapter
     }
 

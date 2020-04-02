@@ -128,7 +128,7 @@ class DashboardFragment : Fragment(), View.OnClickListener, onDownloadTaskFinish
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        if (CommonMethods.checkInternetConnection(activity)) {
+        if (CommonMethods.checkInternetConnection(activity!!)) {
             getDashboardData()
         } else {
             imgFront!!.visibility = View.GONE
@@ -242,7 +242,7 @@ class DashboardFragment : Fragment(), View.OnClickListener, onDownloadTaskFinish
                  if (bHasCalledBySwipe) {
                      if (miLastVisibleItem < position) {
                          Log.i(TAG, "onPageScrolled: Left Swipe");
-                         if (CommonMethods.checkInternetConnection(activity)) {
+                         if (CommonMethods.checkInternetConnection(activity!!)) {
                              //setNextMonthYear();
 
                              setNextMonthDates(startDate);
@@ -261,7 +261,7 @@ class DashboardFragment : Fragment(), View.OnClickListener, onDownloadTaskFinish
 
                      } else {
                          Log.i(TAG, "onPageScrolled: Right Swipe");
-                         if (CommonMethods.checkInternetConnection(activity)) {
+                         if (CommonMethods.checkInternetConnection(activity!!)) {
                              //setPrevMonthYear();
                              setPreviousMonthDates(startDate);
                              /*if (viewPager.getCurrentItem() > 0) {
@@ -370,7 +370,7 @@ class DashboardFragment : Fragment(), View.OnClickListener, onDownloadTaskFinish
                 } else { //                    imgBack.setVisibility(View.GONE);
                     imgFront!!.visibility = View.VISIBLE
                 }
-                if (CommonMethods.checkInternetConnection(activity)) {
+                if (CommonMethods.checkInternetConnection(activity!!)) {
                     setPreviousMonthDates(startDate)
                     if (viewPager!!.currentItem > 0) {
                         viewPager!!.currentItem = viewPager!!.currentItem - 1
@@ -395,7 +395,7 @@ class DashboardFragment : Fragment(), View.OnClickListener, onDownloadTaskFinish
 //                Mon Mar 12 13:28:14 IST 2018
 //
                 if (hideNextMonth(endDate!!)) {
-                    if (CommonMethods.checkInternetConnection(activity)) {
+                    if (CommonMethods.checkInternetConnection(activity!!)) {
                         setNextMonthDates(startDate)
                         if (viewPager!!.currentItem < MI_NO_OF_MONTHS_TO_GENERATE) {
                             viewPager!!.currentItem = viewPager!!.currentItem + 1

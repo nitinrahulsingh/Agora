@@ -147,7 +147,7 @@ class LeaveFragment : Fragment(), View.OnClickListener, DatePickerDialog.OnDateS
         retrofit = RetrofitClient.getInstance(Constants.BASE_URL);
         // Get the leaves data from server
         // getLeaveDataFromServer();
-        if (CommonMethods.checkInternetConnection(activity))
+        if (CommonMethods.checkInternetConnection(activity!!))
             //getAvailableLeaves();
             getAllLeaveDetails("0");
         else {
@@ -234,7 +234,7 @@ class LeaveFragment : Fragment(), View.OnClickListener, DatePickerDialog.OnDateS
             } else {
                 Contants2.showToastMessage(activity, getString(R.string.no_internet), false)
             }
-            R.id.text_view_try_again -> if (CommonMethods.checkInternetConnection(activity)) getAllLeaveDetails(fiscalYear.toString() + "") else {
+            R.id.text_view_try_again -> if (CommonMethods.checkInternetConnection(activity!!)) getAllLeaveDetails(fiscalYear.toString() + "") else {
                 swipeRefreshLayout!!.isRefreshing = false
                 Contants2.showToastMessage(activity, getString(R.string.no_internet), false)
             }
@@ -271,7 +271,7 @@ class LeaveFragment : Fragment(), View.OnClickListener, DatePickerDialog.OnDateS
     }
 
     override fun onRefresh() {
-        if (CommonMethods.checkInternetConnection(activity)) getAllLeaveDetails(fiscalYear.toString() + "") else {
+        if (CommonMethods.checkInternetConnection(activity!!)) getAllLeaveDetails(fiscalYear.toString() + "") else {
             swipeRefreshLayout!!.isRefreshing = false
             Contants2.showToastMessage(activity, getString(R.string.no_internet), false)
         }
@@ -495,8 +495,8 @@ class LeaveFragment : Fragment(), View.OnClickListener, DatePickerDialog.OnDateS
     }
 
     private fun showLeaveTypeFilterDialog() {
-        CommonMethods().customSpinner(activity, "Select Leave Status", inflater, dialogRecyclerView,
-                mlstLeaveFilterList, dialog, dialog_view,
+        CommonMethods().customSpinner(activity, "Select Leave Status", inflater!!, dialogRecyclerView!!,
+                mlstLeaveFilterList, dialog!!, dialog_view!!,
                 object : RecyclerItemClickListener {
                     override fun recyclerViewListClicked(position: Int, itemClickText: String?) {
                         if (mobjLeavesAdapter != null) {
@@ -572,7 +572,7 @@ class LeaveFragment : Fragment(), View.OnClickListener, DatePickerDialog.OnDateS
                         tvTotalCOTillDate!!.text = iTotalCOTillDate.toString()
                         // dismissProgressDialog();//  dismiss progress dialog
 // Now call Applied leave detail service
-                        if (CommonMethods.checkInternetConnection(activity)) { //getAppliedLeaveDetails("0");
+                        if (CommonMethods.checkInternetConnection(activity!!)) { //getAppliedLeaveDetails("0");
                         } else {
                             contants2!!.dismissProgressDialog()
                             swipeRefreshLayout!!.isRefreshing = false

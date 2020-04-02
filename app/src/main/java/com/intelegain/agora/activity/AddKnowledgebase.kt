@@ -154,7 +154,7 @@ class AddKnowledgebase : AppCompatActivity(), View.OnClickListener {
         if (requestCode == PICK_FILE_REQUEST) {
             if (resultCode == Activity.RESULT_OK && data != null && data.data != null) {
                 filePath = data.data
-                selectedFilePath = FilePath.getPath(this, filePath)
+                selectedFilePath = FilePath.getPath(this, filePath!!)
                 mimeType = this.contentResolver.getType(filePath!!)
                 selectedFile = File(selectedFilePath)
                 //addKnowledgeBaseData(true);// isfromImageUpload
@@ -319,7 +319,8 @@ class AddKnowledgebase : AppCompatActivity(), View.OnClickListener {
     private fun showProjectListDialog() {
 
 
-        CommonMethods().customSpinner(this, "Select Project", inflater, dialogRecyclerView, mlstProjectNameList, dialog, dialog_view, object : RecyclerItemClickListener {
+        CommonMethods().customSpinner(this, "Select Project", inflater!!, dialogRecyclerView!!, mlstProjectNameList, dialog!!,
+                dialog_view!!, object : RecyclerItemClickListener {
             override fun recyclerViewListClicked(position: Int, itemClickText: String?) {
                 tvProjectName.text = itemClickText
                 tvProjectName.tag = mlstProjectNameList.indexOf(itemClickText)
@@ -342,7 +343,8 @@ class AddKnowledgebase : AppCompatActivity(), View.OnClickListener {
     private fun showTechnologyListDialog() {
         dialogRecyclerView = null
 
-        CommonMethods().customSpinner(this, "Select Technology", inflater, dialogRecyclerView, mlstTechnologyList, dialog, dialog_view, object : RecyclerItemClickListener {
+        CommonMethods().customSpinner(this, "Select Technology", inflater!!, dialogRecyclerView!!, mlstTechnologyList, dialog!!,
+                dialog_view!!, object : RecyclerItemClickListener {
             override fun recyclerViewListClicked(position: Int, itemClickText: String?) {
                 tvTechnology.text = itemClickText
                 tvTechnology.tag = mlstTechnologyList.indexOf(itemClickText)

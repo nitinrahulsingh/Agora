@@ -98,7 +98,7 @@ class ContactsFragment : Fragment(), View.OnClickListener, OnRefreshListener {
         private get() {
             contants2!!.showProgressDialog(activity)
             swipeRefreshLayout!!.isRefreshing = false
-            val apiInterface = RetrofitClient.retrofit.create(WebApiInterface::class.java)
+            val apiInterface = RetrofitClient.retrofit!!.create(WebApiInterface::class.java)
             val mSharedPrefs = getInstance(activity)
             val strToken = mSharedPrefs.getString("Token", "")
             val strEmpId = mSharedPrefs.getString("emp_Id", "")

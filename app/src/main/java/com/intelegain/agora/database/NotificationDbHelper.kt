@@ -23,7 +23,7 @@ class NotificationDbHelper(context: Context?) : SQLiteOpenHelper(context, DATABA
         // If you change the database schema, you must increment the database version.
         const val DATABASE_VERSION = 1
         const val DATABASE_NAME = "FeedReader.db"
-        private const val SQL_CREATE_ENTRIES = "CREATE TABLE " + NotificationReaderContract.NotificationEntry.TABLE_NAME + " (" +
+        private var SQL_CREATE_ENTRIES = "CREATE TABLE " + NotificationReaderContract.NotificationEntry.TABLE_NAME + " (" +
                 NotificationReaderContract.NotificationEntry._ID + " INTEGER PRIMARY KEY," +
                 NotificationReaderContract.NotificationEntry.COLUMN_NAME_TITLE + " TEXT," +
                 NotificationReaderContract.NotificationEntry.COLUMN_NAME_SUBTITLE + " TEXT," +

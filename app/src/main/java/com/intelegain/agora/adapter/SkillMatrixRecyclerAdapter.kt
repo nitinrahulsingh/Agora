@@ -138,8 +138,8 @@ class SkillMatrixRecyclerAdapter(private val mActivity: Activity, employee_skill
                 }
             })
             tvSkillLevel.setOnClickListener {
-                commonMethods.customSpinner(mActivity, "Select Level", inflater, mDialogRecyclerView, selectSkillLevelList, dialog,
-                        dialogView,
+                commonMethods.customSpinner(mActivity, "Select Level", inflater, mDialogRecyclerView!!, selectSkillLevelList, dialog,
+                        dialogView!!,
                         object : RecyclerItemClickListener {
                             override fun recyclerViewListClicked(position: Int, itemClickText: String?) {
                                 tvSkillLevel.text = itemClickText
@@ -152,8 +152,8 @@ class SkillMatrixRecyclerAdapter(private val mActivity: Activity, employee_skill
                         })
             }
             imageViewDropDownArrow.setOnClickListener {
-                commonMethods.customSpinner(mActivity, "Select Level", inflater, mDialogRecyclerView, selectSkillLevelList, dialog,
-                        dialogView,
+                commonMethods.customSpinner(mActivity, "Select Level", inflater, mDialogRecyclerView!!, selectSkillLevelList, dialog,
+                        dialogView!!,
                         object : RecyclerItemClickListener {
                             override fun recyclerViewListClicked(position: Int, itemClickText: String?) {
                                 tvSkillLevel.text = itemClickText
