@@ -29,6 +29,7 @@
         android:theme="@style/AppThemeMain"
         android:usesCleartextTraffic="true"
         tools:replace="app:icon">
+        <activity android:name=".activity.ForgotPasswordActivity" />
         <activity android:name=".activity.NewApplyLeaveActivity" />
         <activity android:name=".activity.AddKnowledgebase" />
         <activity android:name=".activity.ChangePasswordActivity" />
@@ -36,6 +37,9 @@
         <activity android:name=".activity.my_profile_edit_details_activity" />
         <activity android:name=".activity.BasicCropActivity" />
         <activity android:name=".activity.NewAboutUsActivity" />
+        <activity android:name=".activity.NewContactUsActivity" />
+        <activity android:name=".activity.NewCareerActivity" />
+        <activity android:name=".activity.NewHolidayActivity" />
         <activity android:name=".activity.FingerPrintSettingsActivity" />
         <activity android:name=".fragmments.New_Home_activity" />
         <activity android:name=".activity.SplashActivity">
@@ -56,8 +60,6 @@
             </intent-filter>
         </service>
 
-
-
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.intelegain.agora.fileprovider"
@@ -68,42 +70,33 @@
                 android:resource="@xml/provider_paths" />
         </provider>
 
-
-
         <service
             android:name=".service.AttachmentDownloderService"
             android:exported="true" />
-
-
 
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/ic_notification_icon" />
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_color"
-            android:resource="@color/bg_transparent" />
-
-        <!--<service android:name=".fcm.MyFirebaseInstanceIDService">-->
-        <!--<intent-filter>-->
-        <!--<action android:name="com.google.firebase.INSTANCE_ID_EVENT" />-->
-        <!--</intent-filter>-->
-        <!--</service>-->
-
+            android:resource="@color/bg_transparent" /> <!-- <service android:name=".fcm.MyFirebaseInstanceIDService"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="com.google.firebase.INSTANCE_ID_EVENT" /> -->
+        <!-- </intent-filter> -->
+        <!-- </service> -->
         <meta-data
             android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
-
-        <!--This service is also responsible for refreshing your FCM registration token-->
+            android:value="@integer/google_play_services_version" /> <!-- This service is also responsible for refreshing your FCM registration token -->
         <service
             android:name=".fcm.RegistrationIntentService"
-            android:exported="false" />
-        <!--a receiver to receive notifications-->
+            android:exported="false" /> <!-- a receiver to receive notifications -->
         <receiver
             android:name="com.microsoft.windowsazure.notifications.NotificationsBroadcastReceiver"
             android:permission="com.google.android.c2dm.permission.SEND">
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-                <category android:name="com.intelgain" /><!--<your package name>-->
+
+                <category android:name="com.intelgain" /> <!-- <your package name> -->
             </intent-filter>
         </receiver>
     </application>

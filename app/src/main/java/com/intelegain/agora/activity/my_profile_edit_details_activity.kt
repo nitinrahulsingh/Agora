@@ -9,6 +9,8 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.intelegain.agora.R
 import com.intelegain.agora.api.urls.RetrofitClient.retrofit
+import com.intelegain.agora.constants.Constants
+import com.intelegain.agora.dataFetch.RetrofitClient
 import com.intelegain.agora.interfeces.WebApiInterface
 import com.intelegain.agora.model.CommonStatusMessage
 import com.intelegain.agora.utils.Contants2
@@ -131,7 +133,8 @@ class my_profile_edit_details_activity : AppCompatActivity(), View.OnClickListen
     fun callEditProfileApi() {
         if (Contants2.checkInternetConnection(this)) {
             contants2!!.showProgressDialog(this)
-            val apiInterface: WebApiInterface = retrofit!!.create(WebApiInterface::class.java)
+//            val apiInterface: WebApiInterface = retrofit!!.create(WebApiInterface::class.java)
+            val apiInterface: WebApiInterface = RetrofitClient.getInstance(Constants.BASE_URL).create(WebApiInterface::class.java)
             commonStatusMessage = CommonStatusMessage()
             val mSharedPrefs = getInstance(this)
             val strToken = mSharedPrefs.getString("Token", "")

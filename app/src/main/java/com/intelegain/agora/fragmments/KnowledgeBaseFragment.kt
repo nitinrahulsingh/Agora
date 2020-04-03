@@ -262,8 +262,8 @@ class KnowledgeBaseFragment : Fragment(), View.OnClickListener, OnRefreshListene
      * Show Project name list dialog that to pick project name
      */
     private fun showProjectListDialog() {
-        CommonMethods().customSpinner(activity, "Select Project", inflater!!, dialogRecyclerView!!,
-                mlstProjectNameList, dialog!!, dialog_view!!,
+        CommonMethods().customSpinner(activity, "Select Project", inflater!!,
+                mlstProjectNameList, dialog!!,
                 object : RecyclerItemClickListener {
                     override fun recyclerViewListClicked(position: Int, itemClickText: String?) {
                         tvProjectName!!.text = itemClickText
@@ -278,8 +278,8 @@ class KnowledgeBaseFragment : Fragment(), View.OnClickListener, OnRefreshListene
      */
     private fun showTechnologyListDialog() {
         dialogRecyclerView = null
-        CommonMethods().customSpinner(activity, "Select Technology", inflater!!, dialogRecyclerView!!,
-                mlstTechnologyList, dialog!!, dialog_view!!,
+        CommonMethods().customSpinner(activity, "Select Technology", inflater!!,
+                mlstTechnologyList, dialog!!,
                 object : RecyclerItemClickListener {
                     override fun recyclerViewListClicked(position: Int, itemClickText: String?) {
                         tvTechnology.text = itemClickText
@@ -294,8 +294,8 @@ class KnowledgeBaseFragment : Fragment(), View.OnClickListener, OnRefreshListene
      */
     private fun showTechnologyListFilterDialog() {
         dialogRecyclerView = null
-        CommonMethods().customSpinner(activity, "Select Technology", inflater!!, dialogRecyclerView!!,
-                mlstTechnologyFilterList, dialog!!, dialog_view!!,
+        CommonMethods().customSpinner(activity, "Select Technology", inflater!!,
+                mlstTechnologyFilterList, dialog!!,
                 object : RecyclerItemClickListener {
                     override fun recyclerViewListClicked(position: Int, itemClickText: String?) {
                         if (itemClickText.equals("See All", ignoreCase = true)) knowledgeBaseAdapter!!.filter("", KnowledgeBaseAdapter.FILTER_WITH_TECHNOLOGY) else knowledgeBaseAdapter!!.filter(itemClickText!!, KnowledgeBaseAdapter.FILTER_WITH_TECHNOLOGY)

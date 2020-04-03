@@ -495,8 +495,8 @@ class LeaveFragment : Fragment(), View.OnClickListener, DatePickerDialog.OnDateS
     }
 
     private fun showLeaveTypeFilterDialog() {
-        CommonMethods().customSpinner(activity, "Select Leave Status", inflater!!, dialogRecyclerView!!,
-                mlstLeaveFilterList, dialog!!, dialog_view!!,
+        CommonMethods().customSpinner(activity, "Select Leave Status", inflater!!,
+                mlstLeaveFilterList, dialog!!,
                 object : RecyclerItemClickListener {
                     override fun recyclerViewListClicked(position: Int, itemClickText: String?) {
                         if (mobjLeavesAdapter != null) {

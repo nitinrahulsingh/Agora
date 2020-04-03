@@ -727,8 +727,8 @@ public class LeavesFragment extends Fragment implements View.OnClickListener, Da
      * Show Leave Type Filter list dialog
      */
     private void showLeaveTypeFilterDialog() {
-        new CommonMethods().customSpinner(activity, "Select Leave Status", inflater, dialogRecyclerView,
-                mlstLeaveFilterList, dialog, dialog_view,
+        new CommonMethods().customSpinner(activity, "Select Leave Status", inflater,
+                mlstLeaveFilterList, dialog,
                 new RecyclerItemClickListener() {
                     @Override
                     public void recyclerViewListClicked(int position, String itemClickText) {

@@ -42,9 +42,41 @@ class CommonMethods : RecyclerItemClickListener, TextWatcher {
         context.startActivity(i)
     }
 
-    fun customSpinner(mContext: Context?, title: String?, inflater: LayoutInflater, recyclerView: RecyclerView, dataInfo: List<String>?, dialog: Dialog, dialogView: View, itemClickListener: RecyclerItemClickListener?) {
+    fun customSpinner(mContext: Context?, title: String?, inflater: LayoutInflater, recyclerView: RecyclerView?, dataInfo: List<String>?, dialog: Dialog, dialogView: View?, itemClickListener: RecyclerItemClickListener?) {
         var recyclerView = recyclerView
         var dialogView = dialogView
+        dialogView = inflater.inflate(R.layout.dialog_select_items, null)
+        dialog.setCanceledOnTouchOutside(true)
+        dialog.setContentView(dialogView)
+        dialog.show()
+        val lp = WindowManager.LayoutParams()
+        val window = dialog.window
+        lp.copyFrom(window!!.attributes)
+        lp.width = WindowManager.LayoutParams.MATCH_PARENT
+        lp.height = WindowManager.LayoutParams.WRAP_CONTENT
+        window.attributes = lp
+        recyclerView = dialogView.findViewById(R.id.recyclerview_select_item)
+        val edtDialogSearchItem = dialogView.findViewById<EditText>(R.id.task_manager_dialog_select_project)
+        val txt_heading = dialogView.findViewById<TextView>(R.id.txt_heading)
+        txt_heading.text = title
+        edtDialogSearchItem.addTextChangedListener(this)
+        // recyclerview
+        recyclerView.setHasFixedSize(true)
+        recyclerView.layoutManager = LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL,
+                false)
+        val dividerItemDecoration = DividerItemDecoration(mContext,
+                LinearLayoutManager.VERTICAL)
+        recyclerView.addItemDecoration(dividerItemDecoration)
+        recyclerView.itemAnimator = DefaultItemAnimator()
+        recyclerView.addItemDecoration(VerticalSpaceItemDecoration(10))
+        recyclerView.layoutManager = LinearLayoutManager(mContext)
+        commonRecyclerAdapter = CommonRecyclerAdapter(mContext!!, dataInfo!!, itemClickListener!!)
+        recyclerView.adapter = commonRecyclerAdapter
+    }
+
+    fun customSpinner(mContext: Context?, title: String?, inflater: LayoutInflater, dataInfo: List<String>?, dialog: Dialog, itemClickListener: RecyclerItemClickListener?) {
+        var recyclerView : RecyclerView
+        var dialogView : View
         dialogView = inflater.inflate(R.layout.dialog_select_items, null)
         dialog.setCanceledOnTouchOutside(true)
         dialog.setContentView(dialogView)

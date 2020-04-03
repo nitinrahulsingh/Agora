@@ -417,9 +417,9 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, onDownloadTaskF
                 }
             }
             R.id.textview_forgot_pass -> {
-                /*intent = Intent(this@LoginActivity, ForgotPasswordActivity.class);
+                intent = Intent(this@LoginActivity, ForgotPasswordActivity::class.java)
                 startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);*/
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
             }
             else -> {
             }
