@@ -69,7 +69,9 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toRightOf="@+id/center_guideline"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_Address" />
+                app:layout_constraintTop_toBottomOf="@id/tv_Address"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginLeft="@dimen/_5sdp"/>
 
             <!--contact Text View end-->
 
@@ -85,10 +87,10 @@
             <!--android:text="abc@gmail.com"-->
             <TextView
                 android:id="@+id/tv_email"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/padding_xxxlarge"
-
+                app:layout_constraintWidth_default="wrap"
                 android:textColor="@color/black"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toRightOf="@+id/center_guideline"

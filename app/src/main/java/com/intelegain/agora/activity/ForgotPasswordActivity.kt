@@ -13,27 +13,25 @@ import androidx.core.content.ContextCompat.startActivity
 import com.intelegain.agora.R
 import com.intelegain.agora.api.urls.CommonMethods
 import com.intelegain.agora.api.urls.CommonMethods.Companion.checkInternetConnection
+import com.intelegain.agora.api.urls.RetrofitClient
+import com.intelegain.agora.constants.Constants
 import com.intelegain.agora.fragmments.CustomLoader_constant
+import com.intelegain.agora.interfeces.WebApiInterface
 import com.intelegain.agora.model.ForgotPasswordDetails
 import com.intelegain.agora.service.DataFetchServices
 import com.intelegain.agora.utils.Contants2
 import com.intelegain.agora.utils.Sharedprefrences
 import kotlinx.android.synthetic.main.activity_forgot_password.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class ForgotPasswordActivity : AppCompatActivity(), View.OnClickListener {
-    enum class function {
-        forgot_passwrd
-    }
-
+    var contants2: Contants2? = null
     var email : String = ""
     var username : String = ""
     private var user_data : ForgotPasswordDetails? = null
-    var forgotPass // AsyncTask
-            : ForgotPass? = null
-    private var dft // This class includes HTTp Connection call
-            : DataFetchServices? = null
-    // and Object LoginAuth.
     private var EmpId = ""
     var mSharedPref: Sharedprefrences? = null
     var EmailID = ""
@@ -45,8 +43,8 @@ class ForgotPasswordActivity : AppCompatActivity(), View.OnClickListener {
         init()
     }
 
-    private fun init() {
-        dft = DataFetchServices()
+    private fun init(){
+        contants2 = Contants2()
     }
 
     private fun findviews() {
@@ -76,8 +74,7 @@ class ForgotPasswordActivity : AppCompatActivity(), View.OnClickListener {
                     Toast.makeText(this@ForgotPasswordActivity, "Please enter the e-mail id", Toast.LENGTH_SHORT).show()
                 } else {
                     if (checkInternetConnection(this@ForgotPasswordActivity)) {
-                        forgotPass = ForgotPass(this@ForgotPasswordActivity)
-                        forgotPass!!.execute(function.forgot_passwrd)
+                        forgotPassword()
                     } else {
                         Toast.makeText(this@ForgotPasswordActivity, CommonMethods.no_internet, Toast.LENGTH_SHORT).show()
                     }
@@ -94,53 +91,99 @@ class ForgotPasswordActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    companion object {
-        class ForgotPass(private var activity: ForgotPasswordActivity?) : AsyncTask<function?, Void?, function?>(), DialogInterface.OnCancelListener {
-            private var user_data : ForgotPasswordDetails? = null
-            var dft : DataFetchServices =  DataFetchServices()
-            var customize_dialog: CustomLoader_constant? = null
-            override fun doInBackground(vararg params: function?): function? {
-                val result: function? = null
-                when (params[0]) {
-                    function.forgot_passwrd -> try {
-                        forgotpass("forgotPassword")
-                    } catch (e: Exception) {
-                        e.printStackTrace()
-                    }
-                    else -> {
-                    }
-                }
-                return params[0]
-            }
+    private fun forgotPassword(){
+        if (Contants2.checkInternetConnection(this@ForgotPasswordActivity)) {
+            contants2!!.showProgressDialog(this)
+            val apiInterface = RetrofitClient.getInstance(Constants.BASE_URL)!!.create(WebApiInterface::class.java)
+            val params: MutableMap<String, String?> = HashMap()
+            params["EmpId"] = usename_edittext.getText().toString()
+            params["EmailId"] = ed_email.getText().toString()
+            val call = apiInterface.getForgotPassword(params)
 
-            @Throws(Exception::class)
-            private fun forgotpass(methodname: String) {
-                user_data = dft.ForgotPass(methodname, activity!!.usename_edittext.getText().toString(), activity!!.ed_email.getText().toString(), activity) as ForgotPasswordDetails
-            }
-
-            override fun onPreExecute() {
-                super.onPreExecute()
-                customize_dialog = CustomLoader_constant.show(activity, "Loading...", true, false, false, this)
-            }
-
-            override fun onPostExecute(result: function?) {
-                when (result) {
-                    function.forgot_passwrd -> if (user_data!!.Status == 1) {
-                        Toast.makeText(activity, user_data!!.Message, Toast.LENGTH_SHORT).show()
-                        val intent = Intent(activity, LoginActivity::class.java)
-                        activity!!.startActivity(intent)
-                    } else {
-                        Toast.makeText(activity, user_data!!.Message, Toast.LENGTH_SHORT).show()
-                    }
-                    else -> {
+            call.enqueue(object : Callback<ForgotPasswordDetails?> {
+                override fun onResponse(call: Call<ForgotPasswordDetails?>, response: Response<ForgotPasswordDetails?>) {
+                    when (response.code()) {
+                        200 -> {
+                            contants2!!.dismissProgressDialog()
+                            Toast.makeText(this@ForgotPasswordActivity, response.body()!!.Message, Toast.LENGTH_LONG).show()
+                            if(response.body()!!.Status == 1) {
+                                finish()
+                                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right)
+                            }
+                        }
+                        403 -> {
+                            contants2!!.dismissProgressDialog()
+                            Contants2.showOkAlertDialog(this@ForgotPasswordActivity, response.message(), "") { dialog, which -> Contants2.forceLogout(this@ForgotPasswordActivity) }
+                        }
+                        500 -> {
+                            contants2!!.dismissProgressDialog()
+                            Contants2.showToastMessage(this@ForgotPasswordActivity, getString(R.string.some_error_occurred), true)
+                        }
+                        else -> {
+                            contants2!!.dismissProgressDialog()
+                            Contants2.showToastMessage(this@ForgotPasswordActivity, getString(R.string.some_error_occurred), true)
+                        }
                     }
                 }
-                super.onPostExecute(result)
-                if (customize_dialog!!.isShowing()) customize_dialog!!.dismiss()
-            }
 
-            override fun onCancel(dialog: DialogInterface?) {}
+                override fun onFailure(call: Call<ForgotPasswordDetails?>, t: Throwable) {
+                    call.cancel()
+                    contants2!!.dismissProgressDialog()
+                    Contants2.showToastMessage(this@ForgotPasswordActivity, getString(R.string.some_error_occurred), true)
+                }
+            })
+        } else {
+            Contants2.showToastMessage(this@ForgotPasswordActivity, getString(R.string.no_internet), true)
         }
     }
+
+//    companion object {
+//        class ForgotPass(private var activity: ForgotPasswordActivity?) : AsyncTask<function?, Void?, function?>(), DialogInterface.OnCancelListener {
+//            private var user_data : ForgotPasswordDetails? = null
+//            var dft : DataFetchServices =  DataFetchServices()
+//            var customize_dialog: CustomLoader_constant? = null
+//            override fun doInBackground(vararg params: function?): function? {
+//                val result: function? = null
+//                when (params[0]) {
+//                    function.forgot_passwrd -> try {
+//                        forgotpass("forgotPassword")
+//                    } catch (e: Exception) {
+//                        e.printStackTrace()
+//                    }
+//                    else -> {
+//                    }
+//                }
+//                return params[0]
+//            }
+//
+//            @Throws(Exception::class)
+//            private fun forgotpass(methodname: String) {
+//                user_data = dft.ForgotPass(methodname, activity!!.usename_edittext.getText().toString(), activity!!.ed_email.getText().toString(), activity) as ForgotPasswordDetails
+//            }
+//
+//            override fun onPreExecute() {
+//                super.onPreExecute()
+//                customize_dialog = CustomLoader_constant.show(activity, "Loading...", true, false, false, this)
+//            }
+//
+//            override fun onPostExecute(result: function?) {
+//                when (result) {
+//                    function.forgot_passwrd -> if (user_data!!.Status == 1) {
+//                        Toast.makeText(activity, user_data!!.Message, Toast.LENGTH_SHORT).show()
+//                        val intent = Intent(activity, LoginActivity::class.java)
+//                        activity!!.startActivity(intent)
+//                    } else {
+//                        Toast.makeText(activity, user_data!!.Message, Toast.LENGTH_SHORT).show()
+//                    }
+//                    else -> {
+//                    }
+//                }
+//                super.onPostExecute(result)
+//                if (customize_dialog!!.isShowing()) customize_dialog!!.dismiss()
+//            }
+//
+//            override fun onCancel(dialog: DialogInterface?) {}
+//        }
+//    }
 
 }

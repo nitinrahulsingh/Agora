@@ -12,6 +12,7 @@ import com.intelegain.agora.model.DocumentData;
 import com.intelegain.agora.model.EmpLogin;
 import com.intelegain.agora.model.EmployeeProfile;
 import com.intelegain.agora.model.Employee_contacts;
+import com.intelegain.agora.model.ForgotPasswordDetails;
 import com.intelegain.agora.model.HolidayMaster;
 import com.intelegain.agora.model.KbAttchmentResponce;
 import com.intelegain.agora.model.KnowdlegeAttachmentResponce;
@@ -248,5 +249,10 @@ public interface WebApiInterface {
     Call<KbAttchmentResponce> uploadFile(@Part MultipartBody.Part file, @Part("UploadedImage") RequestBody name,
                                          @Header("empid") String empId,
                                          @Header("token") String token);
+
+    @POST("forgotPassword")
+    Call<ForgotPasswordDetails> getForgotPassword(/*@Header("empid") String empId,
+                                                  @Header("token") String token,*/
+                                                  @Body Map<String, String> params);
 
 }
