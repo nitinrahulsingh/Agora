@@ -14,6 +14,7 @@ object Constants {
     const val DeviceIdText = "DeviceId"
     const val OsTypeText = "OsType"
     const val BASE_URL = "http://emp.intelgain.com/AgoraMobile.api/";
+   //const val BASE_URL = "http://52.172.192.203/AgoraMobile.api/";
 
 
     const val EmployeeID = "EmployeeID";

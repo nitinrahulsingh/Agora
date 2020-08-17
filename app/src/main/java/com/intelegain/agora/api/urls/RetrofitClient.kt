@@ -1,8 +1,11 @@
 package com.intelegain.agora.api.urls
 
 import com.google.gson.GsonBuilder
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
 
 /**
  * Created by suraj.m on 9/8/17.
@@ -23,15 +26,21 @@ object RetrofitClient {
             val gson = GsonBuilder()
                     .setLenient()
                     .create()
+            val interceptor = HttpLoggingInterceptor()
+            interceptor.level = HttpLoggingInterceptor.Level.BODY
+            val okHttpClient = OkHttpClient.Builder()
+                    .readTimeout(30000, TimeUnit.MILLISECONDS)
+                    .addInterceptor(interceptor)
+                    .connectTimeout(50000, TimeUnit.MILLISECONDS)
+                    .writeTimeout(30000, TimeUnit.MILLISECONDS)
+                    .build()
+
             retrofit = Retrofit.Builder()
                     .baseUrl(API_BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create(gson))
+                    .client(okHttpClient)
                     .build()
-            //            HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
-//            OkHttpClient httpClient = new OkHttpClient.Builder().readTimeout(20, TimeUnit.SECONDS).connectTimeout(30, TimeUnit.SECONDS)
-//                    .addInterceptor(logging.setLevel(HttpLoggingInterceptor.Level.BODY)).build();
-//            Retrofit.Builder builder = new Retrofit.Builder().baseUrl(API_BASE_URL).addConverterFactory(ScalarsConverterFactory.create()).addConverterFactory(ScalarsConverterFactory.create());
-//            retrofit = builder.client(httpClient).build();
+
         }
         return retrofit
     }

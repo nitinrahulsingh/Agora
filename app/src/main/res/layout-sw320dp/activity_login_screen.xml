@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/login_relative_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login_background">
+    android:background="@drawable/login_background"
+    tools:ignore="MissingDefaultResource">
 
     <ImageView
         android:id="@+id/agora_logo"
@@ -58,15 +60,25 @@
             android:textCursorDrawable="@null"
             android:textSize="@dimen/size_15sp_18.0sp_20sp_20sp" />
 
+
+
         <View
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:layout_marginBottom="@dimen/_20sdp"
             android:background="@color/login_edit_text_divider" />
 
+        <Switch
+            android:id="@+id/ad_login"
+            android:textColor="@color/white"
+            android:text="AD Login"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
         <Button
             android:id="@+id/login_btn_login"
+            android:layout_marginTop="@dimen/_10sdp"
             style="@style/Match_Wrap_roboto_regular_style"
             android:layout_marginBottom="@dimen/_7sdp"
             android:background="@drawable/button_yellow_click_effect"

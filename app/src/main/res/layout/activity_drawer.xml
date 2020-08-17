@@ -16,7 +16,6 @@
 
     </RelativeLayout>
 
-
     <RelativeLayout
         android:id="@+id/rel_drawer"
         android:layout_width="@dimen/_250sdp"

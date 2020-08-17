@@ -40,6 +40,7 @@ import com.intelegain.agora.utils.FileDownloader
 import com.intelegain.agora.utils.FileDownloader.onDownloadTaskFinish
 import com.intelegain.agora.utils.Sharedprefrences
 import com.intelegain.agora.utils.Sharedprefrences.Companion.getInstance
+import kotlinx.android.synthetic.main.activity_login_screen.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -157,6 +158,9 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, onDownloadTaskF
 //        btnGoogleLogin.setOnClickListener(this);
 //        btnLinkInLogin.setOnClickListener(this);
         tv_forgot_pass!!.setOnClickListener(this)
+
+
+
         //        btnCustomGoogleLogin.setOnClickListener(this);
 //  cb_remb_me = (CheckBox) findViewById(R.id.login_cb_rembme);
 //     cb_remb_me.setChecked(false);
@@ -226,6 +230,15 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, onDownloadTaskF
             params["DeviceId"] = DeviceId
             params["OsType"] = OsType
             params["fcmToken"] = token
+
+
+            if(ad_login.isChecked){
+                params["IsADLogin"] = "true"
+            }else{
+                params["IsADLogin"] = "false"
+            }
+
+
             val call = apiInterface.empLogin(strEmpId, params)
             call.enqueue(object : Callback<EmpLogin?> {
                 override fun onResponse(call: Call<EmpLogin?>, response: Response<EmpLogin?>) {
@@ -233,12 +246,14 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, onDownloadTaskF
                         200 -> {
                             contants2!!.dismissProgressDialog()
                             empLogin = response.body()
+
+
                             mSharedPref!!.putString(getString(R.string.key_emp_id), et_empid!!.text.toString().trim { it <= ' ' })
                             mSharedPref!!.putString(getString(R.string.key_emp_name), empLogin!!.name)
                             mSharedPref!!.putString(getString(R.string.key_token), empLogin!!.token)
                             mSharedPref!!.putString(getString(R.string.key_fcm_token), token)
                             mSharedPref!!.commit()
-                            downloadProfileImage(empLogin!!.uploadedImage, "base64")
+                            downloadProfileImage(empLogin!!,empLogin!!.uploadedImage, "base64")
                         }
                         401 -> {
                             contants2!!.dismissProgressDialog()
@@ -265,27 +280,35 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, onDownloadTaskF
         }
     }
 
-    fun downloadProfileImage(base64Data: String?, fileType: String?) {
+    fun downloadProfileImage(emplogin :EmpLogin,base64Data: String?, fileType: String?) {
         if (base64Data != "") {
             val fileDownloader = FileDownloader(this, this)
             fileDownloader.execute(base64Data, Contants2.emp_profile_image, fileType)
             mSharedPref!!.putboolean(getString(R.string.key_is_remove_photo), false)
         } else {
-            callLoginScreen(true)
+            callLoginScreen(emplogin,true)
             mSharedPref!!.putboolean(getString(R.string.key_is_remove_photo), true)
         }
     }
 
     override fun onDownloadSuccess(strResult: String?, fileName: String?) {
-        callLoginScreen(false)
+        this!!.empLogin?.let { callLoginScreen(it,false) }
     }
 
     override fun onDownloadFailed(strResult: String?) {}
-    private fun callLoginScreen(isRemovePhoto: Boolean) {
-        val intent = Intent(this@LoginActivity, DrawerActivity::class.java)
-        intent.putExtra("isRemovePhoto", isRemovePhoto)
-        startActivity(intent)
-        finishAffinity()
+    private fun callLoginScreen(emplogin :EmpLogin,isRemovePhoto: Boolean) {
+        if(emplogin.isAdmin!!){
+            val intent = Intent(this@LoginActivity, DrawerActivity::class.java)
+            intent.putExtra("isRemovePhoto", isRemovePhoto)
+            startActivity(intent)
+            finishAffinity()
+        }else{
+            val intent = Intent(this@LoginActivity, DrawerActivity::class.java)
+            intent.putExtra("isRemovePhoto", isRemovePhoto)
+            startActivity(intent)
+            finishAffinity()
+        }
+
     }//   cb_remb_me.setChecked(false);
 
     //                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
